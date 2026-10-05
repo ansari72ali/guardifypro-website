@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://guardifypro.ir/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://guardifypro.ir/img/Guardify-Captcha-Pro_result.webp</image:loc>
+      <image:title>پیشخوان افزونه امنیتی و کپچای آفلاین گاردفای پرو وردپرس</image:title>
+      <image:caption>نمای کلی پیشخوان، آمار و وضعیت حفاظت هوشمند در وردپرس</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://guardifypro.ir/img/Smart-Captcha-Failover_result.webp</image:loc>
+      <image:title>پیشخوان هوشمند نظارت و سیستم سوییچر خودکار کپچا (Smart Failover)</image:title>
+      <image:caption>پایش وضعیت اتصال به گوگل و کلودفلر و سوییچ خودکار به کپچای آفلاین در اختلال اینترنت</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://guardifypro.ir/img/Security-Settings_result.webp</image:loc>
+      <image:title>تنظیمات امنیتی و فایروال افزونه گاردفای پرو</image:title>
+      <image:caption>پیکربندی سطح حساسیت، توکن HMAC ضد بازپخش و لیست سفید IPها</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://guardifypro.ir/img/Themes_result.webp</image:loc>
+      <image:title>شخصی‌سازی تم و ظاهر کپچای فرم‌های وردپرس</image:title>
+      <image:caption>سازگاری با دارک مود و لایت مود و هماهنگی با رنگ‌بندی قالب سایت</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://guardifypro.ir/img/Logs_result.webp</image:loc>
+      <image:title>لاگ و گزارش تفصیلی ترافیک و هرزنامه‌های مسدودشده</image:title>
+      <image:caption>تحلیل رفتار ربات‌ها و گزارش میلی‌ثانیه‌ای رویدادهای امنیتی</image:caption>
+    </image:image>
+  </url>
+</urlset>

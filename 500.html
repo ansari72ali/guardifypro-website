@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطای داخلی سرور | گاردفای پرو</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #6366f1; --bg-dark: #020617; }
+        body { font-family: 'IRANYekan', 'IRANYekanWeb', sans-serif; background-color: #020617; color: #f8fafc; overflow: hidden; }
+        .mesh-gradient { position: fixed; width: 150vmax; height: 150vmax; top: -75vmax; left: -75vmax; z-index: -2; opacity: 0.5; filter: blur(120px); }
+        .mesh-1 { background: radial-gradient(circle at center, rgba(239, 68, 68, 0.15) 0%, transparent 70%); animation: mesh-float 40s infinite linear; }
+        @keyframes mesh-float { 0% { transform: translate(0, 0) rotate(0deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
+        .ui-pattern { 
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L60 60M60 30L30 60M0 0L30 30M30 0L0 30' stroke='%23ef4444' stroke-width='0.5' stroke-opacity='0.15' fill='none'/%3E%3C/svg%3E");
+            position: absolute; inset: 0; pointer-events: none; z-index: -1; opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="mesh-gradient mesh-1"></div>
+    <div class="ui-pattern"></div>
+
+    <div class="max-w-xl w-full px-6 text-center">
+        <div class="mb-12 relative inline-block">
+            <div class="text-[12rem] font-black leading-none text-rose-500/10">500</div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-rose-600 w-24 h-24 rounded-3xl shadow-2xl shadow-rose-600/40 flex items-center justify-center animate-pulse">
+                    <i class="fas fa-exclamation-triangle text-white text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="text-4xl font-black mb-6">اختلال در عملکرد سرور!</h1>
+        <p class="text-slate-400 text-lg mb-12 leading-relaxed">متاسفانه سرور در حال حاضر قادر به پاسخگویی به درخواست شما نیست. تیم فنی گاردفای در حال بررسی و رفع مشکل است.</p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/" class="w-full sm:w-auto px-10 py-4 bg-rose-600 hover:bg-rose-700 text-white font-black rounded-2xl transition-all shadow-xl shadow-rose-600/20">
+                تلاش مجدد
+            </a>
+            <a href="mailto:support@guardifypro.ir" class="w-full sm:w-auto px-10 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all">
+                گزارش خطا به پشتیبانی
+            </a>
+        </div>
+    </div>
+</body>
+</html>
