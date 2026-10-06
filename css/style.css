@@ -3412,26 +3412,45 @@ h4, h5, h6 { line-height: 1.50 !important; }
 }
 
 /* ==========================================================================
-   CTA Demo Button High-Contrast Engine (Light & Dark Mode)
+   CTA & Nav Demo Button High-Contrast Engine (Light & Dark Mode)
    ========================================================================== */
 .cta-demo-btn,
 .light .cta-demo-btn,
-.dark .cta-demo-btn {
-    background-color: #4f46e5 !important;
+.dark .cta-demo-btn,
+.nav-demo-btn,
+.light .nav-demo-btn,
+.dark .nav-demo-btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
     border: 1px solid #818cf8 !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 25px -3px rgba(79, 70, 229, 0.45) !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+}
+
+.nav-demo-btn:hover,
+.light .nav-demo-btn:hover,
+.dark .nav-demo-btn:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45) !important;
 }
 
 .cta-demo-btn span,
 .light .cta-demo-btn span,
-.dark .cta-demo-btn span {
+.dark .cta-demo-btn span,
+.nav-demo-btn span,
+.light .nav-demo-btn span,
+.dark .nav-demo-btn span {
     color: #ffffff !important;
+    font-weight: 800 !important;
 }
 
 .cta-demo-btn i,
 .light .cta-demo-btn i,
-.dark .cta-demo-btn i {
+.dark .cta-demo-btn i,
+.nav-demo-btn i,
+.light .nav-demo-btn i,
+.dark .nav-demo-btn i {
     color: #fcd34d !important;
 }
 

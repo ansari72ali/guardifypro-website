@@ -212,8 +212,8 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#faq" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">سوالات متداول</a>
 
                 <!-- Highlighted Direct Button to Demo Studio -->
-                <a href="/demo.php" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-gradient-to-r dark:from-indigo-600/40 dark:to-amber-500/30 dark:text-amber-300 dark:border dark:border-amber-500/40 dark:hover:bg-amber-500 dark:hover:text-slate-950 transition-all font-black flex items-center gap-2 shadow-sm">
-                    <i class="fas fa-desktop text-[12px] text-amber-300 dark:text-amber-400"></i>
+                <a href="/demo.php" class="nav-demo-btn px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition-all font-black flex items-center gap-2 shadow-md shadow-indigo-600/25">
+                    <i class="fas fa-desktop text-[12px] text-amber-300"></i>
                     <span>شبیه ساز افزونه</span>
                 </a>
             </nav>
@@ -287,7 +287,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 </a>
 
                 <div class="pt-3 mt-1 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
-                    <a href="/demo.php" class="mobile-link py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black flex items-center justify-center gap-2 shadow-md">
+                    <a href="/demo.php" class="nav-demo-btn mobile-link py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black flex items-center justify-center gap-2 shadow-md">
                         <i class="fas fa-desktop text-amber-300"></i>
                         <span>شبیه ساز افزونه</span>
                     </a>
