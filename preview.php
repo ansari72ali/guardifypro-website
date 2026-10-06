@@ -43,6 +43,25 @@ include __DIR__ . "/header.php";
                 </div>
             </div>
 
+            <!-- Direct 3-Part Real Plugin Studio Switcher -->
+            <div class="mt-8 mb-4 p-4 rounded-3xl bg-slate-900/90 border-2 border-indigo-500/40 shadow-2xl flex flex-wrap items-center justify-center gap-3">
+                <span class="w-full text-center text-xs font-black text-amber-400 mb-1">
+                    ⚡ دسترسی مستقیم به استودیو و شبیه‌ساز واقعی افزونه گاردفای پرو:
+                </span>
+                <a href="/demo.php?tab=captcha" class="px-4 py-2.5 rounded-2xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-puzzle-piece text-indigo-400"></i>
+                    <span>۱. آزمایشگاه کپچاها و پایش هوشمند FX</span>
+                </a>
+                <a href="/demo.php?tab=login" class="px-4 py-2.5 rounded-2xl bg-amber-500/20 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/40 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-key text-amber-400"></i>
+                    <span>۲. شبیه‌ساز ۶ چیدمان فرم ورود (WP-Login)</span>
+                </a>
+                <a href="/demo.php?tab=admin" class="px-4 py-2.5 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 border border-emerald-500/40 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-sliders text-emerald-400"></i>
+                    <span>۳. پنل مدیریت افزونه در وردپرس (WP-Admin)</span>
+                </a>
+            </div>
+
             <!-- Comprehensive 3 Core Security Pillars Live Monitoring Panel -->
             <div class="dark-contrast-card mt-12 bg-slate-950/90 border-2 border-indigo-500/40 rounded-[2.5rem] p-6 md:p-10 shadow-2xl relative overflow-hidden backdrop-blur-xl">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-800">

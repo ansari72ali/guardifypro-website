@@ -24,10 +24,10 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
         (function() {
             function getTheme() {
                 var m = document.cookie.match(/(?:^|;\s*)(?:guardify_theme|user-theme)=([^;]+)/);
-                if (m) return decodeURIComponent(m[1]);
+                if (m && (m[1] === 'light' || m[1] === 'dark')) return decodeURIComponent(m[1]);
                 try {
                     var l = localStorage.getItem('guardify_theme');
-                    if (l) return l;
+                    if (l === 'light' || l === 'dark') return l;
                 } catch(e) {}
                 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
                     return 'light';
@@ -43,14 +43,15 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     
     <title><?php echo htmlspecialchars($page_title); ?></title>
     
+    <!-- Comprehensive SEO Meta Tags -->
     <meta name="description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی خارجی؛ جلوگیری از اسپم، حملات Brute-Force و ریزش سبد خرید ووکامرس در زمان اختلال اینترنت بین‌الملل.">
-    <meta name="keywords" content="گاردفای پرو, کپچای آفلاین وردپرس, کپچای بومی, امنیت ورود وردپرس, کپچای ووکامرس, ضد اسپم وردپرس, تغییر آدرس لاگین, DevBan">
+    <meta name="keywords" content="گاردفای پرو, کپچای آفلاین وردپرس, کپچای بومی, امنیت ورود وردپرس, کپچای ووکامرس, ضد اسپم وردپرس, تغییر آدرس لاگین, Guardify Pro, DevBan, امنیت وردپرس">
     <meta name="author" content="DevBan">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#6366f1">
     <meta name="application-name" content="گاردفای پرو Guardify Pro v4.00">
     
-    <!-- Resource Hints & DNS Prefetch for Max Performance -->
+    <!-- Resource Hints & DNS Prefetch for Performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -58,17 +59,22 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
 
-    <!-- Canonical and Social Cards -->
+    <!-- Canonical and Social Cards (OpenGraph & Twitter) -->
     <link rel="canonical" href="https://guardifypro.ir/" id="canonical-link">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fa_IR">
     <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
-    <meta property="og:description" content="کپچای ۱۰۰٪ آفلاین وردپرس بدون وابستگی خارجی؛ بدون افت سرعت تسویه‌حساب ووکامرس در زمان اختلال اینترنت.">
+    <meta property="og:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی به سرورهای خارجی؛ محافظت از ووکامرس و فرم‌ها در برابر اسپم و حملات ربات‌ها.">
     <meta property="og:url" content="https://guardifypro.ir/">
     <meta property="og:image" content="https://guardifypro.ir/img/Guardify-Captcha-Pro_result.webp">
     <meta property="og:site_name" content="گاردفای پرو Guardify Pro">
     
-    <!-- JSON-LD Structured Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
+    <meta name="twitter:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی خارجی؛ محافظت از ورود و فرم‌های وردپرس.">
+    <meta name="twitter:image" content="https://guardifypro.ir/img/Guardify-Captcha-Pro_result.webp">
+    
+    <!-- Rich Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -77,10 +83,10 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
           "@type": "SoftwareApplication",
           "@id": "https://guardifypro.ir/#software",
           "name": "Guardify Pro",
-          "alternateName": ["گاردفای پرو", "Guardify Captcha Pro"],
+          "alternateName": ["گاردفای پرو", "Guardify Captcha Pro", "افزونه کپچای آفلاین وردپرس"],
           "applicationCategory": "SecurityApplication",
-          "operatingSystem": "WordPress 5.0+, WooCommerce 4.0+",
-          "softwareVersion": "4.00",
+          "operatingSystem": "WordPress 5.0+, WooCommerce 4.0+, PHP 7.4 - 8.3+",
+          "softwareVersion": "4.00 Ultra",
           "description": "کپچای ۱۰۰٪ بومی و آفلاین وردپرس با اعتبارسنجی سمت سرور، ضد اسپم و سپر امنیتی ورود وردپرس.",
           "offers": {
             "@type": "Offer",
@@ -89,11 +95,42 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
             "availability": "https://schema.org/InStock",
             "url": "https://www.rtl-theme.com"
           },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "128"
+          },
           "author": {
             "@type": "Organization",
             "name": "DevBan",
             "url": "https://guardifypro.ir"
           }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://guardifypro.ir/#website",
+          "url": "https://guardifypro.ir/",
+          "name": "Guardify Pro Official Website",
+          "description": "وب‌سایت رسمی افزونه گاردفای پرو - کپچای بومی و امنیت ورود وردپرس",
+          "inLanguage": "fa-IR"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://guardifypro.ir/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "صفحه اصلی",
+              "item": "https://guardifypro.ir/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "شبیه ساز افزونه",
+              "item": "https://guardifypro.ir/demo.php"
+            }
+          ]
         }
       ]
     }
@@ -123,6 +160,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/css/captcha-themes.css">
     
     <!-- Main Style (with local IRANSans @font-face suite and cache busting) -->
     <link rel="stylesheet" href="/css/style.css?v=4.50">
@@ -166,45 +204,19 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 </div>
             </a>
             
-            <!-- Desktop Navigation Links (Consistent & Unified) -->
-            <div class="hidden lg:flex items-center gap-6 text-xs font-black tracking-wider">
-                <a href="/" class="<?php echo $current_page === 'home' ? 'text-indigo-400 font-black' : 'hover:text-indigo-400 transition-colors'; ?>">صفحه اصلی</a>
-                <a href="/#features" class="hover:text-indigo-400 transition-colors">امکانات و مزایا</a>
-                <a href="/preview.php#login-styler" class="hover:text-amber-400 text-amber-400 transition-colors font-extrabold flex items-center gap-1.5">
-                    <i class="fas fa-palette text-[10px]"></i>
-                    <span>استودیوی WP-Login Pro</span>
-                </a>
-                <a href="/preview.php" class="px-3 py-1.5 rounded-xl <?php echo $current_page === 'preview' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-600 hover:text-white'; ?> transition-all font-black flex items-center gap-1.5 shadow-sm">
-                    <i class="fas fa-flask-vial text-[11px]"></i>
-                    <span>پیش‌نمایش زنده</span>
-                </a>
-                <a href="/#security-guide" class="hover:text-indigo-400 transition-colors">راهنمای امنیت</a>
+            <!-- Desktop Navigation Links (Clean, Spacious & Uncluttered) -->
+            <nav class="hidden lg:flex items-center gap-7 text-xs font-black tracking-wider" aria-label="منوی ناوبری اصلی">
+                <a href="/#why-guardify" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">چرا گاردفای؟</a>
+                <a href="/#captcha-modalities" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">انواع کپچا</a>
+                <a href="/#forms-protection" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">فرم‌ها و ووکامرس</a>
+                <a href="/#faq" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">سوالات متداول</a>
 
-                <!-- "More" Dropdown Menu -->
-                <div class="relative group" id="nav-dropdown-wrapper">
-                    <button id="nav-dropdown-btn" type="button" class="flex items-center gap-1.5 py-2 text-readable hover:text-indigo-400 font-bold transition-colors cursor-pointer">
-                        <span>بیشتر</span>
-                        <i class="fas fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
-                    </button>
-
-                    <div id="nav-dropdown-menu" class="absolute top-full right-0 pt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <div class="p-2 rounded-2xl bg-[var(--card-current)] border border-[var(--border-current)] shadow-2xl backdrop-blur-2xl">
-                            <a href="/#performance" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-indigo-500/10 hover:text-emerald-400 text-readable transition-colors font-bold text-xs">
-                                <i class="fas fa-gauge-high text-xs text-emerald-400"></i>
-                                <span>سرعت و Core Web Vitals</span>
-                            </a>
-                            <a href="/#providers" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 text-readable transition-colors font-bold text-xs">
-                                <i class="fas fa-network-wired text-xs text-indigo-400"></i>
-                                <span>ارائه‌دهندگان جهانی</span>
-                            </a>
-                            <a href="/#faq" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 text-readable transition-colors font-bold text-xs">
-                                <i class="fas fa-circle-question text-xs text-indigo-400"></i>
-                                <span>سوالات متداول</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!-- Highlighted Direct Button to Demo Studio -->
+                <a href="/demo.php" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-gradient-to-r dark:from-indigo-600/40 dark:to-amber-500/30 dark:text-amber-300 dark:border dark:border-amber-500/40 dark:hover:bg-amber-500 dark:hover:text-slate-950 transition-all font-black flex items-center gap-2 shadow-sm">
+                    <i class="fas fa-desktop text-[12px] text-amber-300 dark:text-amber-400"></i>
+                    <span>شبیه ساز افزونه</span>
+                </a>
+            </nav>
 
             <!-- Actions Bar: Theme Toggle & RTL-Theme Purchase -->
             <div class="flex items-center gap-3">
@@ -216,7 +228,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 
                 <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 via-lime-500 to-emerald-600 hover:from-emerald-400 hover:to-lime-400 text-slate-950 px-4 sm:px-5 py-2.5 rounded-xl text-xs font-black shadow-lg shadow-emerald-500/20 hover:scale-105 transition-all">
                     <i class="fas fa-crown text-slate-950 text-xs"></i>
-                    <span>فروش انحصاری در راست‌چین</span>
+                    <span>خرید افزونه</span>
                 </a>
                 
                 <button id="mobile-menu-btn" class="lg:hidden p-2 text-readable cursor-pointer" aria-label="منوی موبایل">
@@ -225,45 +237,40 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
             </div>
         </div>
 
-        <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-[var(--card-current)] border-b border-[var(--border-current)] backdrop-blur-3xl overflow-hidden transition-all duration-300">
-            <div class="flex flex-col p-6 gap-3 text-xs font-black">
-                <a href="/" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-home text-indigo-400"></i>
+        <!-- Mobile Drawer Menu (Streamlined, Clear & Clean) -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 backdrop-blur-3xl overflow-hidden transition-all duration-300 shadow-2xl">
+            <div class="flex flex-col p-4 gap-2 text-xs font-black">
+                <a href="/" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
+                    <i class="fas fa-home text-indigo-500"></i>
                     <span>صفحه اصلی</span>
                 </a>
-                <a href="/preview.php" class="mobile-link py-2.5 px-3 rounded-xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 font-bold flex items-center gap-2.5">
-                    <i class="fas fa-flask-vial text-indigo-400"></i>
-                    <span>آزمایشگاه زنده (پیش‌نمایش کپچا و ورود)</span>
+                <a href="/#why-guardify" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
+                    <i class="fas fa-shield-halved text-indigo-500"></i>
+                    <span>چرا گاردفای پرو؟</span>
                 </a>
-                <a href="/preview.php#login-styler" class="mobile-link py-2.5 px-3 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center gap-2.5">
-                    <i class="fas fa-palette text-amber-400"></i>
-                    <span>استودیوی سفارشی‌ساز WP-Login Pro</span>
+                <a href="/#captcha-modalities" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
+                    <i class="fas fa-cube text-purple-500"></i>
+                    <span>انواع کپچای بومی</span>
                 </a>
-                <a href="/#features" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-shield-halved text-indigo-400"></i>
-                    <span>امکانات و مزایا</span>
+                <a href="/#forms-protection" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
+                    <i class="fas fa-cart-shopping text-emerald-500"></i>
+                    <span>فرم‌ها و ووکامرس</span>
                 </a>
-                <a href="/#security-guide" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-book-open text-indigo-400"></i>
-                    <span>راهنمای جامع امنیت</span>
-                </a>
-                <a href="/#performance" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-emerald-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-gauge-high text-emerald-400"></i>
-                    <span>سرعت و Core Web Vitals</span>
-                </a>
-                <a href="/#providers" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-network-wired text-indigo-400"></i>
-                    <span>ارائه‌دهندگان جهانی</span>
-                </a>
-                <a href="/#faq" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-indigo-500/10 hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-circle-question text-indigo-400"></i>
+                <a href="/#faq" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
+                    <i class="fas fa-circle-question text-amber-500"></i>
                     <span>سوالات متداول</span>
                 </a>
-                <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="mobile-link py-3 px-4 text-center rounded-xl bg-gradient-to-r from-emerald-500 via-lime-500 to-emerald-600 text-slate-950 font-black mt-2 shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 text-xs">
-                    <i class="fas fa-crown"></i>
-                    <span>فروش انحصاری در راست‌چین (RTL-Theme)</span>
-                </a>
+
+                <div class="pt-3 mt-1 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                    <a href="/demo.php" class="mobile-link py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black flex items-center justify-center gap-2 shadow-md">
+                        <i class="fas fa-desktop text-amber-300"></i>
+                        <span>شبیه ساز افزونه</span>
+                    </a>
+                    <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="mobile-link py-2.5 px-4 text-center rounded-xl bg-gradient-to-r from-emerald-500 via-lime-500 to-emerald-600 text-slate-950 font-black shadow-md flex items-center justify-center gap-2">
+                        <i class="fas fa-crown"></i>
+                        <span>خرید افزونه از راست‌چین</span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>

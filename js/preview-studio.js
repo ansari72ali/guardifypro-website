@@ -1,4 +1,15 @@
-/**
+
+    window.showPreviewToast = function(msg) {
+        var old = document.getElementById('preview-toast');
+        if (old) old.remove();
+        var t = document.createElement('div');
+        t.id = 'preview-toast';
+        t.style.cssText = 'position:fixed;bottom:24px;left:24px;background:#0f172a;color:#fff;padding:12px 20px;border-radius:14px;border:1px solid #10b981;box-shadow:0 10px 25px rgba(0,0,0,0.5);font-size:13px;font-weight:800;z-index:99999;direction:rtl;';
+        t.innerHTML = msg;
+        document.body.appendChild(t);
+        setTimeout(function() { if (t) t.remove(); }, 2500);
+    };
+    /**
  * Guardify Pro v4.00 - Dedicated Interactive Preview & Styler Studio Engine
  * Developed by DevBan
  */
@@ -461,7 +472,7 @@
                         ۹ + ۴ = ؟
                     </div>
                     <input type="number" placeholder="پاسخ..." class="guardify-input" style="height:38px;padding:0 10px;text-align:center;font-weight:700;max-width:100px;" />
-                    <button type="button" onclick="alert('تست پیش‌نمایش: پاسخ کپچای ریاضی تایید گردید! ✅')" style="height:38px;padding:0 14px;background:#f59e0b;color:#0f172a;border:none;border-radius:10px;font-size:12px;font-weight:800;cursor:pointer;transition:transform 0.15s;">
+                    <button type="button" onclick="window.showPreviewToast('✓ پاسخ کپچای ریاضی تایید گردید!')" style="height:38px;padding:0 14px;background:#f59e0b;color:#0f172a;border:none;border-radius:10px;font-size:12px;font-weight:800;cursor:pointer;transition:transform 0.15s;">
                         بررسی
                     </button>
                 </div>
@@ -478,7 +489,7 @@
                 <div style="position:relative;background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);height:40px;border-radius:12px;display:flex;align-items:center;padding:0 10px;overflow:hidden;">
                     <div class="guardify-slider-progress" style="position:absolute;left:0;top:0;bottom:0;background:rgba(245,158,11,0.25);width:0%;"></div>
                     <div style="position:relative;z-index:10;font-size:11px;color:#cbd5e1;pointer-events:none;margin:0 auto;">دستگیره را به سمت چپ بکشید ➔</div>
-                    <input type="range" min="0" max="100" value="0" oninput="var p=this.previousElementSibling.previousElementSibling; if(p) p.style.width=this.value+'%'; if(this.value>=95) alert('تست پیش‌نمایش: اسلایدر کشیدنی تایید شد! ✅')" style="width:100%;opacity:0;cursor:pointer;position:absolute;inset:0;z-index:30;" />
+                    <input type="range" min="0" max="100" value="0" oninput="var p=this.previousElementSibling.previousElementSibling; if(p) p.style.width=this.value+'%'; if(this.value>=95) window.showPreviewToast('✓ اسلایدر پازلی با موفقیت تایید شد!')" style="width:100%;opacity:0;cursor:pointer;position:absolute;inset:0;z-index:30;" />
                 </div>
             </div>
         `,
@@ -488,10 +499,10 @@
                     <span>👁️ روی آیکون <strong style="color:#ffffff;background:rgba(255,255,255,0.1);padding:2px 8px;border-radius:6px;">«کلید 🔑»</strong> کلیک کنید:</span>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-                    <button type="button" onclick="alert('آیکون اشتباه انتخاب شد! ❌')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🛡️</button>
-                    <button type="button" onclick="alert('تست پیش‌نمایش: آیکون کلید به درستی تایید شد! ✅')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🔑</button>
-                    <button type="button" onclick="alert('آیکون اشتباه انتخاب شد! ❌')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">⚡</button>
-                    <button type="button" onclick="alert('آیکون اشتباه انتخاب شد! ❌')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🔒</button>
+                    <button type="button" onclick="window.showPreviewToast('✗ آیکون اشتباه انتخاب شد! لطفاً مجدداً دقت فرمایید.')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🛡️</button>
+                    <button type="button" onclick="window.showPreviewToast('✓ آیکون کلید به درستی تایید شد!')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🔑</button>
+                    <button type="button" onclick="window.showPreviewToast('✗ آیکون اشتباه انتخاب شد! لطفاً مجدداً دقت فرمایید.')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">⚡</button>
+                    <button type="button" onclick="window.showPreviewToast('✗ آیکون اشتباه انتخاب شد! لطفاً مجدداً دقت فرمایید.')" style="background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.15);padding:8px;border-radius:10px;font-size:20px;cursor:pointer;transition:all 0.2s;">🔒</button>
                 </div>
             </div>
         `
@@ -508,7 +519,7 @@
                     <p class="guardify-card-subtitle">جهت دسترسی به پنل وردپرس، اطلاعات خود را وارد کنید.</p>
                 </div>
 
-                <form onsubmit="event.preventDefault(); alert('تست پیش‌نمایش: فرم ورود با موفقیت ارسال شد!');">
+                <form onsubmit="event.preventDefault(); window.showPreviewToast('✓ فرم ورود با موفقیت ارسال گردید (پیش‌نمایش)');">
                     <div class="guardify-field-group">
                         <label>نام کاربری یا آدرس ایمیل:</label>
                         <input type="text" value="admin_demo" class="guardify-input" />

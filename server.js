@@ -37,15 +37,22 @@ function renderPhpFile(filePath, req) {
     const pageMatch = content.match(/\$current_page\s*=\s*["']([^"']+)["']/);
     if (pageMatch) currentPage = pageMatch[1];
 
-    // Recursively resolve includes (inside or outside <?php tags)
-    for (let iter = 0; iter < 4; iter++) {
-        content = content.replace(/(<\?php[\s\S]*?)?(?:include|require)(?:_once)?\s*(?:\(\s*)?(?:__DIR__\s*\.\s*)?['"]([^'"]+)['"](?:\s*\))?\s*;([\s\S]*?\?>)?/g, (match, prefix, inc, suffix) => {
+    // Recursively resolve includes (standalone and inside multi-statement PHP blocks)
+    for (let iter = 0; iter < 5; iter++) {
+        // Standalone <?php include ...; ?>
+        content = content.replace(/<\?php\s*(?:include|require)(?:_once)?\s*(?:\(\s*)?(?:__DIR__\s*\.\s*)?['"]([^'"]+)['"](?:\s*\))?\s*;\s*\?>/g, (match, inc) => {
             const incPath = path.resolve(baseDir, inc.replace(/^\//, ''));
             if (fs.existsSync(incPath)) {
-                let incContent = fs.readFileSync(incPath, 'utf8');
-                return (prefix ? prefix.trim() + ' ' : '') + incContent + (suffix ? ' ' + suffix.trim() : '');
+                return fs.readFileSync(incPath, 'utf8');
             }
             return '';
+        });
+
+        // Embedded include inside multi-line <?php ... include ...; ... ?>
+        content = content.replace(/(<\?php[\s\S]*?)(?:include|require)(?:_once)?\s*(?:\(\s*)?(?:__DIR__\s*\.\s*)?['"]([^'"]+)['"](?:\s*\))?\s*;([\s\S]*?\?>)/g, (match, before, inc, after) => {
+            const incPath = path.resolve(baseDir, inc.replace(/^\//, ''));
+            const incContent = fs.existsSync(incPath) ? fs.readFileSync(incPath, 'utf8') : '';
+            return before + '?>\n' + incContent + '\n<?php ' + after;
         });
     }
 
@@ -90,6 +97,17 @@ app.get(['/preview', '/preview.php', '/preview.html'], (req, res) => {
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
     const html = renderPhpFile(path.join(__dirname, 'preview.php'), req);
     res.send(html);
+});
+
+app.get(['/demo', '/demo.php', '/demo.html'], (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    const html = renderPhpFile(path.join(__dirname, 'demo.php'), req);
+    res.send(html);
+});
+
+app.get(['/wp-login', '/wp-login.php'], (req, res) => {
+    res.status(404).send('Not Found');
 });
 
 // Serve static assets with caching headers
