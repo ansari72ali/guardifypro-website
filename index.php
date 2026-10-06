@@ -32,7 +32,7 @@ include __DIR__ . '/header.php';
                     </div>
 
                     <!-- Main Catchy Title -->
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.25]">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.55]">
                         سپر نفوذناپذیر با <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-amber-500 dark:from-indigo-400 dark:via-purple-400 dark:to-amber-400 bg-clip-text text-transparent">کپچای بومی و آفلاین</span> برای وردپرس
                     </h1>
 
@@ -837,7 +837,7 @@ include __DIR__ . '/header.php';
                             <span>تهیه لایسنس انحصاری از راست‌چین</span>
                         </a>
 
-                        <a href="/demo.php" class="px-7 py-4 rounded-2xl bg-indigo-600/70 hover:bg-indigo-600 text-white border border-indigo-400/40 font-black text-sm sm:text-base shadow-lg hover:scale-105 transition-all flex items-center gap-2.5">
+                        <a href="/demo.php" class="cta-demo-btn px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 font-black text-sm sm:text-base shadow-xl shadow-indigo-600/30 hover:scale-105 transition-all flex items-center gap-2.5">
                             <i class="fas fa-desktop text-amber-300"></i>
                             <span>شبیه‌ساز افزونه</span>
                         </a>

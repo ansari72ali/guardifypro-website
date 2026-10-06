@@ -287,8 +287,22 @@ button, input, select, textarea {
     color: #f8fafc !important;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     text-wrap: balance;
+    margin-bottom: 0.5rem;
+}
+
+h1 { line-height: 1.35 !important; }
+h2 { line-height: 1.40 !important; }
+h3 { line-height: 1.45 !important; }
+h4, h5, h6 { line-height: 1.50 !important; }
+
+/* Balanced line-heights for Persian headings */
+.leading-tight,
+.leading-snug,
+.leading-\[1\.25\] {
+    line-height: 1.38 !important;
 }
 
 .text-readable { color: var(--text-current); }
@@ -1619,6 +1633,14 @@ h1, h2, h3, h4 {
     color: #334155 !important;
 }
 
+.light footer h1,
+.light footer h2,
+.light footer h3,
+.light footer h4,
+.light footer h5,
+.light footer h6,
+.light footer .text-white,
+.light footer a .text-white,
 .light footer a h3,
 .light footer h3 {
     color: #0f172a !important;
@@ -1644,8 +1666,21 @@ h1, h2, h3, h4 {
     color: #047857 !important;
 }
 
+.light footer .border-slate-800,
+.light footer .border-slate-800\/80,
 .light footer .border-slate-900 {
     border-color: #e2e8f0 !important;
+}
+
+.light footer .bg-slate-900 {
+    background-color: #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+.light footer .bg-slate-900 span,
+.light footer .bg-slate-900 i {
+    color: #0f172a !important;
 }
 
 .light footer .text-slate-300,
@@ -3350,6 +3385,54 @@ h1, h2, h3, h4 {
         width: 100% !important;
         box-sizing: border-box !important;
     }
+}
+
+/* ==========================================================================
+   Smooth Scroll Reveal Animation System
+   Hardware-accelerated (60fps) non-blocking smooth section entrance
+   ========================================================================== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==========================================================================
+   CTA Demo Button High-Contrast Engine (Light & Dark Mode)
+   ========================================================================== */
+.cta-demo-btn,
+.light .cta-demo-btn,
+.dark .cta-demo-btn {
+    background-color: #4f46e5 !important;
+    border: 1px solid #818cf8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px -3px rgba(79, 70, 229, 0.45) !important;
+}
+
+.cta-demo-btn span,
+.light .cta-demo-btn span,
+.dark .cta-demo-btn span {
+    color: #ffffff !important;
+}
+
+.cta-demo-btn i,
+.light .cta-demo-btn i,
+.dark .cta-demo-btn i {
+    color: #fcd34d !important;
 }
 
 @media (max-width: 640px) {

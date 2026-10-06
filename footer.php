@@ -116,12 +116,8 @@ if (!isset($current_page)) {
     <!-- Mobile Drawer & Navigation Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var mobileBtn = document.getElementById('mobile-menu-btn');
             var mobileMenu = document.getElementById('mobile-menu');
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
+            if (mobileMenu) {
                 var mobileLinks = mobileMenu.querySelectorAll('a');
                 mobileLinks.forEach(function(link) {
                     link.addEventListener('click', function() {

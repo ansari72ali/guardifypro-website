@@ -231,11 +231,36 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                     <span>خرید افزونه</span>
                 </a>
                 
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-readable cursor-pointer" aria-label="منوی موبایل">
+                <button id="mobile-menu-btn" onclick="toggleMobileNavMenu()" class="lg:hidden p-2 text-readable cursor-pointer z-50" aria-label="منوی موبایل">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
+
+        <script>
+        function toggleMobileNavMenu() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            var mobileBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                var isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+                if (mobileBtn) {
+                    var icon = mobileBtn.querySelector('i');
+                    if (icon) {
+                        if (isHidden) {
+                            icon.className = 'fas fa-xmark text-xl';
+                        } else {
+                            icon.className = 'fas fa-bars text-xl';
+                        }
+                    }
+                }
+            }
+        }
+        </script>
 
         <!-- Mobile Drawer Menu (Streamlined, Clear & Clean) -->
         <div id="mobile-menu" class="lg:hidden hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 backdrop-blur-3xl overflow-hidden transition-all duration-300 shadow-2xl">

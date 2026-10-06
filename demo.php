@@ -38,10 +38,14 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
     <!-- Icon Suite & Styles -->
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style (with local IRANSans @font-face suite and cache busting) -->
     <link rel="stylesheet" href="/css/style.css?v=4.50">
     <link rel="stylesheet" href="/css/captcha-themes.css">
     <link rel="stylesheet" href="/css/login-plugin.css">
     <link rel="stylesheet" href="/css/plugin-preview.css">
+
+    <!-- Universal Theme Manager Script -->
+    <script src="/js/theme-manager.js?v=4.30"></script>
 
     <style>
         .demo-master-tab-btn {
@@ -54,20 +58,31 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
+        }
+        .dark .demo-master-tab-btn {
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(30, 41, 59, 0.7);
             color: #94a3b8;
-            text-decoration: none;
         }
-        .demo-master-tab-btn:hover {
+        .dark .demo-master-tab-btn:hover {
             color: #fff;
             background: rgba(255, 255, 255, 0.1);
         }
+        .light .demo-master-tab-btn {
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #475569;
+        }
+        .light .demo-master-tab-btn:hover {
+            color: #0f172a;
+            background: #f1f5f9;
+        }
         .demo-master-tab-btn.active {
-            background: #6366f1;
-            color: #fff;
-            border-color: #6366f1;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            background: #6366f1 !important;
+            color: #ffffff !important;
+            border-color: #6366f1 !important;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
         }
         .animate-fadeIn {
             animation: fadeIn 0.25s ease-out;
@@ -78,39 +93,39 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white transition-colors duration-300">
 
     <!-- ========================================================================= -->
     <!-- MASTER TOP STUDIO NAVIGATION BAR -->
     <!-- ========================================================================= -->
-    <header class="sticky top-0 z-[99999] bg-slate-900/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl px-4 py-3">
+    <header class="sticky top-0 z-[99999] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-md px-4 py-3 transition-colors">
         <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
             
             <!-- Left Branding -->
             <div class="flex items-center gap-3">
-                <a href="/" class="flex items-center gap-2.5 text-white hover:text-indigo-400 transition-colors">
-                    <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                <a href="/" class="flex items-center gap-2.5 text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-600/30 text-white">
                         <i class="fas fa-shield-halved text-white text-base"></i>
                     </div>
                     <div>
-                        <span class="font-black text-sm block leading-tight">گاردفای <span class="text-indigo-400">پرو</span></span>
-                        <span class="text-[10px] text-slate-400 font-semibold block">شبیه ساز افزونه v4.00 Ultra</span>
+                        <span class="font-black text-sm block leading-tight">گاردفای <span class="text-indigo-500 dark:text-indigo-400">پرو</span></span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold block">شبیه ساز افزونه v4.00 Ultra</span>
                     </div>
                 </a>
-                <span class="hidden sm:inline-block text-xs bg-amber-500/15 border border-amber-500/30 text-amber-400 px-2.5 py-1 rounded-lg font-bold">
+                <span class="hidden sm:inline-block text-xs bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-400 px-2.5 py-1 rounded-lg font-bold">
                     شبیه ساز افزونه
                 </span>
             </div>
 
             <!-- Master 3 Tabs Selector -->
-            <div class="flex items-center gap-2 bg-slate-800/80 p-1.5 rounded-2xl border border-slate-700/60 shadow-inner">
+            <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-inner">
                 
                 <!-- Tab 1 Button -->
                 <button type="button" 
                         class="demo-master-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2" 
                         data-master-tab="captcha" 
                         onclick="switchMasterTab('captcha')">
-                    <i class="fas fa-puzzle-piece text-indigo-400"></i>
+                    <i class="fas fa-puzzle-piece text-indigo-500 dark:text-indigo-400"></i>
                     <span>۱. نمایش کپچاها و پایش هوشمند</span>
                 </button>
 
@@ -119,7 +134,7 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                         class="demo-master-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2" 
                         data-master-tab="login" 
                         onclick="switchMasterTab('login')">
-                    <i class="fas fa-key text-amber-400"></i>
+                    <i class="fas fa-key text-amber-500 dark:text-amber-400"></i>
                     <span>۲. فرم ورود وردپرس (WP-Login)</span>
                 </button>
 
@@ -128,15 +143,22 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                         class="demo-master-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2" 
                         data-master-tab="admin" 
                         onclick="switchMasterTab('admin')">
-                    <i class="fas fa-sliders text-emerald-400"></i>
+                    <i class="fas fa-sliders text-emerald-500 dark:text-emerald-400"></i>
                     <span>۳. پنل مدیریت افزونه (WP-Admin)</span>
                 </button>
             </div>
 
-            <!-- Action Button -->
+            <!-- Action Buttons: Theme Toggle & Return to Site -->
             <div class="flex items-center gap-2">
-                <a href="/" class="text-xs text-slate-400 hover:text-white px-3 py-2 rounded-xl transition-colors font-bold">
-                    بازگشت به سایت
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle cursor-pointer" aria-label="تغییر حالت شب و روز" title="تغییر حالت شب و روز">
+                    <i class="fas fa-moon dark:hidden text-indigo-600"></i>
+                    <i class="fas fa-sun hidden dark:block text-amber-400"></i>
+                </button>
+
+                <a href="/" class="text-xs text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white px-3 py-2 rounded-xl transition-colors font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                    <span>بازگشت به سایت</span>
                 </a>
             </div>
         </div>
@@ -149,27 +171,27 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
     <main id="pane-master-captcha" class="demo-master-pane flex-1 max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8 animate-fadeIn">
         
         <!-- Interactive Demo Notice Box (Tab 1) -->
-        <div class="mb-6 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm leading-relaxed flex items-start gap-3.5 shadow-lg backdrop-blur-md">
-            <div class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 shadow-inner">
+        <div class="mb-6 p-4 sm:p-5 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed flex items-start gap-3.5 shadow-lg backdrop-blur-md">
+            <div class="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/40 flex items-center justify-center text-amber-700 dark:text-amber-400 shrink-0 mt-0.5 shadow-inner">
                 <i class="fas fa-circle-info text-base"></i>
             </div>
             <div class="space-y-1">
                 <div class="flex items-center gap-2">
-                    <span class="font-black text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش زنده:</span>
-                    <span class="text-[10px] bg-amber-400/20 text-amber-300 font-extrabold px-2 py-0.5 rounded-md border border-amber-400/30">محیط نمایشی (Demo Only)</span>
+                    <span class="font-black text-amber-900 dark:text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش زنده:</span>
+                    <span class="text-[10px] bg-amber-100 dark:bg-amber-400/20 text-amber-800 dark:text-amber-300 font-extrabold px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-400/30">محیط نمایشی (Demo Only)</span>
                 </div>
-                <p class="text-amber-100/90 text-xs sm:text-[13px] leading-relaxed">
+                <p class="text-amber-900/90 dark:text-amber-100/90 text-xs sm:text-[13px] leading-relaxed">
                     این صفحه صرفاً یک پیش‌نمایش تعاملی و نمایشی از امکانات و چالش‌های کپچای بومی است؛ عملکرد و حتی ساختار نمایش افزونه ممکن است با توجه به اختلاف زمان طراحی دمو با نسخه نهایی منتشر شده دارای تفاوت‌های جزئی باشد و هیچ داده‌ای در سرور ذخیره یا ارسال نمی‌شود.
                 </p>
             </div>
         </div>
 
         <!-- Header Banner -->
-        <div class="mb-8 bg-gradient-to-l from-indigo-950/60 via-slate-900 to-slate-900 p-6 sm:p-8 rounded-3xl border border-indigo-900/40 shadow-xl relative overflow-hidden">
+        <div class="mb-8 bg-gradient-to-l from-indigo-50 dark:from-indigo-950/60 via-slate-100 dark:via-slate-900 to-white dark:to-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-indigo-900/40 shadow-xl relative overflow-hidden">
             <div class="absolute -left-10 -bottom-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                         آزمایشگاه انواع کپچای بومی گاردفای پرو
                     </h1>
                 </div>
@@ -180,17 +202,17 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
             <!-- 1. Native Puzzle Slider (Exact Markup from Guardify Engine) -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between text-slate-900 dark:text-white">
                 <div>
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 font-bold text-lg">۱</span>
+                            <span class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-lg">۱</span>
                             <div>
-                                <h3 class="font-black text-base text-white">اسلایدر پازلی بومی (Puzzle Slider)</h3>
-                                <span class="text-xs text-slate-400">خروجی واقعی تابع render_widget('slider')</span>
+                                <h3 class="font-black text-base text-slate-900 dark:text-white">اسلایدر پازلی بومی (Puzzle Slider)</h3>
+                                <span class="text-xs text-slate-500 dark:text-slate-400">خروجی واقعی تابع render_widget('slider')</span>
                             </div>
                         </div>
-                        <span class="text-[11px] bg-indigo-500/10 text-indigo-400 px-2.5 py-1 rounded-lg font-bold">بومی و سریع</span>
+                        <span class="text-[11px] bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 px-2.5 py-1 rounded-lg font-bold">بومی و سریع</span>
                     </div>
 
                     <!-- Live Interactive Slider Widget matching exact plugin output -->
@@ -220,31 +242,31 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                         </div>
 
                         <!-- Success message badge -->
-                        <div class="guardify-verified-badge hidden mt-3 p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold items-center justify-center gap-2">
+                        <div class="guardify-verified-badge hidden mt-3 p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold items-center justify-center gap-2">
                             <i class="fas fa-check-circle"></i>
                             <span>تایید شد؛ هویت کاربر با موفقیت احراز گردید</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>💡 دستگیره اسلایدر را با ماوس یا لمس به سمت چپ بکشید.</span>
-                    <span class="text-emerald-400 font-bold">۰ تأخیر در لود</span>
+                    <span class="text-emerald-600 dark:text-emerald-400 font-bold">۰ تأخیر در لود</span>
                 </div>
             </div>
 
             <!-- 2. Dynamic Math Challenge (Exact Markup from Guardify Engine) -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between text-slate-900 dark:text-white">
                 <div>
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-lg">۲</span>
+                            <span class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-lg">۲</span>
                             <div>
-                                <h3 class="font-black text-base text-white">آزمون جمع ریاضی (Math Challenge)</h3>
-                                <span class="text-xs text-slate-400">خروجی واقعی تابع render_widget('math')</span>
+                                <h3 class="font-black text-base text-slate-900 dark:text-white">آزمون جمع ریاضی (Math Challenge)</h3>
+                                <span class="text-xs text-slate-500 dark:text-slate-400">خروجی واقعی تابع render_widget('math')</span>
                             </div>
                         </div>
-                        <span class="text-[11px] bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-lg font-bold">سازگار با کَش</span>
+                        <span class="text-[11px] bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 px-2.5 py-1 rounded-lg font-bold">سازگار با کَش</span>
                     </div>
 
                     <!-- Live Math Widget matching exact plugin output -->
@@ -275,30 +297,30 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                             <button type="button" id="demo-math-equation" class="guardify-math-eq guardify-clickable-eq" title="تغییر سوال">۷ + ۴ = </button>
                         </div>
 
-                        <div id="demo-math-status" class="text-xs text-slate-400 font-semibold mt-2 text-right">
+                        <div id="demo-math-status" class="text-xs text-slate-600 dark:text-slate-400 font-semibold mt-2 text-right">
                             لطفاً حاصل‌جمع را وارد کنید
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>💡 عدد صحیح را تایپ کنید تا بلافاصله اعتبارسنجی شود.</span>
-                    <span class="text-amber-400 font-bold">ضد حمله Brute-Force</span>
+                    <span class="text-amber-600 dark:text-amber-400 font-bold">ضد حمله Brute-Force</span>
                 </div>
             </div>
 
             <!-- 3. Visual Icon Match (Exact Markup from Guardify Engine) -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between text-slate-900 dark:text-white">
                 <div>
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-lg">۳</span>
+                            <span class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-lg">۳</span>
                             <div>
-                                <h3 class="font-black text-base text-white">تطبیق آیکون بصری (Icon Match)</h3>
-                                <span class="text-xs text-slate-400">خروجی واقعی تابع render_widget('icon_match')</span>
+                                <h3 class="font-black text-base text-slate-900 dark:text-white">تطبیق آیکون بصری (Icon Match)</h3>
+                                <span class="text-xs text-slate-500 dark:text-slate-400">خروجی واقعی تابع render_widget('icon_match')</span>
                             </div>
                         </div>
-                        <span class="text-[11px] bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-lg font-bold">بصری جذاب</span>
+                        <span class="text-[11px] bg-purple-50 dark:bg-purple-500/10 text-purple-700 dark:text-purple-400 px-2.5 py-1 rounded-lg font-bold">بصری جذاب</span>
                     </div>
 
                     <!-- Live Icon Match Widget matching exact plugin output -->
@@ -327,55 +349,55 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                             <button type="button" class="guardify-verify-btn guardify-icon-verify-btn">بررسی</button>
                         </div>
 
-                        <div id="demo-icon-status" class="text-xs text-slate-400 font-semibold mt-2 text-right">
+                        <div id="demo-icon-status" class="text-xs text-slate-600 dark:text-slate-400 font-semibold mt-2 text-right">
                             یک گزینه را انتخاب نمایید
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>💡 آیکون هدف را لمس کرده و بررسی را بزنید.</span>
-                    <span class="text-purple-400 font-bold">رمزنگاری یک‌بار مصرف</span>
+                    <span class="text-purple-600 dark:text-purple-400 font-bold">رمزنگاری یک‌بار مصرف</span>
                 </div>
             </div>
 
             <!-- 4. Invisible Honeypot Trap (Exact Markup from Plugin) -->
-            <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col justify-between text-slate-900 dark:text-white">
                 <div>
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-bold text-lg">۴</span>
+                            <span class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-500/10 border border-rose-200 dark:border-rose-500/30 flex items-center justify-center text-rose-600 dark:text-rose-400 font-bold text-lg">۴</span>
                             <div>
-                                <h3 class="font-black text-base text-white">تله نامرئی هانی‌پات (Honeypot Trap)</h3>
-                                <span class="text-xs text-slate-400">خروجی واقعی تله guardify_hp_token</span>
+                                <h3 class="font-black text-base text-slate-900 dark:text-white">تله نامرئی هانی‌پات (Honeypot Trap)</h3>
+                                <span class="text-xs text-slate-500 dark:text-slate-400">خروجی واقعی تله guardify_hp_token</span>
                             </div>
                         </div>
-                        <span class="text-[11px] bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-lg font-bold">سکوت کامل</span>
+                        <span class="text-[11px] bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 px-2.5 py-1 rounded-lg font-bold">سکوت کامل</span>
                     </div>
 
                     <!-- Live Honeypot Widget -->
-                    <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/60 my-4 text-xs space-y-3">
-                        <p class="text-slate-300 leading-relaxed">
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 my-4 text-xs space-y-3">
+                        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
                             در کد منبع فرم‌های وردپرس، این تله با ساختار زیر قرار می‌گیرد و انسان هرگز آن را نمی‌بیند، اما خزنده‌ها و ربات‌ها آن را پر می‌کنند:
                         </p>
 
-                        <div class="p-3 bg-slate-950 rounded-xl font-mono text-[11px] text-slate-400 border border-slate-800 overflow-x-auto text-left" dir="ltr">
+                        <div class="p-3 bg-slate-900 rounded-xl font-mono text-[11px] text-slate-300 border border-slate-800 overflow-x-auto text-left" dir="ltr">
                             &lt;label for="guardify_hp_token"&gt;Leave this field blank&lt;/label&gt;<br>
                             &lt;input type="text" name="guardify_hp_token" id="guardify_hp_token" tabindex="-1" autocomplete="off" value="" /&gt;
                         </div>
 
                         <div class="space-y-1.5 pt-2">
-                            <label class="block text-slate-400 font-bold">تست شبیه‌ساز رفتار ربات (در صورت تایپ، بلافاصله اخطار بلاک ظاهر می‌شود):</label>
-                            <input type="text" id="demo-honeypot-bot-input" placeholder="اینجا مقداری تایپ کنید تا رفتار ربات شبیه‌سازی شود..." class="w-full bg-slate-950 border border-rose-500/40 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-rose-500" />
+                            <label class="block text-slate-700 dark:text-slate-400 font-bold">تست شبیه‌ساز رفتار ربات (در صورت تایپ، بلافاصله اخطار بلاک ظاهر می‌شود):</label>
+                            <input type="text" id="demo-honeypot-bot-input" placeholder="اینجا مقداری تایپ کنید تا رفتار ربات شبیه‌سازی شود..." class="w-full bg-white dark:bg-slate-950 border border-rose-300 dark:border-rose-500/40 rounded-xl py-2 px-3 text-slate-900 dark:text-white focus:outline-none focus:border-rose-500" />
                         </div>
 
                         <div id="demo-honeypot-alert" class="hidden"></div>
                     </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>💡 دفع بیش از ۸۵٪ اسپم‌های ربات‌های اتوماتیک در سکوت مطلق.</span>
-                    <span class="text-rose-400 font-bold">مسدودسازی لحظه‌ای IP</span>
+                    <span class="text-rose-600 dark:text-rose-400 font-bold">مسدودسازی لحظه‌ای IP</span>
                 </div>
             </div>
 
@@ -391,53 +413,53 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
         
         <div class="max-w-7xl mx-auto mb-6">
             <!-- Interactive Demo Notice Box (Tab 2) -->
-            <div class="mb-5 p-4 sm:p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm leading-relaxed flex items-start gap-3.5 shadow-lg backdrop-blur-md">
-                <div class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 shadow-inner">
+            <div class="mb-5 p-4 sm:p-5 rounded-2xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed flex items-start gap-3.5 shadow-lg backdrop-blur-md">
+                <div class="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-500/20 border border-amber-200 dark:border-amber-500/40 flex items-center justify-center text-amber-700 dark:text-amber-400 shrink-0 mt-0.5 shadow-inner">
                     <i class="fas fa-circle-info text-base"></i>
                 </div>
                 <div class="space-y-1">
                     <div class="flex items-center gap-2">
-                        <span class="font-black text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش شبیه‌ساز ورود:</span>
-                        <span class="text-[10px] bg-amber-400/20 text-amber-300 font-extrabold px-2 py-0.5 rounded-md border border-amber-400/30">محیط نمایشی (Demo Only)</span>
+                        <span class="font-black text-amber-900 dark:text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش شبیه‌ساز ورود:</span>
+                        <span class="text-[10px] bg-amber-100 dark:bg-amber-400/20 text-amber-800 dark:text-amber-300 font-extrabold px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-400/30">محیط نمایشی (Demo Only)</span>
                     </div>
-                    <p class="text-amber-100/90 text-xs sm:text-[13px] leading-relaxed">
+                    <p class="text-amber-900/90 dark:text-amber-100/90 text-xs sm:text-[13px] leading-relaxed">
                         این بخش صرفاً جهت پیش‌نمایش بصری مدل‌های چیدمان (Architecture Presets) و ساختار فرم ورود طراحی شده است؛ با توجه به اختلاف زمان طراحی دمو با نسخه نهایی منتشر شده، عملکرد و حتی ساختار نمایش افزونه ممکن است دارای تفاوت جزئی باشد و هیچ اطلاعاتی ذخیره یا ارسال نمی‌گردد.
                     </p>
                 </div>
             </div>
 
             <!-- Login Customizer Toolbar (Architecture Presets Only) -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl space-y-4">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl space-y-4 text-slate-900 dark:text-white">
                 
                 <!-- Layout Mode Preset Selectors -->
                 <div>
-                    <div class="text-xs font-black text-slate-300 flex items-center gap-2 mb-3">
-                        <i class="fas fa-table-cells-large text-indigo-400"></i>
+                    <div class="text-xs font-black text-slate-800 dark:text-slate-300 flex items-center gap-2 mb-3">
+                        <i class="fas fa-table-cells-large text-indigo-600 dark:text-indigo-400"></i>
                         <span>انتخاب مدل چینش و ساختار بصری فرم ورود (Architecture Presets):</span>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-                        <button type="button" class="login-layout-btn active p-2.5 rounded-xl border border-indigo-500 bg-indigo-50/10 text-white text-xs font-bold text-center transition-all cursor-pointer" data-layout="centered_card" onclick="setLoginLayoutMode('centered_card')">
+                        <button type="button" class="login-layout-btn active p-2.5 rounded-xl border border-indigo-600 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold text-center transition-all cursor-pointer shadow-sm" data-layout="centered_card" onclick="setLoginLayoutMode('centered_card')">
                             <span class="block text-base mb-1">🎯</span>
                             <span>کارت متمرکز وسط</span>
                         </button>
-                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="split_screen" onclick="setLoginLayoutMode('split_screen')">
+                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-indigo-400 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="split_screen" onclick="setLoginLayoutMode('split_screen')">
                             <span class="block text-base mb-1">🌗</span>
                             <span>اسپلیت اسکرین</span>
                         </button>
-                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="sidebar_right" onclick="setLoginLayoutMode('sidebar_right')">
+                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-indigo-400 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="sidebar_right" onclick="setLoginLayoutMode('sidebar_right')">
                             <span class="block text-base mb-1">📑</span>
                             <span>سایدبار راست</span>
                         </button>
-                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="sidebar_left" onclick="setLoginLayoutMode('sidebar_left')">
+                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-indigo-400 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="sidebar_left" onclick="setLoginLayoutMode('sidebar_left')">
                             <span class="block text-base mb-1">🗂️</span>
                             <span>سایدبار چپ</span>
                         </button>
-                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="floating_split" onclick="setLoginLayoutMode('floating_split')">
+                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-indigo-400 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="floating_split" onclick="setLoginLayoutMode('floating_split')">
                             <span class="block text-base mb-1">✨</span>
                             <span>دو کارت معلق</span>
                         </button>
-                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-700 bg-slate-800 hover:border-slate-500 text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="minimal_compact" onclick="setLoginLayoutMode('minimal_compact')">
+                        <button type="button" class="login-layout-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-indigo-400 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition-all cursor-pointer" data-layout="minimal_compact" onclick="setLoginLayoutMode('minimal_compact')">
                             <span class="block text-base mb-1">🕊️</span>
                             <span>کارت مینیمال</span>
                         </button>

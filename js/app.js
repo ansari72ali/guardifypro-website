@@ -98,27 +98,20 @@ if (!window.GuardifyTheme) {
     }
 }
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        }
-    });
-
+// Mobile Menu Toggle Links
+if (document.querySelectorAll('.mobile-link').length > 0) {
     document.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) {
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+            if (mobileMenuBtn) {
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars text-xl';
+                }
             }
         });
     });
@@ -1330,3 +1323,34 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     createParticles();
     drawParticles();
 })();
+
+/* ==========================================================================
+   Smooth IntersectionObserver Scroll Reveal Engine
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('section:not(#hero), .reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+        return;
+    }
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('section:not(#hero), .reveal-on-scroll');
+    revealElements.forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        revealObserver.observe(el);
+    });
+});
