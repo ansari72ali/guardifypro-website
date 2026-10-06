@@ -9,94 +9,154 @@ include __DIR__ . "/header.php";
 ?>
 
 <!-- Hero Section -->
-    <header id="hero" class="relative pt-32 pb-16 md:pt-36 md:pb-20 overflow-hidden hero-gradient">
-        <!-- Ambient Decorative Cyber Nodes in Hero -->
-        <div class="absolute top-28 left-8 lg:left-16 pointer-events-none floating opacity-40 hidden sm:block">
-            <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 backdrop-blur-md text-[11px] font-mono text-indigo-300">
+    <header id="hero" class="relative pt-32 pb-16 md:pt-36 md:pb-24 overflow-hidden hero-gradient">
+        <!-- Ambient Decorative Cyber Floating Nodes in Hero -->
+        <div class="absolute top-28 left-6 lg:left-12 pointer-events-none floating opacity-80 hidden sm:block z-20">
+            <div class="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-indigo-950/70 border border-indigo-500/30 backdrop-blur-xl text-xs font-bold text-indigo-300 shadow-xl shadow-indigo-950/50">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
                 <i class="fas fa-shield-virus text-indigo-400"></i>
-                <span>Anti-Spam Shield</span>
+                <span>Anti-Spam Shield Active</span>
             </div>
         </div>
-        <div class="absolute bottom-12 right-12 pointer-events-none floating-reverse opacity-40 hidden lg:block">
-            <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md text-[11px] font-mono text-emerald-300">
+        <div class="absolute bottom-16 right-8 pointer-events-none floating-reverse opacity-80 hidden lg:block z-20">
+            <div class="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-emerald-950/70 border border-emerald-500/30 backdrop-blur-xl text-xs font-bold text-emerald-300 shadow-xl shadow-emerald-950/50">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 <i class="fas fa-key text-emerald-400"></i>
-                <span>HMAC Encrypted</span>
+                <span>HMAC Server-Side Encrypted</span>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="text-right order-2 lg:order-1 reveal-right">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-xs font-bold text-indigo-400 mb-6 tracking-wide shimmer-badge">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+            <!-- Left/Main Hero Copy (Col 12 -> Col 7) -->
+            <div class="text-right lg:col-span-7 reveal-right">
+                <!-- Top Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-black text-indigo-400 mb-6 tracking-wide shimmer-badge shadow-sm">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
                     <i class="fas fa-shield-halved text-sm"></i>
-                    <span>توسعه اختصاصی دِوبان (DevBan)</span>
-                    <span class="text-slate-600">·</span>
-                    <span class="text-emerald-400 font-mono">Guardify Pro v4.00</span>
+                    <span>کپچای ۱۰۰٪ بومی و آفلاین وردپرس</span>
+                    <span class="text-slate-600 dark:text-slate-400">·</span>
+                    <span class="text-emerald-500 dark:text-emerald-400 font-mono font-black">نسخه ۴.۰۰ Pro</span>
                 </div>
+
+                <!-- High-Impact Main Headline -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.25] mb-6 text-readable tracking-tight">
-                    کپچای بومی وردپرس و <strong class="bg-gradient-to-r from-indigo-400 via-indigo-300 to-purple-300 bg-clip-text text-transparent">سپر ضد نفوذ ورود</strong>
+                    کپچای بومی وردپرس و <span class="bg-gradient-to-r from-indigo-500 via-indigo-400 to-purple-400 dark:from-indigo-400 dark:via-sky-300 dark:to-emerald-400 bg-clip-text text-transparent">سپر ضد نفوذ ورود</span>
                 </h1>
-                <p class="text-muted text-base md:text-lg max-w-xl ml-auto leading-relaxed mb-8 font-normal">
-                    دیگر نگران قطعی گوگل ریکپچا و ریزش سبد خرید ووکامرس در زمان اختلال اینترنت نباشید. گاردفای پرو چالش‌های امنیتی (اسلایدر، ریاضی و آیکون) را مستقیماً روی سرور شما و با سرعت میلی‌ثانیه‌ای اجرا می‌کند؛ بدون حتی یک بایت وابستگی خارجی.
+
+                <!-- Compelling Subheadline -->
+                <p class="text-muted text-base md:text-lg max-w-2xl ml-auto leading-relaxed mb-8 font-medium">
+                    پایان قطعی گوگل ریکپچا و ریزش سبد خرید ووکامرس در زمان اختلال اینترنت بین‌الملل. <strong>گاردفای پرو</strong> چالش‌های امنیتی (اسلایدر، ریاضی، آیکون و نام‌مرئی) را مستقیماً روی سرور شما و با سرعت میلی‌ثانیه‌ای اجرا می‌کند؛ ۱۰۰٪ بومی، بدون ارسال حتی یک بایت داده به سرورهای خارجی.
                 </p>
 
-                <!-- Clean Trust Points -->
-                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-readable mb-8 font-medium">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-emerald-400"></i>
-                        <span>اجرای ۱۰۰٪ محلی بدون خروج داده</span>
+                <!-- Value Proposition Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8 text-xs font-black text-readable">
+                    <div class="flex items-center gap-2 p-2.5 rounded-xl bg-[var(--card-current)] border border-[var(--border-current)] shadow-sm">
+                        <i class="fas fa-bolt text-amber-400 text-sm"></i>
+                        <span>۰ms تاخیر خارجی</span>
                     </div>
-                    <span class="text-slate-600 hidden sm:inline">·</span>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-emerald-400"></i>
-                        <span>سازگار با ووکامرس، دکان و المنتور</span>
+                    <div class="flex items-center gap-2 p-2.5 rounded-xl bg-[var(--card-current)] border border-[var(--border-current)] shadow-sm">
+                        <i class="fas fa-shield-check text-emerald-400 text-sm"></i>
+                        <span>دفع ۹۹.۴٪ ربات‌ها</span>
                     </div>
-                    <span class="text-slate-600 hidden sm:inline">·</span>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-emerald-400"></i>
-                        <span>۰ میلی‌ثانیه تاخیر خارجی</span>
+                    <div class="flex items-center gap-2 p-2.5 rounded-xl bg-[var(--card-current)] border border-[var(--border-current)] shadow-sm col-span-2 sm:col-span-1">
+                        <i class="fas fa-shopping-cart text-indigo-400 text-sm"></i>
+                        <span>سازگار با ووکامرس و دکان</span>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap items-center justify-start gap-4">
-                    <a href="/preview.php" class="btn-primary text-white px-8 py-4 rounded-2xl text-sm font-black shadow-xl shadow-indigo-600/30 flex items-center gap-3 group shimmer-badge">
-                        <span>ورود به آزمایشگاه زنده و تست چالش‌ها</span>
+                <!-- Primary and Secondary CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-start gap-4 mb-8">
+                    <!-- Primary CTA -->
+                    <a href="/preview.php" class="btn-primary text-white px-8 py-4 rounded-2xl text-sm font-black shadow-xl shadow-indigo-600/30 flex items-center gap-3 group shimmer-badge hover:scale-[1.02] transition-all cursor-pointer">
+                        <i class="fas fa-flask-vial text-base group-hover:rotate-12 transition-transform"></i>
+                        <span>ورود به آزمایشگاه زنده و تست کپچا</span>
                         <i class="fas fa-arrow-left group-hover:-translate-x-1.5 transition-transform"></i>
                     </a>
-                    <a href="#comparison" class="flex items-center gap-2.5 px-6 py-4 rounded-2xl bg-[var(--card-current)] border border-[var(--border-current)] hover:border-indigo-500/50 text-readable font-bold text-xs backdrop-blur-md shadow-sm transition-all">
-                        <i class="fas fa-scale-balanced text-indigo-400"></i>
-                        <span>مقایسه فنی با رقبا</span>
+
+                    <!-- Secondary CTA -->
+                    <a href="/preview.php#login-styler" class="flex items-center gap-2.5 px-6 py-4 rounded-2xl bg-[var(--card-current)] border border-[var(--border-current)] hover:border-amber-400/60 text-readable hover:text-amber-400 font-black text-xs backdrop-blur-md shadow-sm hover:scale-[1.02] transition-all cursor-pointer">
+                        <i class="fas fa-palette text-amber-400 text-sm"></i>
+                        <span>استودیوی WP-Login Pro</span>
+                    </a>
+                </div>
+
+                <!-- Trust Guarantee Note -->
+                <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 font-bold">
+                    <span class="flex items-center gap-1.5 text-emerald-500 dark:text-emerald-400">
+                        <i class="fas fa-check-double text-xs"></i>
+                        <span>لایسنس اورجینال با پشتیبانی دائمی</span>
+                    </span>
+                    <span>·</span>
+                    <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 underline underline-offset-4 decoration-indigo-500/40 transition-colors">
+                        عرضه رسمی در مارکت راست‌چین (RTL-Theme)
                     </a>
                 </div>
             </div>
 
-            <!-- Hero Mockup Window -->
-            <div class="relative order-1 lg:order-2 reveal-left">
+            <!-- Right Hero Interactive Visual Showcase (Col 12 -> Col 5) -->
+            <div class="relative lg:col-span-5 reveal-left">
                 <div class="floating relative z-10 group">
-                    <div class="absolute -inset-10 bg-indigo-500/15 blur-[120px] rounded-full"></div>
+                    <!-- Glow Aura -->
+                    <div class="absolute -inset-8 bg-gradient-to-tr from-indigo-600/25 via-purple-600/20 to-emerald-500/20 blur-3xl rounded-[3rem] pointer-events-none"></div>
+
+                    <!-- Cyber Browser Card -->
                     <div class="relative bg-slate-900/95 dark:bg-[#0c1322] border border-indigo-500/30 rounded-[2.5rem] shadow-2xl overflow-hidden backdrop-blur-2xl">
-                        <!-- Browser Window Header -->
-                        <div class="px-6 py-4 bg-slate-950/80 border-b border-slate-800/80 flex items-center justify-between">
+                        <!-- Window Header -->
+                        <div class="px-6 py-4 bg-slate-950/90 border-b border-slate-800/90 flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-rose-500/90"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500/90"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500/90"></div>
                             </div>
-                            <div class="flex items-center gap-2 px-4 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] text-slate-400 font-mono" dir="ltr">
+                            <div class="flex items-center gap-2 px-4 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] text-slate-300 font-mono" dir="ltr">
                                 <i class="fas fa-lock text-emerald-400 text-[9px]"></i>
-                                <span>https://yoursite.ir/guardify-security</span>
+                                <span>https://yoursite.ir/guardify-shield</span>
                             </div>
-                            <div class="text-[10px] text-emerald-400 font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                                <span>Online</span>
+                            <div class="text-[10px] text-emerald-400 font-black flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span>100% Protected</span>
                             </div>
                         </div>
-                        <div class="p-3">
-                            <img src="/img/Guardify-Captcha-Pro_result.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80'" alt="پنل اختصاصی افزونه امنیتی و کپچای آفلاین گاردفای پرو وردپرس" fetchpriority="high" decoding="async" class="w-full h-auto rounded-[2rem] grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700">
+
+                        <!-- Showcase Visual Image with Interactive Overlay -->
+                        <div class="p-4 relative">
+                            <div class="overflow-hidden rounded-[2rem] border border-slate-800 relative group/img">
+                                <img src="/img/Guardify-Captcha-Pro_result.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80'" alt="پنل اختصاصی افزونه امنیتی و کپچای آفلاین گاردفای پرو وردپرس" fetchpriority="high" decoding="async" class="w-full h-auto object-cover group-hover/img:scale-105 transition-all duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity flex items-end p-5">
+                                    <div class="text-right text-white">
+                                        <div class="text-xs font-black text-indigo-300">پنل تنظیمات گاردفای پرو</div>
+                                        <div class="text-[11px] text-slate-300">پیکربندی هوشمند کپچای اسلایدر و سپر لاگین</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Interactive Feature Badges -->
+                            <div class="mt-4 grid grid-cols-2 gap-3">
+                                <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800/80 text-right">
+                                    <div class="text-[11px] text-slate-400 font-bold mb-1">نوع اعتبارسنجی</div>
+                                    <div class="text-xs font-black text-emerald-400 flex items-center gap-1.5">
+                                        <i class="fas fa-microchip text-xs"></i>
+                                        <span>سمت سرور (Server-Side)</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-slate-950/80 border border-slate-800/80 text-right">
+                                    <div class="text-[11px] text-slate-400 font-bold mb-1">سازگاری فرم‌ها</div>
+                                    <div class="text-xs font-black text-indigo-400 flex items-center gap-1.5">
+                                        <i class="fas fa-check-circle text-xs"></i>
+                                        <span>لاگین، ثبت‌نام، تسویه‌حساب</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="absolute -top-8 -right-8 bg-gradient-to-tr from-indigo-600 to-indigo-500 w-20 h-20 rounded-3xl shadow-xl shadow-indigo-600/40 flex items-center justify-center z-20 animate-spin-slow">
-                    <i class="fas fa-microchip text-white text-3xl"></i>
+
+                <!-- Floating Decorative Microchip Icon -->
+                <div class="absolute -top-6 -right-6 bg-gradient-to-tr from-indigo-600 to-indigo-500 w-16 h-16 rounded-2xl shadow-xl shadow-indigo-600/40 flex items-center justify-center z-20 animate-spin-slow">
+                    <i class="fas fa-microchip text-white text-2xl"></i>
                 </div>
             </div>
         </div>

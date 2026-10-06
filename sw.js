@@ -1,5 +1,5 @@
 // Service Worker for Guardify Pro
-const CACHE_NAME = 'guardify-cache-v6';
+const CACHE_NAME = 'guardify-cache-v9';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.php',
@@ -10,14 +10,12 @@ const ASSETS_TO_CACHE = [
   '/js/app.js',
   '/js/preview-studio.js',
   '/js/chart.js',
-  '/Fonts/iranyekanwebregular.woff',
-  '/Fonts/iranyekanwebmedium.woff',
-  '/Fonts/iranyekanwebbold.woff',
-  '/Fonts/iranyekanwebextrabold.woff',
-  '/Fonts/iranyekanwebblack.woff',
-  '/Fonts/iranyekanweblight.woff',
-  '/Fonts/iranyekanwebthin.woff',
-  '/Fonts/iranyekanwebextrablack.woff',
+  '/Fonts/IRANSansWeb_UltraLight.woff2',
+  '/Fonts/IRANSansWeb_Light.woff2',
+  '/Fonts/IRANSansWeb.woff2',
+  '/Fonts/IRANSansWeb_Medium.woff2',
+  '/Fonts/IRANSansWeb_Bold.woff2',
+  '/Fonts/IRANSansWeb_Black.woff2',
   '/webfonts/fa-solid-900.woff2',
   '/webfonts/fa-brands-400.woff2',
   '/webfonts/fa-regular-400.woff2',

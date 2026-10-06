@@ -99,7 +99,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     }
     </script>
 
-    <!-- Tailwind CDN with Class Dark Mode and Local IRANYekan Font Family -->
+    <!-- Tailwind CDN with Class Dark Mode and Local IRANSans Font Family -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -110,8 +110,8 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                         primary: '#6366f1'
                     },
                     fontFamily: {
-                        sans: ['IRANYekan', 'IRANYekanWeb', 'sans-serif'],
-                        heading: ['IRANYekan', 'IRANYekanWeb', 'sans-serif']
+                        sans: ['IRANSans', 'IRANSansWeb', 'IRANYekan', 'sans-serif'],
+                        heading: ['IRANSans', 'IRANSansWeb', 'IRANYekan', 'sans-serif']
                     }
                 }
             }
@@ -124,8 +124,8 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     
-    <!-- Main Style (with local IRANYekan @font-face suite and cache busting) -->
-    <link rel="stylesheet" href="/css/style.css?v=4.40">
+    <!-- Main Style (with local IRANSans @font-face suite and cache busting) -->
+    <link rel="stylesheet" href="/css/style.css?v=4.50">
     
     <!-- Universal Theme Manager Script -->
     <script src="/js/theme-manager.js?v=4.30"></script>
@@ -176,7 +176,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 </a>
                 <a href="/preview.php" class="px-3 py-1.5 rounded-xl <?php echo $current_page === 'preview' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 hover:bg-indigo-600 hover:text-white'; ?> transition-all font-black flex items-center gap-1.5 shadow-sm">
                     <i class="fas fa-flask-vial text-[11px]"></i>
-                    <span>آزمایشگاه زنده (پیش‌نمایش)</span>
+                    <span>پیش‌نمایش زنده</span>
                 </a>
                 <a href="/#security-guide" class="hover:text-indigo-400 transition-colors">راهنمای امنیت</a>
 
@@ -232,7 +232,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                     <i class="fas fa-home text-indigo-400"></i>
                     <span>صفحه اصلی</span>
                 </a>
-                <a href="/preview.php" class="mobile-link py-3 px-3 rounded-xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 font-bold flex items-center gap-2.5">
+                <a href="/preview.php" class="mobile-link py-2.5 px-3 rounded-xl bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 font-bold flex items-center gap-2.5">
                     <i class="fas fa-flask-vial text-indigo-400"></i>
                     <span>آزمایشگاه زنده (پیش‌نمایش کپچا و ورود)</span>
                 </a>
