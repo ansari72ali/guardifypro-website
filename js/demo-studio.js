@@ -1,5 +1,5 @@
 /**
- * Guardify Pro Interactive 3-Tab Live Demo Studio (v4.00 Ultra)
+ * Guardify Pro Interactive 3-Tab Live Demo Studio (v4.00 Pro)
  * 100% Authentic Replica matching extracted guardify-captcha-pro plugin
  * Client-side only with 0 persistence and 0 user blocking.
  */

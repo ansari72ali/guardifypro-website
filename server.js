@@ -106,6 +106,13 @@ app.get(['/demo', '/demo.php', '/demo.html'], (req, res) => {
     res.send(html);
 });
 
+app.get(['/rtl-landing', '/rtl-landing.php', '/presentation', '/presentation.php', '/rtl-presentation', '/rtl-presentation.php'], (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    const html = renderPhpFile(path.join(__dirname, 'rtl-landing.php'), req);
+    res.send(html);
+});
+
 app.get(['/wp-login', '/wp-login.php'], (req, res) => {
     res.status(404).send('Not Found');
 });

@@ -109,7 +109,7 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                     </div>
                     <div>
                         <span class="font-black text-sm block leading-tight">گاردفای <span class="text-indigo-500 dark:text-indigo-400">پرو</span></span>
-                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold block">شبیه ساز افزونه v4.00 Ultra</span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold block">شبیه ساز افزونه v4.00 Pro</span>
                     </div>
                 </a>
                 <span class="hidden sm:inline-block text-xs bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-400 px-2.5 py-1 rounded-lg font-bold">
