@@ -931,15 +931,15 @@ header('Content-Type: text/html; charset=utf-8');
 
                         <!-- Live Error Terminal Simulator -->
                         <div class="tech-terminal p-4 text-xs space-y-2 text-left" dir="ltr">
-                            <div class="flex items-center justify-between text-[10px] text-slate-500 pb-1.5 border-b border-slate-800">
-                                <span class="text-rose-400 font-bold">● CLOUD NETWORK STATUS</span>
-                                <span class="text-slate-400">TIMEOUT</span>
+                            <div class="flex items-center justify-between text-[10px] pb-1.5 border-b border-slate-800">
+                                <span class="text-rose-400 font-bold" style="color:#fb7185 !important;">● CLOUD NETWORK STATUS</span>
+                                <span class="text-rose-300 font-bold" style="color:#fda4af !important;">TIMEOUT</span>
                             </div>
-                            <div class="text-slate-400 text-[11px] font-mono leading-relaxed space-y-1">
-                                <p><span class="text-indigo-400">CONNECT</span> google.com:443 ... <span class="text-rose-400 font-bold">FAILED</span></p>
-                                <p class="text-rose-400 font-black">ERR_CONNECTION_TIMED_OUT (9999ms)</p>
-                                <p class="text-amber-400 text-[10.5px]">⚠️ HTTP 504 Gateway Timeout: Script Not Loaded</p>
-                                <p class="text-slate-500 text-[10.5px]">Result: WooCommerce Checkout Form Frozen ❌</p>
+                            <div class="text-slate-200 text-[11px] font-mono leading-relaxed space-y-1">
+                                <p><span class="text-indigo-300 font-bold" style="color:#a5b4fc !important;">CONNECT</span> <span style="color:#f1f5f9 !important;">google.com:443 ...</span> <span class="text-rose-400 font-bold" style="color:#fb7185 !important;">FAILED</span></p>
+                                <p class="text-rose-300 font-black" style="color:#fda4af !important;">ERR_CONNECTION_TIMED_OUT (9999ms)</p>
+                                <p class="text-amber-300 text-[10.5px] font-bold" style="color:#fde047 !important;">⚠️ HTTP 504 Gateway Timeout: Script Not Loaded</p>
+                                <p class="text-slate-300 text-[10.5px]" style="color:#cbd5e1 !important;">Result: WooCommerce Checkout Form Frozen ❌</p>
                             </div>
                         </div>
 
@@ -981,15 +981,15 @@ header('Content-Type: text/html; charset=utf-8');
 
                         <!-- Live Success Terminal Simulator -->
                         <div class="tech-terminal p-4 text-xs space-y-2 text-left" dir="ltr">
-                            <div class="flex items-center justify-between text-[10px] text-slate-500 pb-1.5 border-b border-slate-800">
-                                <span class="text-emerald-400 font-bold">● LOCAL HOST ENGINE</span>
-                                <span class="text-emerald-400 font-mono">0.2ms</span>
+                            <div class="flex items-center justify-between text-[10px] pb-1.5 border-b border-slate-800">
+                                <span class="text-emerald-400 font-bold" style="color:#34d399 !important;">● LOCAL HOST ENGINE</span>
+                                <span class="text-emerald-300 font-mono font-bold" style="color:#6ee7b7 !important;">0.2ms</span>
                             </div>
-                            <div class="text-slate-400 text-[11px] font-mono leading-relaxed space-y-1">
-                                <p><span class="text-indigo-400">EXEC</span> /guardify/local-engine.php ... <span class="text-emerald-400 font-bold">200 OK</span></p>
-                                <p class="text-emerald-400 font-black">LOCAL SESSION VERIFIED (0.2ms)</p>
-                                <p class="text-cyan-400 text-[10.5px]">⚡ Zero External Network Calls • 100% Intranet Proof</p>
-                                <p class="text-slate-300 text-[10.5px]">Result: Instant Order Completion & Login Verified ✅</p>
+                            <div class="text-slate-200 text-[11px] font-mono leading-relaxed space-y-1">
+                                <p><span class="text-indigo-300 font-bold" style="color:#a5b4fc !important;">EXEC</span> <span style="color:#f1f5f9 !important;">/guardify/local-engine.php ...</span> <span class="text-emerald-400 font-bold" style="color:#34d399 !important;">200 OK</span></p>
+                                <p class="text-emerald-300 font-black" style="color:#6ee7b7 !important;">LOCAL SESSION VERIFIED (0.2ms)</p>
+                                <p class="text-cyan-300 text-[10.5px] font-bold" style="color:#67e8f9 !important;">⚡ Zero External Network Calls • 100% Intranet Proof</p>
+                                <p class="text-slate-200 text-[10.5px]" style="color:#f8fafc !important;">Result: Instant Order Completion & Login Verified ✅</p>
                             </div>
                         </div>
 
@@ -1358,20 +1358,20 @@ header('Content-Type: text/html; charset=utf-8');
         <!-- ========================================================================= -->
         <!-- 5. COMPLETE FORM COVERAGE MATRIX (WORDPRESS ECOSYSTEM INTEGRATION HUB) -->
         <!-- ========================================================================= -->
-        <section class="p-8 sm:p-14 bg-mesh-radial-3 border-b border-slate-200 space-y-10 relative overflow-hidden">
+        <section class="p-6 sm:p-10 bg-mesh-radial-3 border-b border-slate-200 space-y-6 relative overflow-hidden">
             <!-- Subtle Eye-Relief Ambient Light Flare -->
-            <div class="absolute -top-24 left-1/4 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-12 left-1/4 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 right-1/4 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <!-- Background Ecosystem Interconnect Nodes Grid SVG -->
-            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 400" fill="none">
-                <path d="M100 200 H900 M250 80 V320 M500 80 V320 M750 80 V320" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.55" />
-                <circle cx="250" cy="200" r="5" fill="currentColor" opacity="0.75" />
-                <circle cx="500" cy="200" r="5" fill="currentColor" opacity="0.75" />
-                <circle cx="750" cy="200" r="5" fill="currentColor" opacity="0.75" />
+            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 320" fill="none">
+                <path d="M50 160 H950 M250 40 V280 M500 20 V300 M750 40 V280" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.45" />
+                <circle cx="250" cy="160" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="500" cy="160" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="750" cy="160" r="5" fill="currentColor" opacity="0.75" />
             </svg>
 
-            <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-2.5 relative z-10">
                 <span class="badge-clean-emerald px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
                     پوشش جامع و ۱۰۰ درصدی تمام فرم‌های استاندارد وردپرس
                 </span>
@@ -2279,19 +2279,20 @@ header('Content-Type: text/html; charset=utf-8');
         <!-- ========================================================================= -->
         <!-- 10. TECHNICAL BENCHMARK COMPARISON TABLE (CLEAR GRID & BORDERED MATRIX) -->
         <!-- ========================================================================= -->
-        <section class="p-8 sm:p-14 bg-tech-grid border-b border-slate-200 space-y-10 relative overflow-hidden">
+        <section class="p-6 sm:p-10 bg-tech-grid border-b border-slate-200 space-y-6 relative overflow-hidden">
             <!-- Subtle Eye-Comfort Glow -->
-            <div class="absolute -top-24 left-1/4 w-96 h-96 bg-indigo-500/12 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-12 left-1/3 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 right-1/3 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <!-- Background Benchmark Radar Grid SVG -->
-            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 500" fill="none">
-                <circle cx="500" cy="250" r="180" stroke="currentColor" stroke-width="1.4" stroke-dasharray="6 6" opacity="0.55" />
-                <circle cx="500" cy="250" r="120" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
-                <line x1="200" y1="250" x2="800" y2="250" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5" />
+            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 360" fill="none">
+                <circle cx="500" cy="180" r="140" stroke="currentColor" stroke-width="1.4" stroke-dasharray="6 6" opacity="0.55" />
+                <circle cx="500" cy="180" r="90" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+                <circle cx="500" cy="180" r="40" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6" />
+                <line x1="150" y1="180" x2="850" y2="180" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5" />
             </svg>
 
-            <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-2.5 relative z-10">
                 <span class="badge-clean-indigo px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
                     ⚖️ مقایسه فنی، مستند و شفاف
                 </span>
