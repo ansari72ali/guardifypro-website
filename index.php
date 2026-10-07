@@ -173,7 +173,7 @@ include __DIR__ . '/header.php';
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4">
                     پایان مشکلات فلج‌کننده Google reCAPTCHA و کپچاهای ابری
                 </h2>
-                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
                     کپچاهای خارجی علاوه بر کند کردن سرعت سایت، در زمان اختلال شبکه بین‌الملل کاربران را مسدود و تسویه‌حساب ووکامرس را با شکست مواجه می‌کنند. گاردفای پرو امنیت را به داخل هاست شما می‌آورد.
                 </p>
             </div>
@@ -186,21 +186,21 @@ include __DIR__ . '/header.php';
                         <i class="fas fa-triangle-exclamation"></i>
                     </div>
                     <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">معایب Google reCAPTCHA</h3>
-                    <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
+                    <ul class="text-xs text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed font-medium">
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-times text-rose-500 mt-0.5"></i>
+                            <i class="fas fa-times text-rose-500 mt-0.5 font-bold"></i>
                             <span>لود بیش از ۵۰۰ کیلوبایت اسکریپت سنگین از سرورهای گوگل.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-times text-rose-500 mt-0.5"></i>
-                            <span>مسدود شدن کاربران ایرانی در صورت اختلال یا فیلترینگ اینترنت.</span>
+                            <i class="fas fa-times text-rose-500 mt-0.5 font-bold"></i>
+                            <span>مسدود شدن کاربران در صورت اختلال یا فیلترینگ اینترنت بین‌الملل.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-times text-rose-500 mt-0.5"></i>
-                            <span>ریزش سبد خرید و عدم امکان تکمیل خرید در ووکامرس.</span>
+                            <i class="fas fa-times text-rose-500 mt-0.5 font-bold"></i>
+                            <span>ریزش سبد خرید و عدم امکان تکمیل خرید در ووکامرس و فرم‌های تسویه.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-times text-rose-500 mt-0.5"></i>
+                            <i class="fas fa-times text-rose-500 mt-0.5 font-bold"></i>
                             <span>آزار کاربران با معماهای تصویری نامفهوم (انتخاب اتوبوس/چراغ راهنما).</span>
                         </li>
                     </ul>
@@ -215,14 +215,14 @@ include __DIR__ . '/header.php';
                         <i class="fas fa-shield-halved"></i>
                     </div>
                     <h3 class="text-lg font-black text-white mb-3">برتری مطلق گاردفای پرو</h3>
-                    <ul class="text-xs text-slate-200 space-y-3 leading-relaxed font-semibold">
+                    <ul class="text-xs text-slate-100 space-y-3 leading-relaxed font-semibold">
                         <li class="flex items-start gap-2">
                             <i class="fas fa-check text-emerald-400 mt-0.5"></i>
                             <span>۱۰۰٪ مستقل و بدون ارسال حتی ۱ بایت اطلاعات به خارج از سرور.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="fas fa-check text-emerald-400 mt-0.5"></i>
-                            <span>وزن کل اسکریپت کمتر از ۱۵ کیلوبایت با رندر لحظه‌ای.</span>
+                            <span>وزن کل اسکریپت کمتر از ۱۵ کیلوبایت با رندر لحظه‌ای زیر ۵ میلی‌ثانیه.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="fas fa-check text-emerald-400 mt-0.5"></i>
@@ -230,7 +230,7 @@ include __DIR__ . '/header.php';
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="fas fa-check text-emerald-400 mt-0.5"></i>
-                            <span>احراز هویت زیر ۱ ثانیه با بیشترین حس رضایت کاربر.</span>
+                            <span>احراز هویت زیر ۱ ثانیه با بیشترین حس رضایت و تبدیل مشتری.</span>
                         </li>
                     </ul>
                 </div>
@@ -241,24 +241,136 @@ include __DIR__ . '/header.php';
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3 class="text-lg font-black text-slate-900 dark:text-white mb-3">سرعت، کشینگ و فایروال</h3>
-                    <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
+                    <ul class="text-xs text-slate-700 dark:text-slate-300 space-y-3 leading-relaxed font-medium">
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-check text-emerald-500 mt-0.5"></i>
+                            <i class="fas fa-check text-emerald-500 mt-0.5 font-bold"></i>
                             <span>سازگاری بی‌نقص با LiteSpeed Cache، WP Rocket و Super Cache.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-check text-emerald-500 mt-0.5"></i>
+                            <i class="fas fa-check text-emerald-500 mt-0.5 font-bold"></i>
                             <span>کنترل هوشمند نرخ ارسال درخواست‌ها (Rate Limiting).</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-check text-emerald-500 mt-0.5"></i>
+                            <i class="fas fa-check text-emerald-500 mt-0.5 font-bold"></i>
                             <span>مسدودسازی لحظه‌ای آی‌پی مهاجمان در لیست سیاه امنیتی.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-check text-emerald-500 mt-0.5"></i>
+                            <i class="fas fa-check text-emerald-500 mt-0.5 font-bold"></i>
                             <span>معافیت هوشمند مدیران و نقش‌های کاربری دلخواه (Whitelist).</span>
                         </li>
                     </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 2.5 SPECIAL SECTION: NATIONAL INTRANET & 100% OFFLINE RESILIENCE (نت ملی) -->
+    <!-- ========================================================================= -->
+    <section id="national-network-resilience" class="py-16 md:py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="relative rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-2 border-emerald-500/40 p-8 sm:p-12 shadow-2xl text-white dark-contrast-card">
+                
+                <!-- Background ambient lights -->
+                <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-right">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+                            <i class="fas fa-wifi text-emerald-400"></i>
+                            <span>تضمین ۱۰۰٪ پایداری در اینترنت ملی (نت ملی) و اختلالات بین‌الملل</span>
+                        </div>
+
+                        <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                            فروشگاه شما حتی در زمان قطعی کامل اینترنت بین‌الملل آنلاین می‌ماند
+                        </h2>
+
+                        <p class="text-slate-200 text-xs sm:text-base leading-relaxed font-medium">
+                            وقتی ارتباط با سرورهای خارجی (گوگل، کلودفلر، hCaptcha) مختل می‌شود، سایت‌های معمولی با خطای لود کپچا مواجه شده و تسویه‌حساب مشتریان به کل قطع می‌شود. با <strong>گاردفای پرو</strong>، موتور کپچا تماماً روی سرور شخصی شما در داخل هاست اجرا می‌شود و ۱۰۰٪ بدون نیاز به حتی ۱ بایت شبکه جهانی، کار می‌کند.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2">
+                            <div class="p-3.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md space-y-1">
+                                <div class="font-black text-emerald-300 flex items-center gap-2">
+                                    <i class="fas fa-shield-check"></i>
+                                    <span>صفر وابستگی به Google / Cloudflare</span>
+                                </div>
+                                <p class="text-slate-300 text-[11px] leading-relaxed">تولید توکن و تصویر چالش به طور محلی با PHP GD/SVG در رم هاست.</p>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md space-y-1">
+                                <div class="font-black text-amber-300 flex items-center gap-2">
+                                    <i class="fas fa-cart-shopping"></i>
+                                    <span>جلوگیری از سوختن سفارشات ووکامرس</span>
+                                </div>
+                                <p class="text-slate-300 text-[11px] leading-relaxed">مشتریان در هر شرایط شبکه‌ای می‌توانند خرید خود را بدون معطلی تکمیل کنند.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-wrap items-center gap-3">
+                            <a href="/demo.php" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-emerald-500/30 transition-all flex items-center gap-2">
+                                <i class="fas fa-play"></i>
+                                <span>تست زنده شبیه‌ساز آفلاین</span>
+                            </a>
+                            <span class="text-xs text-slate-300 font-bold">بدون ارسال اطلاعات به خارج از سرور</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Comparison Meter (Live Simulation Card) -->
+                    <div class="lg:col-span-5">
+                        <div class="p-6 rounded-3xl bg-slate-950/80 border border-slate-700 shadow-2xl space-y-4">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
+                                <span class="font-black text-white flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>شبیه‌سازی وضعیت در قطعی اینترنت بین‌الملل:</span>
+                                </span>
+                            </div>
+
+                            <!-- Google reCAPTCHA in Blackout -->
+                            <div class="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 space-y-2">
+                                <div class="flex items-center justify-between text-xs font-bold text-rose-300">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fab fa-google text-rose-400"></i>
+                                        <span>Google reCAPTCHA v2 / v3</span>
+                                    </span>
+                                    <span class="bg-rose-500/20 text-rose-400 text-[10px] px-2 py-0.5 rounded font-black">فلج کامل (Timeout)</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-rose-500 h-2 rounded-full w-1/12 animate-pulse"></div>
+                                </div>
+                                <p class="text-[11px] text-rose-200/80 leading-relaxed">
+                                    ❌ مسدود شدن لود اسکریپت از www.google.com/recaptcha ➔ توقف تسویه‌حساب ووکامرس.
+                                </p>
+                            </div>
+
+                            <!-- Guardify Pro in Blackout -->
+                            <div class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/50 space-y-2">
+                                <div class="flex items-center justify-between text-xs font-bold text-emerald-300">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-shield-halved text-emerald-400"></i>
+                                        <span>گاردفای پرو (Guardify Pro)</span>
+                                    </span>
+                                    <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded font-black">۱۰۰٪ پایدار (۰ میلی‌ثانیه تاخیر)</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                                    <div class="bg-gradient-to-r from-emerald-500 to-lime-400 h-2 rounded-full w-full"></div>
+                                </div>
+                                <p class="text-[11px] text-emerald-200 leading-relaxed font-bold">
+                                    ✓ پردازش آنی روی لوکال‌هاست ➔ رندر زیر ۵ میلی‌ثانیه بدون کوچکترین وقفه در فروش.
+                                </p>
+                            </div>
+
+                            <div class="text-center pt-1 text-[11px] text-slate-400">
+                                🔒 محافظت همزمان در برابر حملات Brute-Force و هرزنامه‌ها با فایروال محلی
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -850,9 +962,10 @@ include __DIR__ . '/header.php';
 
 </main>
 
-<!-- Interactive Hero Slider Script -->
+<!-- Interactive Hero Slider & Modality Playground Scripts -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // 1. Hero Slider
     var thumb = document.getElementById('hero-slider-thumb');
     var track = document.getElementById('hero-slider-track');
     var progress = document.getElementById('hero-slider-progress');
@@ -880,7 +993,6 @@ document.addEventListener('DOMContentLoaded', function() {
         function onMove(e) {
             if (!isDragging) return;
             var clientX = (e.clientX || (e.touches && e.touches[0].clientX));
-            // In RTL, dragging is to the left (negative delta from right)
             var delta = startX - clientX;
             if (delta < 0) delta = 0;
             if (delta > maxDrag) delta = maxDrag;
@@ -898,7 +1010,6 @@ document.addEventListener('DOMContentLoaded', function() {
         function onEnd() {
             if (!isDragging) return;
             isDragging = false;
-            // Reset if not verified
             thumb.style.transition = 'right 0.3s ease';
             progress.style.transition = 'width 0.3s ease';
             thumb.style.right = '0px';
@@ -910,15 +1021,11 @@ document.addEventListener('DOMContentLoaded', function() {
             progress.style.width = '100%';
             if (hint) hint.textContent = 'تایید شد!';
             if (success) success.classList.remove('hidden');
-            if (window.AudioSynth && window.AudioSynth.playSuccess) {
-                window.AudioSynth.playSuccess();
-            }
         }
 
         thumb.addEventListener('mousedown', onStart);
         window.addEventListener('mousemove', onMove);
         window.addEventListener('mouseup', onEnd);
-
         thumb.addEventListener('touchstart', onStart, { passive: true });
         window.addEventListener('touchmove', onMove, { passive: true });
         window.addEventListener('touchend', onEnd);

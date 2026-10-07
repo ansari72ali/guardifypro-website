@@ -193,16 +193,16 @@
 }
 
 .light { 
-    --bg-current: #f8fafc; 
+    --bg-current: #edf2f7; 
     --text-current: #0f172a; 
-    --text-muted: #334155; 
-    --text-dim: #475569;
+    --text-muted: #1e293b; 
+    --text-dim: #334155;
     --card-current: #ffffff; 
-    --card-inner: #f1f5f9;
-    --border-current: #e2e8f0; 
-    --nav-bg: rgba(255, 255, 255, 0.95); 
+    --card-inner: #edf2f7;
+    --border-current: #cbd5e1; 
+    --nav-bg: rgba(237, 242, 247, 0.95); 
     --pattern-opacity: 0.35;
-    --section-bg-alt: #f1f5f9;
+    --section-bg-alt: #e2e8f0;
     --primary: #4f46e5;
 }
 
@@ -267,15 +267,71 @@ button, input, select, textarea {
 
 /* Atmospheric Modern Multi-Hue Background for Light Mode (Vibrant, Radiant & Alive) */
 .light body {
-    background-color: #f8faff;
+    background-color: #edf2f7;
     background-image: 
-        radial-gradient(ellipse 100% 75% at 50% -12%, rgba(99, 102, 241, 0.20) 0%, transparent 60%),
-        radial-gradient(circle at 6% 22%, rgba(14, 165, 233, 0.16) 0%, transparent 42%),
-        radial-gradient(circle at 94% 26%, rgba(168, 85, 247, 0.16) 0%, transparent 45%),
-        radial-gradient(circle at 10% 55%, rgba(16, 185, 129, 0.14) 0%, transparent 40%),
-        radial-gradient(circle at 90% 65%, rgba(245, 158, 11, 0.14) 0%, transparent 42%),
-        radial-gradient(ellipse 90% 60% at 50% 95%, rgba(99, 102, 241, 0.18) 0%, transparent 55%);
+        radial-gradient(ellipse 100% 75% at 50% -12%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 6% 22%, rgba(14, 165, 233, 0.12) 0%, transparent 42%),
+        radial-gradient(circle at 94% 26%, rgba(168, 85, 247, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 10% 55%, rgba(16, 185, 129, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 90% 65%, rgba(245, 158, 11, 0.10) 0%, transparent 42%),
+        radial-gradient(ellipse 90% 60% at 50% 95%, rgba(99, 102, 241, 0.14) 0%, transparent 55%);
     background-attachment: fixed;
+}
+
+/* Light Mode Section Alternation & Card Definition */
+.light #why-guardify,
+.light #login-styler,
+.light #security-radar,
+.light #comparison,
+.light #faq {
+    background-color: #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
+}
+
+.light .glass-nav {
+    background: rgba(237, 242, 247, 0.94) !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.light .glass-card,
+.light section .bg-white {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04) !important;
+}
+
+.light .bg-slate-50,
+.light .bg-slate-100 {
+    background-color: #edf2f7 !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Badge Contrast Optimization in Light Mode */
+.light .bg-indigo-50 {
+    background-color: #e0e7ff !important;
+    border-color: #a5b4fc !important;
+    color: #1e1b4b !important;
+}
+.light .bg-emerald-50 {
+    background-color: #d1fae5 !important;
+    border-color: #6ee7b7 !important;
+    color: #064e3b !important;
+}
+.light .bg-amber-50 {
+    background-color: #fef3c7 !important;
+    border-color: #fcd34d !important;
+    color: #78350f !important;
+}
+.light .bg-purple-50 {
+    background-color: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #581c87 !important;
+}
+.light .bg-rose-50 {
+    background-color: #ffe4e6 !important;
+    border-color: #fda4af !important;
+    color: #881337 !important;
 }
 
 .dark h1:not(#showcase-canvas-container *), 
@@ -1628,9 +1684,9 @@ h4, h5, h6 { line-height: 1.50 !important; }
    Guarantees crisp typography, light background and high contrast in Light Mode
    ========================================================================== */
 .light footer {
-    background-color: #f8fafc !important;
-    border-top: 1px solid #e2e8f0 !important;
-    color: #334155 !important;
+    background-color: #e2e8f0 !important;
+    border-top: 1px solid #cbd5e1 !important;
+    color: #1e293b !important;
 }
 
 .light footer h1,
@@ -1644,14 +1700,17 @@ h4, h5, h6 { line-height: 1.50 !important; }
 .light footer a h3,
 .light footer h3 {
     color: #0f172a !important;
+    font-weight: 900 !important;
 }
 
 .light footer p {
-    color: #334155 !important;
+    color: #1e293b !important;
+    font-weight: 500 !important;
 }
 
 .light footer a:not(.btn-primary) {
-    color: #334155 !important;
+    color: #1e293b !important;
+    font-weight: 600 !important;
 }
 
 .light footer a:not(.btn-primary):hover {
@@ -1669,13 +1728,14 @@ h4, h5, h6 { line-height: 1.50 !important; }
 .light footer .border-slate-800,
 .light footer .border-slate-800\/80,
 .light footer .border-slate-900 {
-    border-color: #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
 }
 
 .light footer .bg-slate-900 {
-    background-color: #e2e8f0 !important;
-    border-color: #cbd5e1 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
     color: #0f172a !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
 
 .light footer .bg-slate-900 span,
@@ -1685,11 +1745,40 @@ h4, h5, h6 { line-height: 1.50 !important; }
 
 .light footer .text-slate-300,
 .light footer .text-slate-400 {
-    color: #475569 !important;
+    color: #1e293b !important;
 }
 
 .light footer div.uppercase span {
-    color: #64748b !important;
+    color: #475569 !important;
+}
+
+/* Specific button styles in light mode */
+.light .nav-demo-btn {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3) !important;
+}
+.light .nav-demo-btn i {
+    color: #fde047 !important;
+}
+.light .nav-demo-btn span {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
+
+.light .cta-demo-btn {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    border: 2px solid #818cf8 !important;
+    box-shadow: 0 10px 25px -4px rgba(79, 70, 229, 0.4) !important;
+}
+.light .cta-demo-btn i {
+    color: #fde047 !important;
+}
+.light .cta-demo-btn span {
+    color: #ffffff !important;
+    font-weight: 800 !important;
 }
 
 /* Screenshot Cards in Dark Mode */

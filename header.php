@@ -44,8 +44,8 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <title><?php echo htmlspecialchars($page_title); ?></title>
     
     <!-- Comprehensive SEO Meta Tags -->
-    <meta name="description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی خارجی؛ جلوگیری از اسپم، حملات Brute-Force و ریزش سبد خرید ووکامرس در زمان اختلال اینترنت بین‌الملل.">
-    <meta name="keywords" content="گاردفای پرو, کپچای آفلاین وردپرس, کپچای بومی, امنیت ورود وردپرس, کپچای ووکامرس, ضد اسپم وردپرس, تغییر آدرس لاگین, Guardify Pro, DevBan, امنیت وردپرس">
+    <meta name="description" content="گاردفای پرو (Guardify Pro v4.00)؛ کپچای ۱۰۰٪ بومی و آفلاین وردپرس با مصونیت کامل در شرایط قطعی اینترنت بین‌الملل و اینترنت ملی (نت ملی). جلوگیری از اسپم، حملات Brute-Force و ریزش سبد خرید ووکامرس.">
+    <meta name="keywords" content="کپچای بومی, کپچای آفلاین وردپرس, کپچای اینترنت ملی, کپچای نت ملی, امنیت ورود وردپرس, کپچای ووکامرس, ضد اسپم وردپرس, تغییر آدرس wp-login, گاردفای پرو, Guardify Pro, کپچای بدون گوگل, کپچای پازلی فارسی">
     <meta name="author" content="DevBan">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#6366f1">
@@ -64,17 +64,17 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fa_IR">
     <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
-    <meta property="og:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی به سرورهای خارجی؛ محافظت از ووکامرس و فرم‌ها در برابر اسپم و حملات ربات‌ها.">
+    <meta property="og:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس؛ پایداری کامل در زمان اختلال اینترنت بین‌الملل و نت ملی بدون ارسال حتی یک بایت داده به خارج از سرور.">
     <meta property="og:url" content="https://guardifypro.ir/">
     <meta property="og:image" content="https://guardifypro.ir/img/Guardify-Captcha-Pro_result.webp">
     <meta property="og:site_name" content="گاردفای پرو Guardify Pro">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
-    <meta name="twitter:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس بدون وابستگی خارجی؛ محافظت از ورود و فرم‌های وردپرس.">
+    <meta name="twitter:description" content="کپچای ۱۰۰٪ بومی و آفلاین وردپرس؛ پایداری کامل در زمان اختلال اینترنت بین‌الملل و نت ملی بدون وابستگی خارجی.">
     <meta name="twitter:image" content="https://guardifypro.ir/img/Guardify-Captcha-Pro_result.webp">
     
-    <!-- Rich Schema.org Structured Data (JSON-LD) -->
+    <!-- Rich Schema.org Structured Data (JSON-LD) with SoftwareApplication, WebSite, Breadcrumbs & FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -83,11 +83,11 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
           "@type": "SoftwareApplication",
           "@id": "https://guardifypro.ir/#software",
           "name": "Guardify Pro",
-          "alternateName": ["گاردفای پرو", "Guardify Captcha Pro", "افزونه کپچای آفلاین وردپرس"],
+          "alternateName": ["گاردفای پرو", "Guardify Captcha Pro", "افزونه کپچای آفلاین وردپرس", "کپچای بومی اینترنت ملی"],
           "applicationCategory": "SecurityApplication",
           "operatingSystem": "WordPress 5.0+, WooCommerce 4.0+, PHP 7.4 - 8.3+",
           "softwareVersion": "4.00 Ultra",
-          "description": "کپچای ۱۰۰٪ بومی و آفلاین وردپرس با اعتبارسنجی سمت سرور، ضد اسپم و سپر امنیتی ورود وردپرس.",
+          "description": "کپچای ۱۰۰٪ بومی، مستقل و آفلاین وردپرس با اعتبارسنجی سمت سرور، ضد اسپم و سپر امنیتی ورود وردپرس با پایداری کامل در قطعی اینترنت بین‌الملل و شبکه ملی اطلاعات.",
           "offers": {
             "@type": "Offer",
             "price": "299000",
@@ -110,7 +110,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
           "@type": "WebSite",
           "@id": "https://guardifypro.ir/#website",
           "url": "https://guardifypro.ir/",
-          "name": "Guardify Pro Official Website",
+          "name": "گاردفای پرو | وب‌سایت رسمی Guardify Pro",
           "description": "وب‌سایت رسمی افزونه گاردفای پرو - کپچای بومی و امنیت ورود وردپرس",
           "inLanguage": "fa-IR"
         },
@@ -129,6 +129,36 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
               "position": 2,
               "name": "شبیه ساز افزونه",
               "item": "https://guardifypro.ir/demo.php"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://guardifypro.ir/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "عملکرد گاردفای پرو در زمان قطعی اینترنت بین‌الملل و نت ملی چگونه است؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "گاردفای پرو ۱۰۰٪ آفلاین و محلی روی سرور یا هاست شما اجرا می‌شود. بر خلاف گوگل ریکپچا و کلودفلر، حتی در شرایط قطعی کامل اینترنت بین‌الملل و فعال بودن اینترنت ملی (نت ملی)، تسویه‌حساب مشتریان، فرم‌های ورود و ثبت‌نام با سرعت زیر ۵ میلی‌ثانیه کار می‌کنند و هیچ سفارشی از دست نمی‌رود."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "آیا گاردفای پرو نیاز به API Key یا سرور خارجی دارد؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "خیر، هیچ‌گونه نیازی به کلید API، ثبت‌نام در سایت‌های خارجی یا ارتباط شبکه با سرورهای خارجی ندارد و تمام محاسبات با موتور توابع PHP به صورت ایمن در داخل هاست انجام می‌شود."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "آیا با ووکامرس، دیجیتس و افزونه‌های کش سازگار است؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "بله، سازگاری کامل با فرم پرداخت و تسویه‌حساب ووکامرس، ورود پیامکی دیجیتس (Digits) و کلیه افزونه‌های کش مانند لایت‌اسپید کش (LiteSpeed Cache) و راکت وجود دارد."
+              }
             }
           ]
         }
