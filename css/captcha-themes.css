@@ -2,10 +2,22 @@
  * Guardify Captcha Pro Stylesheet v3.50
  */
 
-/* Font Inheritance: Inherits exact theme font (IRANSans, Dana, Shabnam, etc.) */
+/* Font Inheritance: Inherits exact theme font (IRANSans, Dana, Shabnam, etc.) while protecting FontAwesome Icons */
 .guardify-font-inherit,
-.guardify-font-inherit * {
-    font-family: inherit !important;
+.guardify-font-inherit *:not(i):not([class*="fa-"]):not([class^="fa-"]) {
+    font-family: inherit;
+}
+
+.guardify-captcha-container i,
+.guardify-captcha-container .fa,
+.guardify-captcha-container .fas,
+.guardify-captcha-container .fa-solid,
+.guardify-captcha-container .fab,
+.guardify-captcha-container .far {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
 }
 
 .guardify-captcha-container {

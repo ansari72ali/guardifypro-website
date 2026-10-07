@@ -52,9 +52,31 @@ header('Content-Type: text/html; charset=utf-8');
     <link rel="stylesheet" href="/css/captcha-themes.css">
 
     <style>
-        /* Force IRANSans across all elements on this page */
-        html, body, *, input, button, select, textarea, div, span, p, h1, h2, h3, h4, h5, h6 {
-            font-family: 'IRANSans', 'IRANSansWeb', 'IRANYekan', sans-serif !important;
+        /* Base Persian Font typography across standard text elements */
+        html, body, div:not([class*="fa-"]):not([class^="fa-"]), span:not([class*="fa-"]):not([class^="fa-"]), p, h1, h2, h3, h4, h5, h6, input, button:not([class*="fa-"]):not([class^="fa-"]), select, textarea, a, strong, b, label {
+            font-family: 'IRANSans', 'IRANSansWeb', 'IRANYekan', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Protect FontAwesome Icons from font-family overrides */
+        .fa, .fas, .far, .fal, .fad, .fab, .fa-solid, .fa-regular, .fa-brands, [class*="fa-"], [class^="fa-"], i[class*="fa-"] {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+            font-style: normal !important;
+            font-variant: normal !important;
+            text-rendering: auto !important;
+            line-height: 1 !important;
+            display: inline-block !important;
+        }
+        .fa-solid, .fas {
+            font-weight: 900 !important;
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fa-regular, .far {
+            font-weight: 400 !important;
+            font-family: "Font Awesome 6 Free" !important;
+        }
+        .fa-brands, .fab {
+            font-weight: 400 !important;
+            font-family: "Font Awesome 6 Brands" !important;
         }
 
         /* Vibrant Ergonomic Dynamic Colored Background (Anti-Monotony FX) */
@@ -299,6 +321,76 @@ header('Content-Type: text/html; charset=utf-8');
             box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25) !important;
         }
 
+        /* Enhanced Visual Background Elements & Circuit Accents - Balanced Contrast & Refined Aesthetic */
+        .cyber-circuit-svg {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.75;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-circuit-svg path,
+        .cyber-circuit-svg line,
+        .cyber-circuit-svg circle {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .cyber-corner-tl {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 18px;
+            height: 18px;
+            border-top: 2px solid rgba(99, 102, 241, 0.65);
+            border-left: 2px solid rgba(99, 102, 241, 0.65);
+            border-top-left-radius: 4px;
+            pointer-events: none;
+            filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.25));
+        }
+        .cyber-corner-br {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 18px;
+            height: 18px;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.65);
+            border-right: 2px solid rgba(99, 102, 241, 0.65);
+            border-bottom-right-radius: 4px;
+            pointer-events: none;
+            filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.25));
+        }
+
+        .theme-aura-crimson {
+            background: radial-gradient(circle, rgba(225, 29, 72, 0.18) 0%, transparent 70%);
+        }
+        .theme-aura-nordic {
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, transparent 70%);
+        }
+        .theme-aura-galaxy {
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
+        }
+        .theme-aura-indigo {
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.18) 0%, transparent 70%);
+        }
+
+        .floating-badge-chip {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(199, 210, 254, 0.85);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.10);
+        }
+
+        /* Subtle Animated Pulse for Live Nodes */
+        @keyframes cyberPulseRing {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 0.3; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .pulse-ring-fx {
+            animation: cyberPulseRing 3s ease-in-out infinite;
+        }
+
         /* Ergonomic Ambient Lighting Orbs for Anti-Glare and Eye Strain Prevention */
         .ambient-glow-orb {
             position: absolute;
@@ -524,6 +616,32 @@ header('Content-Type: text/html; charset=utf-8');
             <div class="absolute -top-24 -right-24 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
+            <!-- Background Decorative Tech Circuit Traces & Floating Particles -->
+            <svg class="cyber-circuit-svg top-0 right-0 w-80 h-80 text-indigo-400" viewBox="0 0 200 200" fill="none">
+                <path d="M10 10 H80 L120 50 H190 M80 10 V90 L140 150 H190 M10 80 H60 L100 120 V190" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.85" />
+                <circle cx="10" cy="10" r="4.5" fill="currentColor" opacity="0.9" />
+                <circle cx="190" cy="50" r="4" fill="currentColor" opacity="0.9" />
+                <circle cx="190" cy="150" r="4" fill="currentColor" opacity="0.9" />
+                <circle cx="100" cy="120" r="3" fill="currentColor" opacity="0.8" />
+            </svg>
+            <svg class="cyber-circuit-svg bottom-0 left-0 w-80 h-80 text-emerald-500" viewBox="0 0 200 200" fill="none">
+                <path d="M190 190 H120 L80 150 H10 M120 190 V110 L60 50 H10 M190 120 H140 L100 80 V10" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.85" />
+                <circle cx="190" cy="190" r="4.5" fill="currentColor" opacity="0.9" />
+                <circle cx="10" cy="50" r="4" fill="currentColor" opacity="0.9" />
+                <circle cx="10" cy="150" r="4" fill="currentColor" opacity="0.9" />
+                <circle cx="100" cy="80" r="3" fill="currentColor" opacity="0.8" />
+            </svg>
+
+            <!-- Floating Decorative Mini Chips -->
+            <div class="hidden lg:flex absolute top-12 left-10 floating-badge-chip px-3 py-1.5 rounded-2xl items-center gap-2 text-[11px] font-mono text-indigo-900 border border-indigo-200/80 shadow-md">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span>SECURE_RUNTIME: 0.2ms</span>
+            </div>
+            <div class="hidden lg:flex absolute top-12 right-10 floating-badge-chip px-3 py-1.5 rounded-2xl items-center gap-2 text-[11px] font-mono text-emerald-900 border border-emerald-200/80 shadow-md">
+                <i class="fas fa-lock text-emerald-600 text-xs"></i>
+                <span>OFFLINE_FALLBACK: ACTIVE</span>
+            </div>
+
             <div class="relative z-10 max-w-4xl mx-auto space-y-6">
                 
                 <!-- Category & Exclusive Distribution Badge -->
@@ -599,6 +717,19 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Glowing Background Mesh Orbs -->
             <div class="absolute -top-10 -left-10 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-10 -right-10 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Tech Telemetry SVGs & Circuit Grid Markers -->
+            <svg class="cyber-circuit-svg top-4 right-1/4 w-72 h-32 text-indigo-500" viewBox="0 0 300 100" fill="none">
+                <path d="M0 50 H80 L110 20 H200 L230 80 H300" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.7" />
+                <circle cx="80" cy="50" r="3.5" fill="currentColor" opacity="0.85" />
+                <circle cx="200" cy="20" r="3.5" fill="currentColor" opacity="0.85" />
+                <circle cx="230" cy="80" r="3.5" fill="currentColor" opacity="0.85" />
+            </svg>
+            <svg class="cyber-circuit-svg bottom-4 left-1/4 w-72 h-32 text-emerald-500" viewBox="0 0 300 100" fill="none">
+                <path d="M0 80 H70 L100 30 H190 L220 70 H300" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.7" />
+                <circle cx="70" cy="80" r="3.5" fill="currentColor" opacity="0.85" />
+                <circle cx="190" cy="30" r="3.5" fill="currentColor" opacity="0.85" />
+            </svg>
 
             <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 
@@ -732,6 +863,17 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Anti-Eye-Strain Ambient Glow Behind Section -->
             <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/12 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Server Interconnect Diagram SVG -->
+            <svg class="cyber-circuit-svg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-96 text-indigo-500" viewBox="0 0 600 200" fill="none">
+                <path d="M50 100 H250 L300 50 H350 L400 100 H550" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 4" opacity="0.65" />
+                <path d="M50 100 L100 150 H200 L250 100" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 4" opacity="0.65" />
+                <circle cx="50" cy="100" r="5" fill="currentColor" opacity="0.8" />
+                <circle cx="300" cy="50" r="4.5" fill="currentColor" opacity="0.8" />
+                <circle cx="550" cy="100" r="5" fill="currentColor" opacity="0.8" />
+                <circle cx="100" cy="150" r="3.5" fill="currentColor" opacity="0.8" />
+                <circle cx="200" cy="150" r="3.5" fill="currentColor" opacity="0.8" />
+            </svg>
 
             <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <span class="badge-clean-amber px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
@@ -922,8 +1064,11 @@ header('Content-Type: text/html; charset=utf-8');
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Sample 1: 1. Smart Slider Captcha in Cyber Emerald Theme with Smart Human Inspection FX -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-emerald-400 shadow-md relative overflow-hidden">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-emerald-400 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl"></div>
+                    <div class="cyber-corner-br"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-900 flex items-center gap-1.5">
                                 <i class="fas fa-sliders text-emerald-600 text-sm"></i>
@@ -938,7 +1083,7 @@ header('Content-Type: text/html; charset=utf-8');
                             
                             <div class="guardify-slider-header" style="color:#d1fae5;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:8px;">
                                 <span class="guardify-slider-title" style="display:flex;align-items:center;gap:5px;">
-                                    <i class="fas fa-shield-halved text-emerald-400"></i>
+                                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
                                     👁️ پایش و بازرسی رفتار انسانی:
                                 </span>
                                 <span style="font-size:11px;color:#34d399;font-weight:900;" class="flex items-center gap-1">
@@ -968,17 +1113,20 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         <strong>کپچای کشیدنی اسلایدر هوشمند:</strong> دستگیره در مرز بین رنگ سبز و فضای خالی، با احراز فوق‌سریع کمتر از ۱ ثانیه.
                     </div>
                 </div>
 
                 <!-- Sample 2: Math Level 1 (Addition) in Velvet Crimson / Ruby Theme (Single Line Box) -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-rose-400/80 shadow-md">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-rose-400/80 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-rose-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl" style="border-color:rgba(244,63,94,0.4)"></div>
+                    <div class="cyber-corner-br" style="border-color:rgba(244,63,94,0.4)"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-900 flex items-center gap-1.5">
-                                <i class="fas fa-plus text-rose-600"></i>
+                                <i class="fa-solid fa-plus text-rose-600"></i>
                                 ۲. ریاضی سطح ۱: جمع (تم زرشکی یاقوتی)
                             </span>
                             <span class="badge-clean-rose px-2.5 py-0.5 rounded-full text-[10px] font-black">Level 1: Addition</span>
@@ -989,12 +1137,12 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam" style="background:linear-gradient(90deg,transparent,#f43f5e,transparent) !important; animation: guardifyRadarScan 2s ease-in-out infinite;"></div></div>
                             <div class="guardify-math-header" style="color:#ffe4e6;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:8px;">
                                 <span class="guardify-math-title" style="display:flex;align-items:center;gap:4px;">
-                                    <i class="fas fa-calculator text-rose-400"></i>
+                                    <i class="fa-solid fa-calculator text-rose-400"></i>
                                     چالش جمع ۲ بخشی:
                                 </span>
-                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#fecdd3;display:flex;align-items:center;gap:3px;background:none;border:none;cursor:pointer;">
+                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#fecdd3;display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;">
                                     <span>تغییر سوال</span>
-                                    <i class="fas fa-arrows-rotate text-[10px]"></i>
+                                    <i class="fa-solid fa-arrows-rotate text-[10px]"></i>
                                 </button>
                             </div>
                             <!-- Single Line Unified Horizontal Box for Equation, Input & Button -->
@@ -1009,17 +1157,20 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         <strong>سطح ۱ (جمع ساده دو رقمی):</strong> اعداد معادله و کادر پاسخ در یک خط واحد افقی درون همان باکس؛ بدون نویز آزاردهنده.
                     </div>
                 </div>
 
                 <!-- Sample 3: Math Level 2 (Multiplication) in Cosmic Galaxy / Amethyst Theme (Single Line Box) -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-purple-400/80 shadow-md">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-purple-400/80 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-purple-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl" style="border-color:rgba(168,85,247,0.4)"></div>
+                    <div class="cyber-corner-br" style="border-color:rgba(168,85,247,0.4)"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-900 flex items-center gap-1.5">
-                                <i class="fas fa-xmark text-purple-600"></i>
+                                <i class="fa-solid fa-xmark text-purple-600"></i>
                                 ۳. ریاضی سطح ۲: ضرب (تم بنفش کهکشانی)
                             </span>
                             <span class="badge-clean-purple px-2.5 py-0.5 rounded-full text-[10px] font-black">Level 2: Multiply</span>
@@ -1030,12 +1181,12 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam" style="background:linear-gradient(90deg,transparent,#c084fc,transparent) !important; animation: guardifyRadarScan 2s ease-in-out infinite;"></div></div>
                             <div class="guardify-math-header" style="color:#f3e8ff;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:8px;">
                                 <span class="guardify-math-title" style="display:flex;align-items:center;gap:4px;">
-                                    <i class="fas fa-meteor text-purple-400"></i>
+                                    <i class="fa-solid fa-meteor text-purple-400"></i>
                                     چالش جدول ضرب امنیتی:
                                 </span>
-                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#e9d5ff;display:flex;align-items:center;gap:3px;background:none;border:none;cursor:pointer;">
+                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#e9d5ff;display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;">
                                     <span>تغییر سوال</span>
-                                    <i class="fas fa-arrows-rotate text-[10px]"></i>
+                                    <i class="fa-solid fa-arrows-rotate text-[10px]"></i>
                                 </button>
                             </div>
                             <!-- Single Line Unified Horizontal Box for Equation, Input & Button -->
@@ -1050,17 +1201,20 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         <strong>سطح ۲ (ضرب دو عددی):</strong> چالش ضرب استاندارد با طراحی کهکشانی ارگونومیک، کاملاً هم‌راستا در یک خط باکس.
                     </div>
                 </div>
 
                 <!-- Sample 4: Math Level 3 (3-Part Expression: Addition + Subtraction ONLY, NO Multiply) -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-amber-400/80 shadow-md">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-amber-400/80 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl" style="border-color:rgba(245,158,11,0.4)"></div>
+                    <div class="cyber-corner-br" style="border-color:rgba(245,158,11,0.4)"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-800 flex items-center gap-1.5">
-                                <i class="fas fa-cubes-stacked text-amber-600"></i>
+                                <i class="fa-solid fa-cubes-stacked text-amber-600"></i>
                                 ۴. ریاضی سطح ۳: عبارت ۳ بخشی (تم طلای ۲۴ عیار)
                             </span>
                             <span class="badge-clean-amber px-2 py-0.5 rounded text-[10px] font-bold">Level 3: Add + Subtract</span>
@@ -1071,12 +1225,12 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam" style="background:linear-gradient(90deg,transparent,#eab308,transparent) !important;"></div></div>
                             <div class="guardify-math-header" style="color:#fde047;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:8px;">
                                 <span class="guardify-math-title" style="display:flex;align-items:center;gap:4px;">
-                                    <i class="fas fa-crown text-amber-400"></i>
+                                    <i class="fa-solid fa-crown text-amber-400"></i>
                                     معادله ۳ بخشی (جمع و تفریق):
                                 </span>
-                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#fef08a;display:flex;align-items:center;gap:3px;background:none;border:none;cursor:pointer;">
+                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#fef08a;display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;">
                                     <span>تغییر سوال</span>
-                                    <i class="fas fa-arrows-rotate text-[10px]"></i>
+                                    <i class="fa-solid fa-arrows-rotate text-[10px]"></i>
                                 </button>
                             </div>
                             <!-- Single Line Unified Horizontal Box for 3-Part Equation, Input & Button -->
@@ -1091,17 +1245,20 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         <strong>سطح ۳ (معادله ۳ بخشی ترکیبی جمع و تفریق):</strong> شامل یک عمل جمع و یک تفریق (بدون ضرب)، کاملاً در یک خط واحد.
                     </div>
                 </div>
 
                 <!-- Sample 5: Icon Match in Royal Navy Theme -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-blue-400/60 shadow-md">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-blue-400/60 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-blue-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl" style="border-color:rgba(59,130,246,0.4)"></div>
+                    <div class="cyber-corner-br" style="border-color:rgba(59,130,246,0.4)"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-800 flex items-center gap-1.5">
-                                <i class="fas fa-icons text-blue-600"></i>
+                                <i class="fa-solid fa-icons text-blue-600"></i>
                                 ۵. تطبیق آیکون و نماد (تم سرمه‌ای شاهانه)
                             </span>
                             <span class="badge-clean-indigo px-2 py-0.5 rounded text-[10px] font-bold">Royal Navy</span>
@@ -1112,9 +1269,9 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam" style="background:linear-gradient(90deg,transparent,#38bdf8,transparent) !important;"></div></div>
                             <div class="guardify-icon-header" style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:#cbd5e1;margin-bottom:8px;">
                                 <span class="guardify-icon-title">روی آیکون <strong class="guardify-target-name text-amber-300">«کلید دسترسی»</strong> کلیک کنید:</span>
-                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#94a3b8;display:flex;align-items:center;gap:3px;background:none;border:none;cursor:pointer;">
+                                <button type="button" class="guardify-refresh-btn" style="font-size:10.5px;color:#94a3b8;display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;">
                                     <span>تغییر</span>
-                                    <i class="fas fa-arrows-rotate text-[10px]"></i>
+                                    <i class="fa-solid fa-arrows-rotate text-[10px]"></i>
                                 </button>
                             </div>
                             <div class="guardify-icon-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
@@ -1128,17 +1285,20 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         احراز هویت لمسی با یک تپ با وکتورهای شفاف؛ بدون نیاز به باز کردن کیبورد مجازی در موبایل.
                     </div>
                 </div>
 
                 <!-- Sample 6: Slider in Minimal Clean Light Theme (Light Mode Slider Captcha) -->
-                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-indigo-300 shadow-md">
-                    <div class="space-y-3">
+                <div class="p-6 rounded-3xl sub-box space-y-4 clean-card flex flex-col justify-between border-2 border-indigo-300 shadow-md relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-indigo-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="cyber-corner-tl" style="border-color:rgba(99,102,241,0.4)"></div>
+                    <div class="cyber-corner-br" style="border-color:rgba(99,102,241,0.4)"></div>
+                    <div class="space-y-3 relative z-10">
                         <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
                             <span class="font-black text-slate-800 flex items-center gap-1.5">
-                                <i class="fas fa-sliders text-indigo-600"></i>
+                                <i class="fa-solid fa-sliders text-indigo-600"></i>
                                 ۶. اسلایدر کشیدنی (تم لایت و مینیمال سازمانی)
                             </span>
                             <span class="badge-clean-indigo px-2.5 py-0.5 rounded text-[10px] font-bold">Clean Light Theme</span>
@@ -1149,7 +1309,7 @@ header('Content-Type: text/html; charset=utf-8');
                             <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam" style="background:linear-gradient(90deg,transparent,#6366f1,transparent) !important; animation: guardifyRadarScan 2s ease-in-out infinite;"></div></div>
                             <div class="guardify-slider-header" style="color:#312e81;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:8px;">
                                 <span class="guardify-slider-title" style="display:flex;align-items:center;gap:5px;">
-                                    <i class="fas fa-shield-halved text-indigo-600"></i>
+                                    <i class="fa-solid fa-shield-halved text-indigo-600"></i>
                                     چالش امنیتی تم لایت:
                                 </span>
                                 <span style="font-size:11px;color:#4f46e5;font-weight:900;" class="flex items-center gap-1">
@@ -1165,7 +1325,7 @@ header('Content-Type: text/html; charset=utf-8');
                             </div>
                         </div>
                     </div>
-                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium">
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-600 leading-relaxed font-medium relative z-10">
                         <strong>کپچای کشیدنی تم لایت (Clean Light):</strong> ظاهر مینیمال، روشن و سازمانی؛ هماهنگ با قالب‌های اداری، آموزشی و فروشگاهی روشن.
                     </div>
                 </div>
@@ -1181,6 +1341,14 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Subtle Eye-Relief Ambient Light Flare -->
             <div class="absolute -top-24 left-1/4 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Ecosystem Interconnect Nodes Grid SVG -->
+            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 400" fill="none">
+                <path d="M100 200 H900 M250 80 V320 M500 80 V320 M750 80 V320" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.55" />
+                <circle cx="250" cy="200" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="500" cy="200" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="750" cy="200" r="5" fill="currentColor" opacity="0.75" />
+            </svg>
 
             <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <span class="badge-clean-emerald px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
@@ -1308,6 +1476,18 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Subtle Eye-Comfort Glow -->
             <div class="absolute -top-20 right-1/4 w-96 h-96 bg-indigo-500/12 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-20 left-1/4 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Decorative Security Watermark SVGs -->
+            <svg class="cyber-circuit-svg top-8 left-8 w-64 h-64 text-indigo-400" viewBox="0 0 100 100" fill="none">
+                <path d="M50 10 L85 25 V50 C85 70 50 90 50 90 C50 90 15 70 15 50 V25 L50 10 Z" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.65" />
+                <path d="M50 25 L75 35 V50 C75 65 50 80 50 80 C50 80 25 65 25 50 V35 L50 25 Z" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+            </svg>
+            <svg class="cyber-circuit-svg bottom-8 right-8 w-64 h-64 text-emerald-500" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.65" />
+                <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+                <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="1" opacity="0.5" />
+            </svg>
 
             <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <span class="badge-clean-indigo px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
@@ -1582,10 +1762,10 @@ header('Content-Type: text/html; charset=utf-8');
                     استودیوی استایلر صفحه ورود (WP-Login Styler)
                 </span>
                 <h3 class="text-2xl sm:text-3xl font-black text-slate-900">
-                    شبیه‌سازی چیدمان «دو کارت معلق لوکس» در تم سرمه‌ای شاهانه (Royal Navy)
+                    بازطراحی صفحه لاگین وردپرس
                 </h3>
                 <p class="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed">
-                    گاردفای پرو بدون تغییر آدرس رسمی صفحه لاگین (`wp-login.php`) و با حفظ کامل کوکی‌ها و نشست‌های معتبر وردپرس، فرم ورود را به ساختار فوق‌العاده شیک <strong>دو کارت معلق لوکس (Floating Dual-Card Split)</strong> با گرادیانت‌های غنی سرمه‌ای، افکت‌های شیشه‌ای مات و هاله‌های نوری ضد خستگی چشم ارتقا می‌دهد:
+                    شبیه‌سازی چیدمان <strong>«دو کارت معلق لوکس»</strong> در تم سرمه‌ای شاهانه (Royal Navy)؛ گاردفای پرو بدون تغییر آدرس رسمی صفحه لاگین (`wp-login.php`) و با حفظ کامل کوکی‌ها و نشست‌های معتبر وردپرس، فرم ورود را به ساختاری فوق‌العاده شیک با گرادیانت‌های غنی سرمه‌ای، افکت‌های شیشه‌ای مات و هاله‌های نوری ضد خستگی چشم ارتقا می‌دهد:
                 </p>
             </div>
 
@@ -1834,12 +2014,21 @@ header('Content-Type: text/html; charset=utf-8');
             <div class="absolute -top-20 right-1/4 w-96 h-96 bg-amber-500/12 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-20 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
+            <!-- Background Motherboard Circuit Traces SVG -->
+            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 400" fill="none">
+                <path d="M0 100 H300 L350 150 H650 L700 100 H1000 M0 300 H250 L300 250 H700 L750 300 H1000" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 5" opacity="0.6" />
+                <circle cx="350" cy="150" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="650" cy="150" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="300" cy="250" r="5" fill="currentColor" opacity="0.75" />
+                <circle cx="700" cy="250" r="5" fill="currentColor" opacity="0.75" />
+            </svg>
+
             <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <span class="badge-clean-amber px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
                     ⚡ فناوری انحصاری Smart Failover Engine
                 </span>
                 <h3 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
-                    سوییچر هوشمند: بیمه ۱۰۰٪ فروشگاه در برابر اختلالات شبکه
+                    سوییچر هوشمند: بیمه سایت و فروشگاه در برابر اختلالات اینترنت
                 </h3>
                 <p class="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium">
                     اگر در شرایط عادی از سرویس‌های کلود استفاده می‌کنید، سوییچر هوشمند Guardify Pro وضعیت شبکه را پایش کرده و در صورت قطعی اینترنت بین‌الملل، بدون وقفه به موتور بومی سوئیچ می‌کند:
@@ -2067,95 +2256,329 @@ header('Content-Type: text/html; charset=utf-8');
         </section>
 
         <!-- ========================================================================= -->
-        <!-- 10. TECHNICAL BENCHMARK COMPARISON TABLE -->
+        <!-- 10. TECHNICAL BENCHMARK COMPARISON TABLE (CLEAR GRID & BORDERED MATRIX) -->
         <!-- ========================================================================= -->
         <section class="p-8 sm:p-14 bg-tech-grid border-b border-slate-200 space-y-10 relative overflow-hidden">
             <!-- Subtle Eye-Comfort Glow -->
-            <div class="absolute -top-24 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -top-24 left-1/4 w-96 h-96 bg-indigo-500/12 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Benchmark Radar Grid SVG -->
+            <svg class="cyber-circuit-svg top-0 left-0 w-full h-full text-indigo-500" viewBox="0 0 1000 500" fill="none">
+                <circle cx="500" cy="250" r="180" stroke="currentColor" stroke-width="1.4" stroke-dasharray="6 6" opacity="0.55" />
+                <circle cx="500" cy="250" r="120" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+                <line x1="200" y1="250" x2="800" y2="250" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.5" />
+            </svg>
 
             <div class="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <span class="badge-clean-indigo px-4 py-1.5 rounded-full text-xs font-black inline-block shadow-sm">
-                    مقایسه فنی و مستند
+                    ⚖️ مقایسه فنی، مستند و شفاف
                 </span>
-                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">
+                <h3 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
                     جدول مقایسه گاردفای پرو با سایر راهکارها
                 </h3>
                 <p class="text-slate-700 text-xs sm:text-sm font-medium">
-                    بررسی معیارهای کلیدی که خریداران حرفه‌ای راست‌چین به آن اهمیت می‌دهند:
+                    بررسی جامع و دقیق فاکتورهای کلیدی که برای مدیران وب‌سایت‌ها و فروشگاه‌های ایرانی حیاتی است:
                 </p>
             </div>
 
-            <!-- Comparison Table with High-Contrast Highlights -->
-            <div class="relative z-10 overflow-x-auto rounded-3xl border-2 border-indigo-200 shadow-2xl bg-white/95">
-                <table class="w-full text-right text-xs text-slate-700">
-                    <thead class="bg-slate-900 text-white font-black text-xs border-b border-slate-800">
-                        <tr>
-                            <th class="p-4.5">ویژگی / فاکتور ارزیابی</th>
-                            <th class="p-4.5 bg-gradient-to-r from-indigo-700 to-blue-700 text-white font-black border-x border-indigo-500">گاردفای پرو (Guardify Pro)</th>
-                            <th class="p-4.5 text-slate-300">Google reCAPTCHA v2/v3</th>
-                            <th class="p-4.5 text-slate-300">Cloudflare Turnstile</th>
-                            <th class="p-4.5 text-slate-300">کپچاهای متفرقه ساده</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200">
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">عملکرد در زمان اینترنت ملی (نت ملی)</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ ۱۰۰٪ فعال و پایدار</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ قطعی کامل و خطا</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ مسدود شدن در نت ملی</td>
-                            <td class="p-4 text-emerald-700">✓ فعال</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">سرعت احراز هویت (Latency)</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">&lt; ۵ میلی‌ثانیه</td>
-                            <td class="p-4 text-rose-600 font-bold">&gt; ۸۰۰ میلی‌ثانیه</td>
-                            <td class="p-4 text-amber-600">۳۵۰ تا ۹۰۰ میلی‌ثانیه</td>
-                            <td class="p-4 text-emerald-700">زیر ۳۰ میلی‌ثانیه</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">حجم کل اسکریپت بارگذاری شده</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">&lt; ۱۵ کیلوبایت</td>
-                            <td class="p-4 text-rose-600 font-bold">&gt; ۵۰۰ کیلوبایت</td>
-                            <td class="p-4 text-amber-600">حدود ۱۲۰ کیلوبایت</td>
-                            <td class="p-4 text-amber-600">۸۰ تا ۲۵۰ کیلوبایت</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">استودیوی بازطراحی صفحه لاگین (دو کارت معلق لوکس)</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ ۶ چیدمان + ۲۵ والپیپر گرادیانت</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">تنوع تم‌های رنگی کپچا</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ بیش از ۳۵ تم و استایل آماده</td>
-                            <td class="p-4 text-rose-600 font-bold">فقط ۲ حالت لایت و دارک</td>
-                            <td class="p-4 text-rose-600 font-bold">فقط ۲ حالت</td>
-                            <td class="p-4 text-slate-500">محدود</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">پایش بیومتریک و تله‌متری (Smart Human FX)</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ آنالیز حرکت ماوس بدون کلود</td>
-                            <td class="p-4 text-slate-600">نیاز به ارتباط دائمی با گوگل</td>
-                            <td class="p-4 text-slate-600">وابسته به کلودفلر</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">سازگاری با افزونه‌های کش (LiteSpeed, Rocket)</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ ۱۰۰٪ سازگار (AJAX Token)</td>
-                            <td class="p-4 text-amber-600 font-bold">نیاز به کانفیگ پیچیده</td>
-                            <td class="p-4 text-amber-600 font-bold">نیاز به کانفیگ پیچیده</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ خطای مکرر توکن</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50/80">
-                            <td class="p-4 font-bold text-slate-900">پشتیبانی و اصالت کاملاً بومی</td>
-                            <td class="p-4 text-emerald-700 font-black bg-indigo-50/60">✓ تیم توسعه DevBan</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                            <td class="p-4 text-rose-600 font-bold">✗ ندارد</td>
-                            <td class="p-4 text-slate-500">ناشناخته</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Comparison Table Container with Crisp Grid Border & Shadow -->
+            <div class="relative z-10 max-w-5xl mx-auto overflow-hidden rounded-3xl border-2 border-slate-300 shadow-2xl bg-white">
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right text-xs text-slate-700 border-collapse border border-slate-300">
+                        <!-- Table Head with Crisp Grid Borders & Column Hierarchy -->
+                        <thead>
+                            <tr class="bg-slate-900 text-white font-black text-xs">
+                                <th class="p-4 sm:p-5 w-1/3 min-w-[200px] border border-slate-700 text-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-layer-group text-indigo-400"></i>
+                                        <span>ویژگی و فاکتور ارزیابی</span>
+                                    </div>
+                                </th>
+                                <!-- Guardify Pro Highlighted Column -->
+                                <th class="p-4 sm:p-5 w-1/4 min-w-[190px] bg-gradient-to-b from-indigo-800 via-indigo-900 to-slate-950 text-white font-black border-2 border-amber-400 shadow-lg relative text-center">
+                                    <div class="absolute -top-1 right-1/2 translate-x-1/2 px-3 py-0.5 rounded-b-lg bg-amber-400 text-slate-950 text-[10px] font-black tracking-wide shadow-md flex items-center gap-1">
+                                        <i class="fas fa-crown text-[10px]"></i> انتخاب شماره ۱
+                                    </div>
+                                    <div class="pt-2">
+                                        <div class="text-sm sm:text-base font-black text-amber-300 flex items-center justify-center gap-1.5">
+                                            <span>گاردفای پرو</span>
+                                            <i class="fas fa-shield-check text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-[10px] text-indigo-200 font-mono block mt-0.5">Guardify Pro</span>
+                                    </div>
+                                </th>
+                                <th class="p-4 sm:p-5 text-center text-slate-200 min-w-[150px] border border-slate-700">
+                                    <div class="flex flex-col items-center gap-0.5">
+                                        <i class="fab fa-google text-rose-400 text-base mb-1"></i>
+                                        <span class="text-white font-bold">Google reCAPTCHA</span>
+                                        <span class="text-[10px] text-slate-400">v2 / v3 / Enterprise</span>
+                                    </div>
+                                </th>
+                                <th class="p-4 sm:p-5 text-center text-slate-200 min-w-[150px] border border-slate-700">
+                                    <div class="flex flex-col items-center gap-0.5">
+                                        <i class="fas fa-cloud text-amber-400 text-base mb-1"></i>
+                                        <span class="text-white font-bold">Cloudflare Turnstile</span>
+                                        <span class="text-[10px] text-slate-400">سرویس ابری خارجی</span>
+                                    </div>
+                                </th>
+                                <th class="p-4 sm:p-5 text-center text-slate-200 min-w-[140px] border border-slate-700">
+                                    <div class="flex flex-col items-center gap-0.5">
+                                        <i class="fas fa-puzzle-piece text-purple-400 text-base mb-1"></i>
+                                        <span class="text-white font-bold">کپچاهای متفرقه</span>
+                                        <span class="text-[10px] text-slate-400">افزونه‌های رایگان ساده</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="text-[12px]">
+                            
+                            <!-- Row 1: National Net -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-wifi"></i>
+                                        </div>
+                                        <span>عملکرد در شرایط اختلال اینترنت و نت ملی</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-emerald-900 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-emerald-800">
+                                        <i class="fas fa-circle-check text-emerald-600 text-sm"></i>
+                                        <span>۱۰۰٪ فعال، بومی و بدون قطعی</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 font-black text-[11px] border border-rose-200">
+                                        <i class="fas fa-circle-xmark text-rose-600"></i> قطعی کامل و خطا
+                                    </span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 text-rose-700 font-black text-[11px] border border-rose-200">
+                                        <i class="fas fa-circle-xmark text-rose-600"></i> مسدود در شبکه ملی
+                                    </span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 font-bold text-[11px] border border-emerald-200">
+                                        <i class="fas fa-check text-emerald-600"></i> فعال
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2: Latency -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <span>سرعت پاسخگویی و احراز هویت (Latency)</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-emerald-900 text-center">
+                                    <div class="flex items-center justify-center gap-2 text-emerald-800">
+                                        <i class="fas fa-bolt text-amber-500"></i>
+                                        <span>زیر ۵ میلی‌ثانیه</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white font-mono text-[10px]">0.2ms</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="font-mono text-xs text-rose-600 font-black">> ۸۰۰ms</span>
+                                    <span class="block text-[10px] text-slate-500">تاخیر سرور آمریکا</span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="font-mono text-xs text-amber-700 font-bold">۳۵۰ تا ۹۰۰ms</span>
+                                    <span class="block text-[10px] text-slate-500">سرویس ابری خارجی</span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="font-mono text-xs text-slate-700 font-bold">زیر ۳۰ms</span>
+                                    <span class="block text-[10px] text-slate-500">کپچای محلی سنتی</span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3: Payload -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-feather"></i>
+                                        </div>
+                                        <span>حجم کل اسکریپت بارگذاری شده</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-emerald-900 text-center">
+                                    <div class="flex items-center justify-center gap-2 text-indigo-950 font-bold">
+                                        <i class="fas fa-feather text-indigo-600"></i>
+                                        <span>کمتر از ۱۵ KB</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-indigo-600 text-white font-bold text-[10px]">فوق سبک</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-50 text-rose-700 font-mono font-bold text-[11px] border border-rose-200">
+                                        > ۵۰۰ KB (فوق‌سنگین)
+                                    </span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-50 text-amber-800 font-mono font-bold text-[11px] border border-amber-200">
+                                        حدود ۱۲۰ KB
+                                    </span>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white">
+                                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-bold text-[11px] border border-slate-200">
+                                        ۸۰ تا ۲۵۰ KB
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4: WP-Login Styler -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-wand-magic-sparkles"></i>
+                                        </div>
+                                        <span>استودیوی بازطراحی صفحه لاگین (دو کارت معلق لوکس)</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-indigo-950 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-indigo-900">
+                                        <i class="fas fa-check text-emerald-600"></i>
+                                        <span>۶ مدل چیدمان + ۲۵ والپیپر گرادیانت</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> ندارد
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> ندارد
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> ندارد
+                                </td>
+                            </tr>
+
+                            <!-- Row 5: 35+ Color Themes -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+                                        <span>تنوع تم‌های رنگی و استایل کپچا</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-amber-950 text-center">
+                                    <div class="flex items-center justify-center gap-2 text-slate-900">
+                                        <i class="fas fa-palette text-pink-600"></i>
+                                        <span>بیش از ۳۵ تم آماده رنگی</span>
+                                        <span class="flex gap-1">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-600 font-bold">فقط ۲ حالت (لایت / دارک)</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-600 font-bold">فقط ۲ حالت</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-500 font-bold">بسیار محدود</td>
+                            </tr>
+
+                            <!-- Row 6: Smart Human Inspection -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-eye"></i>
+                                        </div>
+                                        <span>پایش بیومتریک رفتار انسانی (Smart Human Inspection FX)</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-cyan-950 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-cyan-900 font-black">
+                                        <i class="fas fa-radar text-cyan-600"></i>
+                                        <span>آنالیز هوشمند ماوس بدون ارسال داده</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-600">وابسته به ارسال داده به گوگل</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-600">وابسته به کلودفلر</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> ندارد
+                                </td>
+                            </tr>
+
+                            <!-- Row 7: Cache Compatibility -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <span>سازگاری با کشینگ (LiteSpeed, WP Rocket)</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-emerald-950 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-emerald-900">
+                                        <i class="fas fa-check-circle text-emerald-600"></i>
+                                        <span>۱۰۰٪ سازگار (AJAX Dynamic Token)</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-amber-700 font-bold">نیازمند تنظیمات پیچیده</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-amber-700 font-bold">نیازمند تنظیمات پیچیده</td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-600 font-bold">
+                                    <span class="block text-rose-600 font-black">✗ خطای مکرر توکن</span>
+                                    <span class="text-[10px] text-slate-500">قفل شدن فرم‌ها</span>
+                                </td>
+                            </tr>
+
+                            <!-- Row 8: Support & Origin -->
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 border border-slate-200 bg-slate-50/50">
+                                    <div class="flex items-center gap-2.5">
+                                        <div class="w-7 h-7 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center text-xs shrink-0">
+                                            <i class="fas fa-headset"></i>
+                                        </div>
+                                        <span>پشتیبانی، به‌روزرسانی و اصالت بومی</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 border-2 border-amber-400/80 bg-emerald-50/60 font-black text-indigo-950 text-center">
+                                    <div class="flex items-center justify-center gap-1.5 text-indigo-900">
+                                        <i class="fas fa-certificate text-amber-500"></i>
+                                        <span>لایسنس رسمی و تیم توسعه DevBan</span>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> بدون پشتیبانی
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-rose-500 font-black text-xs">
+                                    <i class="fas fa-times text-rose-500 ml-1"></i> بدون پشتیبانی
+                                </td>
+                                <td class="p-4 text-center border border-slate-200 bg-white text-slate-500 font-bold">ناشناخته و رهاشده</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bottom Winner Verdict Banner -->
+                <div class="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-t-2 border-slate-400 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3 text-right">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-950 flex items-center justify-center text-2xl shadow-lg shadow-amber-400/30 shrink-0 font-black">
+                            🏆
+                        </div>
+                        <div>
+                            <h4 class="font-black text-sm sm:text-base text-amber-300">نتیجه نهایی ارزیابی فنی: گاردفای پرو انتخاب برتر و بی‌رقیب</h4>
+                            <p class="text-xs text-slate-300 font-medium">تنها راهکاری که سرعت زیر ۵ms، پایداری ۱۰۰٪ نت ملی، استایلر لوکس و سازگاری کامل کش را یکجا تضمین می‌کند.</p>
+                        </div>
+                    </div>
+                    <div class="px-4 py-2 rounded-2xl bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 text-xs font-black shrink-0 flex items-center gap-1.5 shadow-sm">
+                        <i class="fas fa-badge-check text-emerald-400 text-sm"></i>
+                        <span>امتیاز فنی: ۱۰۰ / ۱۰۰</span>
+                    </div>
+                </div>
+
             </div>
 
         </section>
@@ -2167,6 +2590,13 @@ header('Content-Type: text/html; charset=utf-8');
             <!-- Subtle Eye-Comfort Glow -->
             <div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -top-20 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Background Golden Trust Rays SVG -->
+            <svg class="cyber-circuit-svg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] text-amber-500" viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.45" />
+                <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <path d="M100 0 V200 M0 100 H200 M29 29 L171 171 M29 171 L171 29" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.35" />
+            </svg>
 
             <div class="relative z-10 max-w-3xl mx-auto space-y-5">
                 <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/30">
