@@ -327,7 +327,15 @@ header('Content-Type: text/html; charset=utf-8');
             pointer-events: none;
             opacity: 0.75;
             z-index: 1;
-            transition: all 0.3s ease;
+            transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+            will-change: transform;
+            transition: opacity 0.3s ease;
+        }
+
+        .cyber-circuit-svg.-translate-x-1\/2,
+        .ambient-glow-orb.-translate-x-1\/2,
+        .parallax-centered {
+            transform: translate3d(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)), 0) !important;
         }
 
         .cyber-circuit-svg path,
@@ -379,6 +387,8 @@ header('Content-Type: text/html; charset=utf-8');
             backdrop-filter: blur(10px);
             border: 1px solid rgba(199, 210, 254, 0.85);
             box-shadow: 0 4px 14px rgba(99, 102, 241, 0.10);
+            transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+            will-change: transform;
         }
 
         /* Subtle Animated Pulse for Live Nodes */
@@ -391,7 +401,7 @@ header('Content-Type: text/html; charset=utf-8');
             animation: cyberPulseRing 3s ease-in-out infinite;
         }
 
-        /* Ergonomic Ambient Lighting Orbs for Anti-Glare and Eye Strain Prevention */
+        /* Ergonomic Ambient Lighting Orbs with Parallax Depth */
         .ambient-glow-orb {
             position: absolute;
             border-radius: 9999px;
@@ -399,7 +409,18 @@ header('Content-Type: text/html; charset=utf-8');
             pointer-events: none;
             z-index: 0;
             opacity: 0.55;
-            transition: all 0.5s ease;
+            transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+            will-change: transform;
+            transition: opacity 0.5s ease;
+        }
+
+        .bg-blur-glow {
+            transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+            will-change: transform;
+        }
+
+        .bg-blur-glow.-translate-x-1\/2 {
+            transform: translate3d(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)), 0) !important;
         }
 
         .eye-comfort-gradient {
@@ -2640,5 +2661,138 @@ header('Content-Type: text/html; charset=utf-8');
 
     </div>
 
+    <!-- ========================================================================= -->
+    <!-- SUBTLE PARALLAX DEPTH ENGINE (SMOOTH MOUSE & GYROSCOPE MULTI-LAYER DEPTH) -->
+    <!-- ========================================================================= -->
+    <script>
+    (function() {
+        // Respect reduced motion accessibility preferences
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        const container = document.querySelector('.poster-container') || document.body;
+        const parallaxItems = [];
+
+        // 1. Deep Ambient Lighting Orbs (Slow drift, large depth separation)
+        document.querySelectorAll('.ambient-glow-orb, [class*="blur-3xl"]').forEach((el, idx) => {
+            const factor = (idx % 2 === 0 ? 1 : -1) * (18 + (idx % 4) * 5);
+            parallaxItems.push({
+                el: el,
+                depthX: factor,
+                depthY: factor * 0.75,
+                curX: 0,
+                curY: 0
+            });
+        });
+
+        // 2. Mid-Depth Cyber Circuit SVGs & Watermarks (Clear separation from cards)
+        document.querySelectorAll('.cyber-circuit-svg').forEach((el, idx) => {
+            const factor = (idx % 2 === 0 ? -1 : 1) * (14 + (idx % 3) * 4);
+            parallaxItems.push({
+                el: el,
+                depthX: factor,
+                depthY: factor * 0.8,
+                curX: 0,
+                curY: 0
+            });
+        });
+
+        // 3. High-Depth Floating Badge Chips (Floating levitation)
+        document.querySelectorAll('.floating-badge-chip').forEach((el, idx) => {
+            const factor = (idx === 0 ? 16 : -16);
+            parallaxItems.push({
+                el: el,
+                depthX: factor,
+                depthY: factor * 0.85,
+                curX: 0,
+                curY: 0
+            });
+        });
+
+        // 4. Custom data-depth items
+        document.querySelectorAll('[data-parallax-depth]').forEach(el => {
+            const depth = parseFloat(el.getAttribute('data-parallax-depth')) || 15;
+            parallaxItems.push({
+                el: el,
+                depthX: depth,
+                depthY: depth * 0.8,
+                curX: 0,
+                curY: 0
+            });
+        });
+
+        if (parallaxItems.length === 0) return;
+
+        let targetNormX = 0;
+        let targetNormY = 0;
+        let isLoopRunning = false;
+
+        function handleMouseMove(e) {
+            const rect = container.getBoundingClientRect();
+            // Normalized coordinate from -1 to +1 relative to viewport / container center
+            const relX = ((e.clientX - rect.left) / rect.width) - 0.5;
+            const relY = ((e.clientY - rect.top) / rect.height) - 0.5;
+            targetNormX = Math.max(-1, Math.min(1, relX * 2));
+            targetNormY = Math.max(-1, Math.min(1, relY * 2));
+
+            if (!isLoopRunning) {
+                isLoopRunning = true;
+                requestAnimationFrame(updateParallax);
+            }
+        }
+
+        function handleMouseLeave() {
+            targetNormX = 0;
+            targetNormY = 0;
+        }
+
+        // Silky smooth damping factor (Lerp)
+        const LERP = 0.055;
+
+        function updateParallax() {
+            let activeMotion = false;
+
+            for (let i = 0; i < parallaxItems.length; i++) {
+                const item = parallaxItems[i];
+                const destX = targetNormX * item.depthX;
+                const destY = targetNormY * item.depthY;
+
+                item.curX += (destX - item.curX) * LERP;
+                item.curY += (destY - item.curY) * LERP;
+
+                if (Math.abs(destX - item.curX) > 0.04 || Math.abs(destY - item.curY) > 0.04) {
+                    activeMotion = true;
+                }
+
+                item.el.style.setProperty('--px', item.curX.toFixed(2) + 'px');
+                item.el.style.setProperty('--py', item.curY.toFixed(2) + 'px');
+            }
+
+            if (activeMotion || Math.abs(targetNormX) > 0.001 || Math.abs(targetNormY) > 0.001) {
+                requestAnimationFrame(updateParallax);
+            } else {
+                isLoopRunning = false;
+            }
+        }
+
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+
+        // Device orientation for mobile / tablets
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(e) {
+                if (e.gamma !== null && e.beta !== null) {
+                    targetNormX = Math.max(-1, Math.min(1, e.gamma / 22));
+                    targetNormY = Math.max(-1, Math.min(1, (e.beta - 40) / 22));
+                    if (!isLoopRunning) {
+                        isLoopRunning = true;
+                        requestAnimationFrame(updateParallax);
+                    }
+                }
+            }, { passive: true });
+        }
+    })();
+    </script>
 </body>
 </html>
