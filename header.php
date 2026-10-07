@@ -93,7 +93,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
             "price": "299000",
             "priceCurrency": "IRR",
             "availability": "https://schema.org/InStock",
-            "url": "https://www.rtl-theme.com"
+            "url": "https://guardifypro.ir"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -239,7 +239,6 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#why-guardify" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">چرا گاردفای؟</a>
                 <a href="/#captcha-modalities" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">انواع کپچا</a>
                 <a href="/#forms-protection" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">فرم‌ها و ووکامرس</a>
-                <a href="/rtl-landing.php" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1.5"><i class="fas fa-file-image text-amber-500"></i><span>معرفی محصول (راست‌چین)</span></a>
                 <a href="/#faq" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">سوالات متداول</a>
 
                 <!-- Highlighted Direct Button to Demo Studio -->
@@ -311,10 +310,6 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#forms-protection" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
                     <i class="fas fa-cart-shopping text-emerald-500"></i>
                     <span>فرم‌ها و ووکامرس</span>
-                </a>
-                <a href="/rtl-landing.php" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-file-image text-amber-500"></i>
-                    <span>معرفی محصول (راست‌چین)</span>
                 </a>
                 <a href="/#faq" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
                     <i class="fas fa-circle-question text-amber-500"></i>

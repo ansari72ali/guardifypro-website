@@ -34,7 +34,7 @@ include __DIR__ . '/header.php';
                     
                     <!-- Clean Unboxed Category & Brand Header Indicator -->
                     <div class="flex flex-wrap items-center gap-2 text-xs font-black text-slate-700 dark:text-slate-300">
-                        <span class="text-amber-500 flex items-center gap-1.5"><i class="fas fa-crown"></i> انحصاری در راست‌چین</span>
+                        <span class="text-amber-500 flex items-center gap-1.5"><i class="fas fa-shield-halved"></i> نسخه تجاری گاردفای پرو</span>
                         <span aria-hidden="true" class="text-slate-400">·</span>
                         <span class="text-indigo-600 dark:text-indigo-400">نسخه ۴.۰۰ تجاری پرو</span>
                         <span aria-hidden="true" class="text-slate-400">·</span>
@@ -56,11 +56,6 @@ include __DIR__ . '/header.php';
                         <a href="/demo.php" class="px-7 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 dark:bg-gradient-to-r dark:from-indigo-600 dark:via-indigo-500 dark:to-purple-600 text-white font-black text-sm sm:text-base shadow-xl shadow-indigo-600/25 hover:scale-105 transition-all flex items-center gap-2.5">
                             <i class="fas fa-desktop text-amber-300 text-base"></i>
                             <span>شبیه‌ساز زنده افزونه</span>
-                        </a>
-
-                        <a href="/rtl-landing.php" class="px-6 py-4 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 font-black text-sm sm:text-base border border-slate-700 shadow-md hover:scale-105 transition-all flex items-center gap-2">
-                            <i class="fas fa-file-image text-amber-400"></i>
-                            <span>معرفی محصول (راست‌چین)</span>
                         </a>
 
                         <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-lime-500 to-emerald-600 hover:from-emerald-400 hover:to-lime-400 text-slate-950 font-black text-sm sm:text-base shadow-lg shadow-emerald-500/20 hover:scale-105 transition-all flex items-center gap-2">
