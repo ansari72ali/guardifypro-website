@@ -62,19 +62,24 @@ if (!isset($current_page)) {
 
                 <!-- Col 4: Demo Simulator & Links -->
                 <div>
-                    <h4 class="text-xs font-black text-white uppercase tracking-wider mb-4 border-r-2 border-amber-500 pr-2">شبیه‌ساز افزونه</h4>
+                    <h4 class="text-xs font-black text-white uppercase tracking-wider mb-4 border-r-2 border-amber-500 pr-2">شبیه‌ساز و آموزش</h4>
                     <ul class="space-y-2.5 text-xs">
                         <li>
                             <a href="/demo.php" class="text-amber-300 font-bold hover:text-amber-200 transition-colors flex items-center gap-1.5">
                                 <i class="fas fa-desktop text-[10px]"></i>
-                                <span>شبیه‌ساز افزونه</span>
+                                <span>شبیه‌ساز آنلاین افزونه</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/guide.php" class="text-indigo-400 font-bold hover:text-indigo-300 transition-colors flex items-center gap-1.5">
+                                <i class="fas fa-graduation-cap text-[10px]"></i>
+                                <span>آموزش جامع پنل و شبیه‌ساز</span>
                             </a>
                         </li>
                         <li><a href="/demo.php?tab=captcha" class="hover:text-indigo-400 transition-colors">۱. آزمایشگاه انواع کپچا</a></li>
                         <li><a href="/demo.php?tab=login" class="hover:text-indigo-400 transition-colors">۲. فرم ورود وردپرس</a></li>
                         <li><a href="/demo.php?tab=admin" class="hover:text-indigo-400 transition-colors">۳. پنل مدیریت (WP-Admin)</a></li>
                         <li><a href="/#performance" class="hover:text-emerald-400 transition-colors">آمار و امتیاز لایت‌هاوس</a></li>
-                        <li><a href="/#comparison" class="hover:text-indigo-400 transition-colors">جدول مقایسه با رقبا</a></li>
                     </ul>
                 </div>
 

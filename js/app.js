@@ -149,33 +149,17 @@ if (navDropdownBtn && navDropdownMenu) {
     });
 }
 
-// Dynamic Element Reveal on Scroll
-const scrollReveal = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-        }
+// Dynamic Element Reveal on Scroll (Optimized for instant visibility & smooth 60fps scrolling)
+const forceRevealAll = () => {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-on-scroll').forEach(el => {
+        el.classList.add('revealed');
     });
 };
 
-const globalObserver = new IntersectionObserver(scrollReveal, {
-    threshold: 0.01,
-    rootMargin: '200px 0px 200px 0px'
-});
-
-const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-revealElements.forEach(el => globalObserver.observe(el));
-
-// Safety fallback to ensure full visibility on mobile or delayed observers
-const forceRevealAll = () => {
-    revealElements.forEach(el => el.classList.add('revealed'));
-};
-
-if (window.innerWidth <= 768) {
-    forceRevealAll();
+forceRevealAll();
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceRevealAll);
 }
-setTimeout(forceRevealAll, 500);
 window.addEventListener('load', forceRevealAll);
 
 // Swiper Sliders Integration
@@ -1174,40 +1158,8 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     document.addEventListener('DOMContentLoaded', window.renderStage);
 }
 
-// Atmospheric Cyber Visual Effects & Interactive Mouse Spotlight System
+// Atmospheric Cyber Visual Effects (Hardware-Accelerated & Scroll-Optimized)
 (function initAtmosphericVisualFX() {
-    let ticking = false;
-    let lastX = window.innerWidth / 2;
-    let lastY = window.innerHeight / 2;
-
-    window.addEventListener('pointermove', (e) => {
-        lastX = e.clientX;
-        lastY = e.clientY;
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                document.documentElement.style.setProperty('--mouse-x', `${lastX}px`);
-                document.documentElement.style.setProperty('--mouse-y', `${lastY}px`);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-
-    const updateCardSpotlight = (card, e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--card-x', `${x}px`);
-        card.style.setProperty('--card-y', `${y}px`);
-    };
-
-    document.addEventListener('pointermove', (e) => {
-        const targetCard = e.target.closest('.spotlight-card, .feature-card, .stat-card');
-        if (targetCard) {
-            updateCardSpotlight(targetCard, e);
-        }
-    }, { passive: true });
-
     const canvas = document.getElementById('cyber-particles-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -1218,6 +1170,20 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     let particles = [];
     let animationFrameId = null;
     let isPageVisible = !document.hidden;
+    let isScrolling = false;
+    let scrollTimeout = null;
+
+    // Pause canvas animation while user is scrolling to guarantee buttery 60/120fps
+    window.addEventListener('scroll', () => {
+        isScrolling = true;
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+            if (isPageVisible && !animationFrameId) {
+                animationFrameId = requestAnimationFrame(drawParticles);
+            }
+        }, 150);
+    }, { passive: true });
 
     const resizeCanvas = () => {
         width = canvas.width = window.innerWidth;
@@ -1226,20 +1192,18 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 
     const createParticles = () => {
         particles = [];
-        const count = Math.min(Math.floor((width * height) / 36000), 42);
+        // Light, non-taxing particle count
+        const count = Math.min(Math.floor((width * height) / 55000), 18);
         const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
         const darkColors = [
             'rgba(99, 102, 241, ', // Indigo
             'rgba(6, 182, 212, ',  // Cyan
-            'rgba(168, 85, 247, ', // Violet
-            'rgba(16, 185, 129, '  // Emerald
+            'rgba(168, 85, 247, '  // Violet
         ];
         const lightColors = [
             'rgba(79, 70, 229, ',  // Deep Indigo
             'rgba(2, 132, 199, ',  // Sky Blue
-            'rgba(147, 51, 234, ', // Royal Violet
-            'rgba(5, 150, 105, ',  // Emerald Green
-            'rgba(217, 119, 6, '   // Warm Amber
+            'rgba(147, 51, 234, '  // Royal Violet
         ];
         const colors = isDark ? darkColors : lightColors;
 
@@ -1247,40 +1211,23 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
             particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.45,
-                vy: (Math.random() - 0.5) * 0.45,
-                radius: Math.random() * 2.5 + 1.2,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                radius: Math.random() * 2 + 1,
                 colorBase: colors[Math.floor(Math.random() * colors.length)],
-                alpha: isDark ? (Math.random() * 0.4 + 0.2) : (Math.random() * 0.45 + 0.35)
+                alpha: isDark ? (Math.random() * 0.3 + 0.15) : (Math.random() * 0.25 + 0.15)
             });
         }
     };
 
     const drawParticles = () => {
-        if (!isPageVisible) return;
+        if (!isPageVisible || isScrolling) {
+            animationFrameId = null;
+            return;
+        }
         ctx.clearRect(0, 0, width, height);
 
         const isDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
-        const lineAlphaScale = isDark ? 0.12 : 0.16;
-        const lineStrokeColor = isDark ? '99, 102, 241' : '79, 70, 229';
-
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 135) {
-                    const alpha = (1 - dist / 135) * lineAlphaScale;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(${lineStrokeColor}, ${alpha})`;
-                    ctx.lineWidth = isDark ? 0.75 : 0.9;
-                    ctx.stroke();
-                }
-            }
-        }
 
         for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
@@ -1294,11 +1241,8 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `${p.colorBase}${isDark ? p.alpha : p.alpha * 0.5})`;
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = p.colorBase + '0.4)';
+            ctx.fillStyle = `${p.colorBase}${isDark ? p.alpha : p.alpha * 0.7})`;
             ctx.fill();
-            ctx.shadowBlur = 0;
         }
 
         animationFrameId = requestAnimationFrame(drawParticles);
@@ -1311,11 +1255,12 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 
     document.addEventListener('visibilitychange', () => {
         isPageVisible = !document.hidden;
-        if (isPageVisible) {
+        if (isPageVisible && !isScrolling) {
             cancelAnimationFrame(animationFrameId);
             drawParticles();
         } else {
             cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
         }
     });
 
@@ -1325,32 +1270,10 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 })();
 
 /* ==========================================================================
-   Smooth IntersectionObserver Scroll Reveal Engine
+   Smooth Instant Content Rendering (Zero Pop-in, Zero Scroll Lag)
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-    if (!('IntersectionObserver' in window)) {
-        document.querySelectorAll('section:not(#hero), .reveal-on-scroll').forEach(el => el.classList.add('revealed'));
-        return;
-    }
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -40px 0px',
-        threshold: 0.08
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('section:not(#hero), .reveal-on-scroll');
-    revealElements.forEach(el => {
-        el.classList.add('reveal-on-scroll');
-        revealObserver.observe(el);
+    document.querySelectorAll('section, .reveal-on-scroll, .reveal, .reveal-left, .reveal-right').forEach(el => {
+        el.classList.add('revealed');
     });
 });

@@ -1763,41 +1763,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('touchmove', onMove, { passive: true });
         window.addEventListener('touchend', onEnd);
     }
-
-    // 2. Hardware-Accelerated Smooth Parallax Depth Engine
-    var parallaxElements = document.querySelectorAll('.cyber-circuit-svg, [class*="blur-3xl"], [class*="blur-2xl"]');
-    if (parallaxElements.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        var mouseX = 0, mouseY = 0;
-        var currentX = 0, currentY = 0;
-        var rafId = null;
-
-        window.addEventListener('mousemove', function(e) {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-            if (!rafId) {
-                rafId = requestAnimationFrame(animateParallax);
-            }
-        }, { passive: true });
-
-        function animateParallax() {
-            currentX += (mouseX - currentX) * 0.05;
-            currentY += (mouseY - currentY) * 0.05;
-
-            for (var i = 0; i < parallaxElements.length; i++) {
-                var el = parallaxElements[i];
-                var depth = (i % 3 === 0) ? 14 : ((i % 3 === 1) ? 22 : 8);
-                var moveX = currentX * depth;
-                var moveY = currentY * depth;
-                el.style.transform = 'translate3d(' + moveX + 'px, ' + moveY + 'px, 0)';
-            }
-
-            if (Math.abs(mouseX - currentX) > 0.001 || Math.abs(mouseY - currentY) > 0.001) {
-                rafId = requestAnimationFrame(animateParallax);
-            } else {
-                rafId = null;
-            }
-        }
-    }
 });
 </script>
 
