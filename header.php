@@ -195,29 +195,27 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <!-- Main Style (with local IRANSans @font-face suite and cache busting) -->
     <link rel="stylesheet" href="/css/style.css?v=4.50">
     
-    <!-- Universal Scripts: jQuery for WordPress Plugin Scripts & Theme Manager -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Universal Theme Manager Script -->
     <script src="/js/theme-manager.js?v=4.30"></script>
 </head>
 <body class="transition-colors duration-500 min-h-screen flex flex-col">
 
     <!-- Atmospheric Modern Multi-Layered Background FX -->
-    <div class="fixed inset-0 pointer-events-none -z-20 overflow-hidden">
-        <!-- Interactive Mouse Spotlight -->
+    <div class="background-elements fixed inset-0 pointer-events-none -z-20 overflow-hidden">
+        <!-- Interactive Soft Ambient Spotlight -->
         <div id="mouse-spotlight" class="mouse-spotlight"></div>
 
-        <!-- 4-Orb Multi-Layered Cyber Aurora -->
+        <!-- Multi-Layered Well-Distributed Cyber Aurora -->
         <div class="mesh-gradient mesh-1"></div>
         <div class="mesh-gradient mesh-2"></div>
         <div class="mesh-gradient mesh-3"></div>
         <div class="mesh-gradient mesh-4"></div>
 
-        <!-- Cyber Grid Overlay with Masking -->
+        <!-- Subtle Cyber Grid Overlay with Masking -->
         <div class="cyber-grid-overlay"></div>
-        <div class="ui-pattern pulse-effect"></div>
 
-        <!-- Interactive Cyber Particles Canvas -->
-        <canvas id="cyber-particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-60"></canvas>
+        <!-- Subtle Cyber Particles Canvas -->
+        <canvas id="cyber-particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-30"></canvas>
     </div>
 
     <!-- Unified High-Tech Navigation Bar -->
@@ -240,7 +238,6 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#why-guardify" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">چرا گاردفای؟</a>
                 <a href="/#captcha-modalities" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">انواع کپچا</a>
                 <a href="/#forms-protection" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">فرم‌ها و ووکامرس</a>
-                <a href="/guide.php" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1.5"><i class="fas fa-graduation-cap text-indigo-500"></i><span>آموزش شبیه‌ساز</span></a>
                 <a href="/#faq" class="text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">سوالات متداول</a>
 
                 <!-- Highlighted Direct Button to Demo Studio -->
@@ -312,10 +309,6 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#forms-protection" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
                     <i class="fas fa-cart-shopping text-emerald-500"></i>
                     <span>فرم‌ها و ووکامرس</span>
-                </a>
-                <a href="/guide.php" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
-                    <i class="fas fa-graduation-cap text-indigo-500"></i>
-                    <span>آموزش شبیه‌ساز</span>
                 </a>
                 <a href="/#faq" class="mobile-link py-2 px-3 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-2.5">
                     <i class="fas fa-circle-question text-amber-500"></i>

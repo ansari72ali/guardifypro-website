@@ -15,14 +15,11 @@ include __DIR__ . '/header.php';
     <!-- 1. HIGH-IMPACT HERO SECTION WITH DUAL LUXURY CAPTCHA SHOWCASE -->
     <!-- ========================================================================= -->
     <section id="hero" class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
-        <!-- Multi-Layered Deep Geometric Background (Absolute Layer) -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
-            <div class="absolute inset-0 geo-hex-pattern opacity-70"></div>
-            <div class="absolute inset-0 geo-cyber-grid opacity-50"></div>
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/15 rounded-full blur-3xl"></div>
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-500/12 rounded-full blur-3xl"></div>
-            <div class="geo-bracket top-8 right-8 border-t-2 border-r-2 rounded-tr-md"></div>
-            <div class="geo-bracket bottom-8 left-8 border-b-2 border-l-2 rounded-bl-md"></div>
+        <!-- Refined Geometric Ambient Background Layer -->
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
+            <!-- Subtle ambient glows positioned cleanly within hero bounds without invading navbar -->
+            <div class="absolute top-1/4 -right-16 w-80 h-80 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-6 -left-16 w-80 h-80 bg-emerald-500/8 dark:bg-emerald-500/12 rounded-full blur-3xl"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -158,7 +155,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="telemetry-deck" class="py-12 md:py-14 bg-slate-100/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Deep Geometric Mesh Background Layer -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-60"></div>
             <div class="absolute -top-16 right-1/4 w-72 h-72 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-16 left-1/4 w-72 h-72 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
@@ -274,7 +271,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="crisis-vs-solution" class="py-10 md:py-14 relative overflow-hidden">
         <!-- Deep Multi-Layer Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-10 left-10 w-72 h-72 bg-rose-500/12 dark:bg-rose-500/15 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-10 right-10 w-72 h-72 bg-emerald-500/12 dark:bg-emerald-500/15 rounded-full blur-3xl"></div>
@@ -406,7 +403,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="captcha-modalities" class="py-14 md:py-18 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Deep Geometric Background Layer -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-20 right-10 w-80 h-80 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-20 left-10 w-80 h-80 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl"></div>
@@ -647,7 +644,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="login-hardening" class="py-10 md:py-14 relative overflow-hidden">
         <!-- Deep Multi-Layer Background Layer -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-12 right-1/4 w-80 h-80 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 left-1/4 w-80 h-80 bg-rose-500/12 dark:bg-rose-500/15 rounded-full blur-3xl"></div>
@@ -785,7 +782,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="login-styler" class="py-10 md:py-14 bg-slate-100/80 dark:bg-slate-900/70 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Deep Multi-Layer Background Layer -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-10 left-10 w-72 h-72 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-10 right-10 w-72 h-72 bg-cyan-500/15 dark:bg-cyan-500/20 rounded-full blur-3xl"></div>
@@ -893,7 +890,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="forms-protection" class="py-10 md:py-14 relative overflow-hidden">
         <!-- Multi-Layer Deep Geometric Background (Absolute Layer) -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-12 left-1/4 w-80 h-80 bg-emerald-500/15 dark:bg-emerald-500/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 right-1/4 w-80 h-80 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-3xl"></div>
@@ -1015,7 +1012,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="security-radar" class="py-10 md:py-14 bg-slate-100/80 dark:bg-slate-900/70 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Deep Multi-Layer Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-12 left-10 w-80 h-80 bg-rose-500/15 dark:bg-rose-500/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 right-10 w-80 h-80 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-3xl"></div>
@@ -1124,7 +1121,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="performance" class="py-10 md:py-14 relative overflow-hidden">
         <!-- Deep Multi-Layer Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-12 right-1/4 w-80 h-80 bg-emerald-500/15 dark:bg-emerald-500/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 left-1/4 w-80 h-80 bg-cyan-500/15 dark:bg-cyan-500/20 rounded-full blur-3xl"></div>
@@ -1157,7 +1154,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="comparison" class="py-10 md:py-14 bg-slate-100/80 dark:bg-slate-900/70 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Deep Multi-Layer Background Layer -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-12 left-1/3 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-500/25 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-12 right-1/3 w-96 h-96 bg-amber-500/15 dark:bg-amber-500/20 rounded-full blur-3xl"></div>
@@ -1515,7 +1512,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="setup-guide" class="py-12 md:py-18 relative overflow-hidden">
         <!-- Deep Geometric Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-16 left-1/4 w-80 h-80 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-16 right-1/4 w-80 h-80 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl"></div>
@@ -1571,7 +1568,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="faq" class="py-12 md:py-18 bg-slate-100/70 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden" itemscope itemtype="https://schema.org/FAQPage">
         <!-- Deep Geometric Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
             <div class="absolute -top-16 right-1/4 w-80 h-80 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-16 left-1/4 w-80 h-80 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl"></div>
@@ -1651,7 +1648,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="cta" class="py-12 md:py-18 relative overflow-hidden">
         <!-- Deep Geometric Background FX -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0">
+        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0">
             <div class="absolute inset-0 geo-hex-pattern opacity-50"></div>
         </div>
 
