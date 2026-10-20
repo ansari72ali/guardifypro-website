@@ -2099,7 +2099,7 @@ include __DIR__ . '/header.php';
                     <div class="cta-action-row pt-2">
                         <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="cta-action-btn px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all">
                             <i class="fas fa-bag-shopping"></i>
-                            <span>خرید لایسنس اورجینال از راست‌چین</span>
+                            <span>خرید از راست‌چین</span>
                         </a>
 
                         <a href="/demo.php" class="cta-action-btn px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 font-black text-sm sm:text-base shadow-xl shadow-indigo-600/35 transition-all">
