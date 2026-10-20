@@ -608,7 +608,7 @@ include_once __DIR__ . '/header.php';
                             <div class="text-[11px] font-bold text-slate-400 mb-0.5">۴. تابع PHP رندر مستقیم در فایل‌های قالب:</div>
                             <code class="text-xs font-mono text-purple-300" dir="ltr">&lt;?php echo guardify_render_captcha(); ?&gt;</code>
                         </div>
-                        <button type="button" onclick="copyGuideCode('<?php if (function_exists(\'guardify_render_captcha\')) { echo guardify_render_captcha(); } ?>', this)" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-[11px] font-bold transition-all cursor-pointer shrink-0">
+                        <button type="button" onclick="copyGuideCode('&lt;?php if (function_exists(&quot;guardify_render_captcha&quot;)) { echo guardify_render_captcha(); } ?&gt;', this)" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-[11px] font-bold transition-all cursor-pointer shrink-0">
                             کپی کد
                         </button>
                     </div>
