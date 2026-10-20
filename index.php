@@ -295,26 +295,30 @@ include __DIR__ . '/header.php';
         box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.4);
     }
 
-    /* Hero Action Buttons: Strictly Single Row on Mobile & Desktop */
-    .hero-action-row {
+    /* Hero & Final CTA Action Buttons: Strictly Single Row on Mobile & Desktop */
+    .hero-action-row,
+    .cta-action-row {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.65rem;
         align-items: center;
     }
-    .hero-action-btn {
+    .hero-action-btn,
+    .cta-action-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.45rem;
         white-space: nowrap;
         text-align: center;
     }
     @media (max-width: 639px) {
-        .hero-action-btn {
-            padding: 0.85rem 0.45rem !important;
-            font-size: 0.75rem !important;
+        .hero-action-btn,
+        .cta-action-btn {
+            padding: 0.85rem 0.4rem !important;
+            font-size: 0.72rem !important;
             border-radius: 0.9rem !important;
+            gap: 0.35rem !important;
         }
     }
     @media (min-width: 640px) {
@@ -322,6 +326,12 @@ include __DIR__ . '/header.php';
             display: flex;
             flex-wrap: wrap;
             gap: 0.9rem;
+        }
+        .cta-action-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
         }
     }
 </style>
@@ -2062,7 +2072,7 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="cta" aria-labelledby="cta-heading" class="py-14 md:py-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="relative rounded-3xl bg-gradient-to-r from-indigo-950 via-slate-900 to-purple-950 border-2 border-indigo-500/60 p-8 sm:p-14 text-center overflow-hidden shadow-[0_25px_75px_-15px_rgba(79,70,229,0.5)] text-white dark-contrast-card">
+            <div class="relative rounded-3xl bg-gradient-to-r from-indigo-950 via-slate-900 to-purple-950 border-2 border-indigo-500/60 p-5 sm:p-14 text-center overflow-hidden shadow-[0_25px_75px_-15px_rgba(79,70,229,0.5)] text-white dark-contrast-card">
                 
                 <!-- CTA Ambient Glows & Watermark Icons -->
                 <div class="card-top-beam bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
@@ -2086,13 +2096,13 @@ include __DIR__ . '/header.php';
                         پیش از خرید می‌توانید تمامی امکانات، ۳۵+ تم رنگی، استایلر صفحه ورود و پیشخوان مدیریت افزونه را به صورت زنده در دموی افزونه امتحان کنید.
                     </p>
 
-                    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-                        <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center gap-2.5">
+                    <div class="cta-action-row pt-2">
+                        <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="cta-action-btn px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all">
                             <i class="fas fa-bag-shopping"></i>
                             <span>خرید لایسنس اورجینال از راست‌چین</span>
                         </a>
 
-                        <a href="/demo.php" class="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 font-black text-sm sm:text-base shadow-xl shadow-indigo-600/35 transition-all flex items-center gap-2.5">
+                        <a href="/demo.php" class="cta-action-btn px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 font-black text-sm sm:text-base shadow-xl shadow-indigo-600/35 transition-all">
                             <i class="fas fa-desktop text-amber-300"></i>
                             <span>ورود به دموی افزونه</span>
                         </a>
