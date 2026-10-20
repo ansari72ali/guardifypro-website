@@ -140,7 +140,7 @@
     ];
 
     const payloadData = [
-        { metric: 'حجم کدهای جاوااسکریپت (KB)', external: 680, guardify: 18, unit: 'KB' },
+        { metric: 'بار مصرفی روی لود صفحه (KB)', external: 680, guardify: 9, unit: 'KB' },
         { metric: 'تعداد درخواست‌های شبکه (Req)', external: 9, guardify: 1, unit: 'Req' },
         { metric: 'داده‌های ارسال تله‌متری (KB)', external: 42, guardify: 0, unit: 'KB' },
     ];
