@@ -1672,108 +1672,194 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
                 <span class="step-badge-pill bg-indigo-600 text-white shadow-md">
                     <span class="icon-circle-sm bg-white text-indigo-700">۶</span>
-                    <span>شخصی‌سازی فرم ورود وردپرس</span>
+                    <span>استایلر و امنیت صفحه ورود (WP-Login Pro)</span>
                 </span>
                 <h3 class="type-h1 text-slate-950 font-black">
-                    تغییر آسان ظاهر <span class="text-indigo-700">صفحه ورود وردپرس</span>
+                    شخصی‌سازی و امنیت <span class="text-indigo-700">صفحه ورود وردپرس</span>
                 </h3>
                 <p class="type-body text-slate-900 font-bold">
-                    صفحه ورود ساده وردپرس (wp-login.php) را بدون نیاز به هیچ افزونه دیگری، متناسب با برند و رنگ سایت خودتان مرتب کنید:
+                    طراحی مدرن فرم‌های ورود، عضویت و فراموشی رمز عبور (wp-login.php) با والپیپرهای گرادیانی سبک و سپرهای امنیتی یکپارچه:
                 </p>
             </div>
 
-            <div class="w-full relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 items-stretch">
-                    
-                    <!-- CARD 1: CAPABILITIES -->
-                    <div class="p-5 sm:p-6 rounded-2xl box-deluxe-indigo flex flex-col justify-between space-y-4 relative overflow-hidden">
-                        <i class="fas fa-palette box-watermark-icon text-indigo-950"></i>
-                        <div class="space-y-3.5 relative z-10">
-                            <div class="flex items-center justify-between pb-2.5 border-b border-indigo-300">
-                                <h4 class="type-h3 text-slate-950">امکانات استایلر صفحه ورود</h4>
-                                <span class="px-3 py-1 rounded-full bg-indigo-600 text-white type-micro font-black">۶ چیدمان آماده</span>
-                            </div>
-
-                            <ul class="space-y-3 type-sm text-slate-900 font-bold">
-                                <li class="flex items-center gap-3">
-                                    <span class="icon-circle-md bg-indigo-600 text-white shadow-sm"><i class="fas fa-check"></i></span>
-                                    <span>تغییر رنگ دکمه‌ها، فونت فارسی و کادر فرم متناسب با سایت</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="icon-circle-md bg-indigo-600 text-white shadow-sm"><i class="fas fa-check"></i></span>
-                                    <span>جایگزینی لوگوی اختصاصی سایت به جای لوگوی پیش‌فرض وردپرس</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="icon-circle-md bg-indigo-600 text-white shadow-sm"><i class="fas fa-check"></i></span>
-                                    <span>انتخاب تصویر پس‌زمینه دلخواه، گرادیان تیره یا حالت شیشه‌ای</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="icon-circle-md bg-indigo-600 text-white shadow-sm"><i class="fas fa-check"></i></span>
-                                    <span>نمایش پیام خوش‌آمدگویی و لینک‌های راهنمای دلخواه زیر فرم</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="p-3 rounded-xl bg-white/90 border border-indigo-300 flex items-center justify-between relative z-10">
-                            <span class="type-xs font-black text-indigo-950">پالت‌های رنگی آماده پوسته ورود:</span>
-                            <div class="flex items-center gap-1.5">
-                                <span class="w-4 h-4 rounded-full bg-indigo-600 border border-white shadow-sm"></span>
-                                <span class="w-4 h-4 rounded-full bg-emerald-500 border border-white shadow-sm"></span>
-                                <span class="w-4 h-4 rounded-full bg-amber-500 border border-white shadow-sm"></span>
-                                <span class="w-4 h-4 rounded-full bg-purple-600 border border-white shadow-sm"></span>
-                                <span class="w-4 h-4 rounded-full bg-rose-500 border border-white shadow-sm"></span>
-                            </div>
+            <div class="w-full relative z-10 space-y-5">
+                
+                <!-- CARD 1: EXACT CAPABILITIES FROM ADMIN PANEL (guardify-tab-login_styler) -->
+                <div class="p-5 sm:p-6 rounded-2xl box-deluxe-indigo space-y-4 relative overflow-hidden">
+                    <i class="fas fa-sliders box-watermark-icon text-indigo-950"></i>
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-indigo-300 relative z-10">
+                        <h4 class="type-h3 text-slate-950 flex items-center gap-2.5">
+                            <span class="icon-circle-md bg-indigo-600 text-white shadow-sm"><i class="fas fa-wand-magic-sparkles"></i></span>
+                            <span>امکانات استایلر صفحه ورود در پنل افزونه</span>
+                        </h4>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-indigo-600 text-white type-micro font-black">۶ الگوی چیدمان</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-600 text-white type-micro font-black">۲۰+ والپیپر CSS</span>
                         </div>
                     </div>
 
-                    <!-- CARD 2: AUTHENTIC WORDPRESS LOGIN FORM -->
-                    <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative z-20 flex flex-col justify-center" style="background-color: #060814; background-image: radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.35) 0%, transparent 55%), radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.25) 0%, transparent 55%);">
-                        <div class="p-5 sm:p-6 w-full max-w-md mx-auto relative z-10">
-                            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
-                                <div class="flex items-center gap-2.5">
-                                    <div class="icon-circle-md bg-indigo-600 text-white border border-indigo-400">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 relative z-10">
+                        <!-- Real Feature 1: 6 Layout Architecture Presets -->
+                        <div class="p-3.5 rounded-xl bg-white/90 border border-indigo-200 flex items-start gap-3">
+                            <span class="icon-circle-md bg-indigo-600 text-white shadow-sm mt-0.5"><i class="fas fa-table-cells-large"></i></span>
+                            <div class="space-y-0.5">
+                                <strong class="type-sm text-slate-950 block font-black">۶ مدل چینش و ساختار بصری (Architecture Presets)</strong>
+                                <p class="type-xs text-slate-700 font-bold">کارت متمرکز وسط، اسپلیت اسکرین (دو تکه)، سایدبار راست، سایدبار چپ، دو کارت معلق لوکس و کارت فشرده مینیمال.</p>
+                            </div>
+                        </div>
+
+                        <!-- Real Feature 2: 20+ CSS Mesh Gradient Wallpapers & Frosted Glass -->
+                        <div class="p-3.5 rounded-xl bg-white/90 border border-indigo-200 flex items-start gap-3">
+                            <span class="icon-circle-md bg-purple-600 text-white shadow-sm mt-0.5"><i class="fas fa-palette"></i></span>
+                            <div class="space-y-0.5">
+                                <strong class="type-sm text-slate-950 block font-black">۲۰+ والپیپر گرادیانت نوری (Mesh Glow) و افکت شیشه‌ای</strong>
+                                <p class="type-xs text-slate-700 font-bold">پس‌زمینه‌های نوری کدنویسی‌شده (بدون تصویر سنگین) مانند شفق قطبی، کیهانی نیلی، طلایی ۲۴ عیار، سرمه‌ای شاهانه و بلور مات.</p>
+                            </div>
+                        </div>
+
+                        <!-- Real Feature 3: Local Fonts & Structural Form/Input/Button Customizer -->
+                        <div class="p-3.5 rounded-xl bg-white/90 border border-indigo-200 flex items-start gap-3">
+                            <span class="icon-circle-md bg-amber-500 text-white shadow-sm mt-0.5"><i class="fas fa-font"></i></span>
+                            <div class="space-y-0.5">
+                                <strong class="type-sm text-slate-950 block font-black">فونت‌های محلی آفلاین و شخصی‌سازی کادر، فیلدها و دکمه</strong>
+                                <p class="type-xs text-slate-700 font-bold">فونت‌های داخلی ایران‌سنس، ایران‌یکان و وزیر + تنظیم عرض کادر، گردی گوشه‌ها، سایه ۳بعدی، استایل دکمه و آیکون چشم رمز عبور.</p>
+                            </div>
+                        </div>
+
+                        <!-- Real Feature 4: Hero Banner Texts, Remember Me Tooltip, Footer Links & Hardening -->
+                        <div class="p-3.5 rounded-xl bg-white/90 border border-indigo-200 flex items-start gap-3">
+                            <span class="icon-circle-md bg-emerald-600 text-white shadow-sm mt-0.5"><i class="fas fa-user-shield"></i></span>
+                            <div class="space-y-0.5">
+                                <strong class="type-sm text-slate-950 block font-black">مدیریت متون بنر، پاورقی، تولتیپ و سپرهای امنیتی ورود</strong>
+                                <p class="type-xs text-slate-700 font-bold">ویرایش تیتر و ۳ ویژگی بنر، تولتیپ هشدار «مرا به خاطر بسپار»، حذف لینک بازگشت/زبان و سپر ضد بروت‌فورس و اسکن نویسندگان.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: SINGLE DISPLAY MODE SHOWCASE (FLOATING SPLIT / دو کارت معلق لوکس FROM DEMO) -->
+                <div class="rounded-2xl overflow-hidden border-2 border-indigo-500/50 shadow-2xl relative z-20 p-5 sm:p-7" style="background-color: #060814; background-image: radial-gradient(circle at 90% 10%, rgba(236, 72, 153, 0.38) 0%, transparent 55%), radial-gradient(circle at 10% 90%, rgba(56, 189, 248, 0.38) 0%, transparent 55%);">
+                    
+                    <!-- Top Mode Indicator Bar -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-white/10">
+                        <div class="flex items-center gap-2">
+                            <span class="icon-circle-sm bg-indigo-500/20 text-indigo-300 border border-indigo-500/40"><i class="fas fa-desktop"></i></span>
+                            <span class="type-xs text-white font-black">نمونه یکی از ۶ حالت نمایش در افزونه: چیدمان «دو کارت معلق لوکس» (Floating Split)</span>
+                        </div>
+                        <span class="type-micro bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-full font-black">
+                            والپیپر کیهانی نیلی + کپچای هماهنگ با تم ورود
+                        </span>
+                    </div>
+
+                    <!-- Authentic Floating Split Mode Layout from Demo -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+                        
+                        <!-- Right Column in RTL: Floating Welcome & Security Info Card (5 cols) -->
+                        <div class="lg:col-span-5 p-5 sm:p-6 rounded-2xl bg-slate-900/85 border border-white/15 shadow-xl text-right space-y-3.5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 type-micro font-black">
+                                🔒 سامانه ورود امن هوشمند
+                            </div>
+                            <h4 class="type-h3 text-white font-black">
+                                حفاظت پیشرفته و امنیت ۲۴ ساعته
+                            </h4>
+                            <p class="type-xs text-slate-300 leading-relaxed font-medium">
+                                به پرتال امن دسترسی کاربران خوش آمدید. تمامی داده‌ها و نشست‌های ورود رمزنگاری شده و تحت حفاظت سیستم ضد نفوذ است.
+                            </p>
+                            <div class="pt-3 border-t border-white/10 space-y-2 type-xs text-slate-200 font-bold">
+                                <div class="flex items-center gap-2">
+                                    <span class="icon-circle-sm bg-emerald-500/20 text-emerald-400"><i class="fas fa-check"></i></span>
+                                    <span>محافظت سازمانی و رمزنگاری داده‌ها</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="icon-circle-sm bg-emerald-500/20 text-emerald-400"><i class="fas fa-check"></i></span>
+                                    <span>تجربه احراز هویت سریع و روان</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="icon-circle-sm bg-emerald-500/20 text-emerald-400"><i class="fas fa-check"></i></span>
+                                    <span>طراحی اختصاصی برای سامانه‌های پیشرفته</span>
+                                </div>
+                            </div>
+                            <div class="pt-2.5 border-t border-white/10 flex items-center gap-2 type-micro text-amber-300 font-bold">
+                                <i class="fas fa-shield-halved text-emerald-400"></i>
+                                <span>ارتباط شما رمزنگاری شده و ایمن است</span>
+                            </div>
+                        </div>
+
+                        <!-- Left Column in RTL: Authentic Login Card (7 cols) -->
+                        <div class="lg:col-span-7 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-white/20 shadow-2xl space-y-3.5">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                                <div class="flex items-center gap-3">
+                                    <div class="icon-circle-lg bg-indigo-500/20 border border-indigo-500/40 text-indigo-400">
                                         <i class="fas fa-shield-halved"></i>
                                     </div>
                                     <div>
-                                        <h2 class="type-h4 text-white">ورود به حساب کاربری</h2>
-                                        <p class="type-micro text-amber-200 font-bold">پرتال امن اعضای سایت</p>
+                                        <h2 class="type-h4 text-white font-black">ورود به حساب کاربری</h2>
+                                        <p class="type-micro text-slate-300 font-bold mt-0.5">لطفاً برای ادامه مشخصات خود را وارد نمایید</p>
                                     </div>
                                 </div>
-                                <span class="flex items-center gap-1.5 type-micro text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                    پوسته اختصاصی
+                                <span class="type-micro bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-2.5 py-1 rounded-lg font-black">
+                                    فونت محلی ایران‌سنس
                                 </span>
                             </div>
 
                             <form name="loginform" id="loginform" class="space-y-3">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div>
-                                        <label for="demo_user_login" class="block type-micro font-bold text-slate-200 mb-1">نام کاربری یا ایمیل</label>
-                                        <input type="text" name="log" id="demo_user_login" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3 py-2 type-xs text-white font-bold" value="admin" readonly />
+                                        <label for="demo_user_login" class="block type-micro font-bold text-slate-200 mb-1">نام کاربری یا نشانی ایمیل</label>
+                                        <input type="text" name="log" id="demo_user_login" class="w-full bg-slate-950/90 border border-slate-700 rounded-xl px-3 py-2 type-xs text-white font-bold" value="admin" readonly />
                                     </div>
                                     <div>
                                         <label for="demo_user_pass" class="block type-micro font-bold text-slate-200 mb-1">رمز عبور</label>
-                                        <input type="password" name="pwd" id="demo_user_pass" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3 py-2 type-xs text-white font-bold" value="••••••••••" readonly />
+                                        <div class="relative">
+                                            <input type="password" name="pwd" id="demo_user_pass" class="w-full bg-slate-950/90 border border-slate-700 rounded-xl px-3 py-2 type-xs text-white font-bold" value="••••••••••" readonly />
+                                            <span class="absolute left-3 top-2 text-slate-400"><i class="fas fa-eye text-xs"></i></span>
+                                        </div>
                                     </div>
                                 </div>
 
+                                <!-- Embedded Captcha Box Inheriting Login Theme -->
                                 <div class="guardify-captcha-container guardify-theme-dark-slate guardify-slider-wrap !my-2" data-captcha-type="slider">
                                     <div class="guardify-top-radar-track"><div class="guardify-top-radar-beam"></div></div>
+                                    <div class="guardify-slider-header">
+                                        <span class="guardify-slider-title">
+                                            <i class="fas fa-shield-halved text-indigo-400 ml-1"></i>
+                                            حفاظت امنیتی ورود:
+                                        </span>
+                                        <span class="type-micro text-emerald-400 font-bold">هماهنگ با تم لاگین</span>
+                                    </div>
                                     <div class="guardify-slider-track" role="slider">
                                         <div class="guardify-slider-progress" style="width:100%;"></div>
-                                        <span class="guardify-slider-hint text-emerald-400 font-bold">هویت تأیید شد ✓</span>
+                                        <span class="guardify-slider-hint text-emerald-400 font-bold">تایید شد ✓</span>
                                         <div class="guardify-slider-thumb" style="right:calc(100% - 40px);">✓</div>
                                     </div>
                                 </div>
 
-                                <button type="button" class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-black type-xs shadow-md">
-                                    ورود امن به پیشخوان
-                                </button>
+                                <!-- Remember Me with Tooltip Icon + Submit Button -->
+                                <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+                                    <div class="flex items-center gap-1.5 type-xs text-slate-200 font-bold">
+                                        <input type="checkbox" checked readonly class="accent-indigo-500 w-3.5 h-3.5 rounded" />
+                                        <span>مرا به خاطر بسپار</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 type-micro" title="جهت امنیت بیشتر، در رایانه‌ها و مکان‌های عمومی تیک این گزینه را نزنید.">ℹ️ تولتیپ امنیتی</span>
+                                    </div>
+                                    <button type="button" class="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-black type-xs shadow-lg flex items-center gap-1.5">
+                                        <i class="fas fa-key text-amber-300"></i>
+                                        <span>ورود به حساب کاربری</span>
+                                    </button>
+                                </div>
+
+                                <!-- Legal & Security Footer Bar -->
+                                <div class="pt-2.5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 type-micro text-slate-400 font-bold">
+                                    <span class="text-slate-300">🔒 محافظت شده با فناوری هوشمند Guardify Security</span>
+                                    <div class="flex items-center gap-2 text-indigo-300">
+                                        <span>قوانین و مقررات</span> • <span>حریم خصوصی</span> • <span>پشتیبانی</span>
+                                    </div>
+                                </div>
                             </form>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -1971,10 +2057,10 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                             </tr>
                             <tr class="bg-cyan-100/70">
                                 <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/90 border-l border-indigo-200 align-middle">
-                                    تغییر ظاهر فرم ورود وردپرس
+                                    استایلر اختصاصی صفحه ورود
                                 </td>
                                 <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
-                                    ۶ چیدمان مدرن با امکان تغییر آسان لوگو، رنگ‌بندی و تصویر پس‌زمینه
+                                    ۶ الگوی چیدمان مدرن، ۲۰+ والپیپر گرادیانت نوری (CSS)، فونت‌های محلی آفلاین و شخصی‌سازی کادر و فیلدها
                                 </td>
                             </tr>
                             <tr class="bg-emerald-100/80">
