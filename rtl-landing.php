@@ -260,7 +260,14 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             text-align: right;
             margin: 0;
             padding: 1.75rem 1rem;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            background-color: #090d1a;
+            background-image:
+                radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 85% 35%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23818cf8' stroke-width='1.2' stroke-opacity='0.08'%3E%3Cpath d='M30 14l14 6v13c0 10-6 17-14 21-8-4-14-11-14-21V20l14-6z'/%3E%3Crect x='78' y='24' width='22' height='18' rx='4'/%3E%3Cpath d='M83 24v-5a6 6 0 0 1 12 0v5'/%3E%3Ccircle cx='30' cy='88' r='13'/%3E%3Cpath d='M23 88l5 5 9-9'/%3E%3Cpath d='M89 76l11 6v12l-11 6-11-6V82l11-6z'/%3E%3C/g%3E%3C/svg%3E"),
+                linear-gradient(135deg, #090d1a 0%, #17153b 50%, #090d1a 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 120px 120px, 100% 100%;
             color: #0f172a;
             min-height: 100vh;
             overflow-x: hidden;
@@ -272,8 +279,19 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             max-width: 960px;
             margin: 0 auto;
             padding: 1.75rem;
-            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #eef2ff 100%);
-            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.55), 0 0 0 2px rgba(148, 163, 184, 0.35);
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(circle at 10% 8%, rgba(99, 102, 241, 0.09) 0%, transparent 38%),
+                radial-gradient(circle at 90% 48%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 15% 92%, rgba(168, 85, 247, 0.09) 0%, transparent 38%),
+                url("data:image/svg+xml,%3Csvg width='144' height='144' viewBox='0 0 144 144' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%234f46e5' stroke-width='1.15' stroke-opacity='0.042' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M36 16l15 6v14c0 11-6.5 18.5-15 22.5-8.5-4-15-11.5-15-22.5V22l15-6z'/%3E%3Cpath d='M31 37l4 4 8-8'/%3E%3Crect x='96' y='26' width='24' height='20' rx='4'/%3E%3Cpath d='M102 26v-5a6 6 0 0 1 12 0v5'/%3E%3Ccircle cx='108' cy='36' r='2'/%3E%3Ccircle cx='36' cy='106' r='16'/%3E%3Cpath d='M25 106h22M36 95a19 19 0 0 1 0 22M36 95a19 19 0 0 0 0 22'/%3E%3Ccircle cx='102' cy='106' r='6'/%3E%3Cpath d='M108 106h14v5h-4v-5'/%3E%3C/g%3E%3C/svg%3E"),
+                linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #eef2ff 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 144px 144px, 100% 100%;
+            box-shadow:
+                0 30px 70px -15px rgba(0, 0, 0, 0.65),
+                0 0 45px -10px rgba(99, 102, 241, 0.25),
+                0 0 0 2px rgba(148, 163, 184, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
             border-radius: 1.75rem;
             position: relative;
             display: flex;
@@ -292,7 +310,9 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
-            box-shadow: 0 10px 25px -8px rgba(15, 23, 42, 0.08);
+            box-shadow:
+                0 12px 28px -8px rgba(15, 23, 42, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.75);
             box-sizing: border-box;
         }
 
@@ -322,9 +342,16 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             gap: 0.55rem;
             padding: 0.4rem 1.1rem;
             border-radius: 9999px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            background:
+                radial-gradient(circle at 50% 0%, rgba(129, 140, 248, 0.28), transparent 70%),
+                linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             border: 1.5px solid #6366f1;
-            box-shadow: 0 6px 16px -4px rgba(15, 23, 42, 0.25);
+            box-shadow:
+                0 6px 18px -4px rgba(15, 23, 42, 0.3),
+                0 0 15px -3px rgba(99, 102, 241, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18);
             color: #fef08a;
             font-size: var(--type-xs);
             font-weight: 900;
@@ -487,7 +514,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         }
 
         /* =========================================================================
-           4. DEDICATED UNDERLYING 3D BACKGROUND LAYER (STRICTLY Z-INDEX 0, ZERO OVERLAP)
+           4. DEDICATED UNDERLYING SVG BACKGROUND LAYER (STRICTLY Z-INDEX 0, ZERO OVERLAP)
            ========================================================================= */
         .bg-3d-layer {
             position: absolute !important;
@@ -501,21 +528,21 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         .token-3d-wrapper-right,
         .token-3d-wrapper-left {
             position: absolute !important;
-            top: 1rem !important;
-            width: 48px !important;
-            height: 54px !important;
-            opacity: 0.2 !important;
+            top: 0.85rem !important;
+            width: 52px !important;
+            height: 58px !important;
+            opacity: 0.16 !important;
             display: none !important;
             z-index: 0 !important;
             pointer-events: none !important;
             user-select: none !important;
         }
-        .token-3d-wrapper-right { right: 1.15rem !important; }
-        .token-3d-wrapper-left { left: 1.15rem !important; }
+        .token-3d-wrapper-right { right: 1rem !important; }
+        .token-3d-wrapper-left { left: 1rem !important; }
 
         .bg-3d-layer-dark .token-3d-wrapper-right,
         .bg-3d-layer-dark .token-3d-wrapper-left {
-            opacity: 0.32 !important;
+            opacity: 0.28 !important;
         }
 
         .token-3d-wrapper-right svg,
@@ -525,9 +552,50 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             display: block !important;
         }
 
+        /* Strategic Peripheral Security & WordPress SVG Icons (Strictly Outside Text Zones) */
+        .bg-sec-svg-icon {
+            position: absolute !important;
+            pointer-events: none !important;
+            user-select: none !important;
+            z-index: 0 !important;
+            display: none !important;
+        }
+        .bg-sec-svg-tl {
+            top: 0.65rem !important;
+            left: 0.85rem !important;
+            width: 64px !important;
+            height: 64px !important;
+            opacity: 0.055 !important;
+        }
+        .bg-sec-svg-tr {
+            top: 0.65rem !important;
+            right: 0.85rem !important;
+            width: 64px !important;
+            height: 64px !important;
+            opacity: 0.055 !important;
+        }
+        .bg-sec-svg-bl {
+            bottom: 0.65rem !important;
+            left: 0.85rem !important;
+            width: 68px !important;
+            height: 68px !important;
+            opacity: 0.05 !important;
+        }
+        .bg-sec-svg-br {
+            bottom: 0.65rem !important;
+            right: 0.85rem !important;
+            width: 68px !important;
+            height: 68px !important;
+            opacity: 0.05 !important;
+        }
+        .bg-3d-layer-dark .bg-sec-svg-icon {
+            opacity: 0.09 !important;
+        }
+
         @media (min-width: 768px) {
             .token-3d-wrapper-right,
-            .token-3d-wrapper-left {
+            .token-3d-wrapper-left,
+            .bg-sec-svg-icon {
                 display: block !important;
             }
         }
@@ -608,13 +676,13 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             z-index: 20 !important;
         }
 
-        /* In-box Watermark Icons */
+        /* Subtle Low-Opacity Watermark Icons Inside Cards (Positioned in Corner Behind Content) */
         .box-watermark-icon {
             position: absolute;
-            left: -0.75rem;
-            bottom: -0.75rem;
-            font-size: 5rem;
-            opacity: 0.09;
+            left: -0.65rem;
+            bottom: -0.65rem;
+            font-size: 4.6rem;
+            opacity: 0.055;
             pointer-events: none;
             user-select: none;
             z-index: 1;
@@ -623,10 +691,10 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
         .box-watermark-icon-dark {
             position: absolute;
-            left: -0.75rem;
-            bottom: -0.75rem;
-            font-size: 5rem;
-            opacity: 0.11;
+            left: -0.65rem;
+            bottom: -0.65rem;
+            font-size: 4.6rem;
+            opacity: 0.075;
             pointer-events: none;
             user-select: none;
             z-index: 1;
@@ -635,148 +703,328 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         }
 
         /* =========================================================================
-           COHESIVE INFOGRAPHIC CARDS & SECTION GRADIENT BACKGROUNDS
+           5. GLASSMORPHISM & SOFT GLOW LIGHTING GRADIENTS ON MAIN CARDS (STATIC)
            ========================================================================= */
-        .box-deluxe-indigo {
-            background: linear-gradient(145deg, #ffffff 0%, #f5f7ff 55%, #e0e7ff 100%) !important;
-            border: 1.5px solid #a5b4fc !important;
-            box-shadow: 0 6px 16px -6px rgba(79, 70, 229, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-        }
-        .box-deluxe-emerald {
-            background: linear-gradient(145deg, #ffffff 0%, #f2fbf7 55%, #d1fae5 100%) !important;
-            border: 1.5px solid #6ee7b7 !important;
-            box-shadow: 0 6px 16px -6px rgba(16, 185, 129, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-        }
-        .box-deluxe-amber {
-            background: linear-gradient(145deg, #ffffff 0%, #fffdf5 55%, #fef3c7 100%) !important;
-            border: 1.5px solid #fcd34d !important;
-            box-shadow: 0 6px 16px -6px rgba(245, 158, 11, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-        }
-        .box-deluxe-purple {
-            background: linear-gradient(145deg, #ffffff 0%, #faf5ff 55%, #f3e8ff 100%) !important;
-            border: 1.5px solid #d8b4fe !important;
-            box-shadow: 0 6px 16px -6px rgba(168, 85, 247, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-        }
-        .box-deluxe-cyan {
-            background: linear-gradient(145deg, #ffffff 0%, #f2fcfe 55%, #cffafe 100%) !important;
-            border: 1.5px solid #67e8f9 !important;
-            box-shadow: 0 6px 16px -6px rgba(6, 182, 212, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-        }
+        .box-deluxe-indigo,
+        .box-deluxe-emerald,
+        .box-deluxe-amber,
+        .box-deluxe-purple,
+        .box-deluxe-cyan,
         .box-deluxe-rose {
-            background: linear-gradient(145deg, #ffffff 0%, #fff5f6 55%, #ffe4e6 100%) !important;
-            border: 1.5px solid #fda4af !important;
-            box-shadow: 0 6px 16px -6px rgba(244, 63, 94, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
-        /* Jewel-Toned Dark Infographic Kiosk Cards (Section 4 Captchas) */
+        /* Static Top Specular Light Beam on All Deluxe & Kiosk Cards */
+        .box-deluxe-indigo::before,
+        .box-deluxe-emerald::before,
+        .box-deluxe-amber::before,
+        .box-deluxe-purple::before,
+        .box-deluxe-cyan::before,
+        .box-deluxe-rose::before,
+        .box-neon-kiosk::before,
+        .security-hud-pill::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            border-radius: 9999px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .box-deluxe-indigo {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(99, 102, 241, 0.16) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(56, 189, 248, 0.13) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 247, 255, 0.86) 55%, rgba(224, 231, 255, 0.88) 100%) !important;
+            border: 1.5px solid rgba(165, 180, 252, 0.9) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(79, 70, 229, 0.15),
+                0 0 22px -6px rgba(99, 102, 241, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(165, 180, 252, 0.35) !important;
+        }
+        .box-deluxe-indigo::before {
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.65), rgba(56, 189, 248, 0.65), transparent);
+        }
+
+        .box-deluxe-emerald {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(16, 185, 129, 0.16) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(45, 212, 191, 0.13) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(242, 251, 247, 0.86) 55%, rgba(209, 250, 229, 0.88) 100%) !important;
+            border: 1.5px solid rgba(110, 231, 183, 0.9) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(16, 185, 129, 0.15),
+                0 0 22px -6px rgba(16, 185, 129, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(110, 231, 183, 0.35) !important;
+        }
+        .box-deluxe-emerald::before {
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.65), rgba(45, 212, 191, 0.65), transparent);
+        }
+
+        .box-deluxe-amber {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(245, 158, 11, 0.17) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(251, 191, 36, 0.14) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 253, 245, 0.86) 55%, rgba(254, 243, 199, 0.88) 100%) !important;
+            border: 1.5px solid rgba(252, 211, 77, 0.92) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(245, 158, 11, 0.15),
+                0 0 22px -6px rgba(245, 158, 11, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(252, 211, 77, 0.35) !important;
+        }
+        .box-deluxe-amber::before {
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.65), rgba(251, 146, 60, 0.65), transparent);
+        }
+
+        .box-deluxe-purple {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(168, 85, 247, 0.16) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(129, 140, 248, 0.14) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 245, 255, 0.86) 55%, rgba(243, 232, 255, 0.88) 100%) !important;
+            border: 1.5px solid rgba(216, 180, 254, 0.9) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(168, 85, 247, 0.15),
+                0 0 22px -6px rgba(168, 85, 247, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(216, 180, 254, 0.35) !important;
+        }
+        .box-deluxe-purple::before {
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.65), rgba(99, 102, 241, 0.65), transparent);
+        }
+
+        .box-deluxe-cyan {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(6, 182, 212, 0.16) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(56, 189, 248, 0.14) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(242, 252, 254, 0.86) 55%, rgba(207, 250, 254, 0.88) 100%) !important;
+            border: 1.5px solid rgba(103, 232, 249, 0.9) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(6, 182, 212, 0.15),
+                0 0 22px -6px rgba(6, 182, 212, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(103, 232, 249, 0.35) !important;
+        }
+        .box-deluxe-cyan::before {
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.65), rgba(56, 189, 248, 0.65), transparent);
+        }
+
+        .box-deluxe-rose {
+            background:
+                radial-gradient(circle at 12% 14%, rgba(244, 63, 94, 0.15) 0%, transparent 48%),
+                radial-gradient(circle at 88% 86%, rgba(251, 113, 133, 0.13) 0%, transparent 48%),
+                linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 245, 246, 0.86) 55%, rgba(255, 228, 230, 0.88) 100%) !important;
+            border: 1.5px solid rgba(253, 164, 175, 0.9) !important;
+            box-shadow:
+                0 10px 26px -6px rgba(244, 63, 94, 0.15),
+                0 0 22px -6px rgba(244, 63, 94, 0.2),
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.95),
+                inset 0 -1px 0 rgba(253, 164, 175, 0.35) !important;
+        }
+        .box-deluxe-rose::before {
+            background: linear-gradient(90deg, transparent, rgba(244, 63, 94, 0.65), rgba(251, 113, 133, 0.65), transparent);
+        }
+
+        /* Jewel-Toned Dark Glassmorphism Kiosk Cards (Section 4 Captchas & HUD) */
         .box-neon-kiosk {
-            background: linear-gradient(160deg, #131c38 0%, #0b1124 100%);
-            border: 1.5px solid rgba(129, 140, 248, 0.4);
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background:
+                radial-gradient(circle at 14% 18%, rgba(99, 102, 241, 0.22) 0%, transparent 50%),
+                linear-gradient(160deg, rgba(19, 28, 56, 0.92) 0%, rgba(11, 17, 36, 0.95) 100%);
+            border: 1.5px solid rgba(129, 140, 248, 0.45);
+            box-shadow:
+                0 14px 28px -8px rgba(0, 0, 0, 0.5),
+                0 0 24px -6px rgba(99, 102, 241, 0.25),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16);
         }
+        .box-neon-kiosk::before {
+            background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.8), rgba(56, 189, 248, 0.8), transparent);
+        }
+
         .kiosk-emerald {
-            background: linear-gradient(155deg, #062c21 0%, #091c24 55%, #0b1329 100%) !important;
-            border: 1.5px solid rgba(52, 211, 153, 0.5) !important;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(16, 185, 129, 0.28) 0%, transparent 52%),
+                radial-gradient(circle at 88% 85%, rgba(6, 182, 212, 0.18) 0%, transparent 50%),
+                linear-gradient(155deg, rgba(6, 44, 33, 0.92) 0%, rgba(9, 28, 36, 0.94) 55%, rgba(11, 19, 41, 0.96) 100%) !important;
+            border: 1.5px solid rgba(52, 211, 153, 0.55) !important;
+            box-shadow:
+                0 12px 26px -8px rgba(0, 0, 0, 0.5),
+                0 0 22px -6px rgba(16, 185, 129, 0.28),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16) !important;
         }
+        .kiosk-emerald::before {
+            background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.85), rgba(45, 212, 191, 0.85), transparent) !important;
+        }
+
         .kiosk-indigo {
-            background: linear-gradient(155deg, #1c1947 0%, #121733 55%, #0b1329 100%) !important;
-            border: 1.5px solid rgba(129, 140, 248, 0.5) !important;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(99, 102, 241, 0.3) 0%, transparent 52%),
+                radial-gradient(circle at 88% 85%, rgba(56, 189, 248, 0.2) 0%, transparent 50%),
+                linear-gradient(155deg, rgba(28, 25, 71, 0.92) 0%, rgba(18, 23, 51, 0.94) 55%, rgba(11, 19, 41, 0.96) 100%) !important;
+            border: 1.5px solid rgba(129, 140, 248, 0.55) !important;
+            box-shadow:
+                0 12px 26px -8px rgba(0, 0, 0, 0.5),
+                0 0 22px -6px rgba(99, 102, 241, 0.28),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16) !important;
         }
+        .kiosk-indigo::before {
+            background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.85), rgba(56, 189, 248, 0.85), transparent) !important;
+        }
+
         .kiosk-purple {
-            background: linear-gradient(155deg, #2b103b 0%, #181130 55%, #0b1329 100%) !important;
-            border: 1.5px solid rgba(192, 132, 252, 0.5) !important;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.3) 0%, transparent 52%),
+                radial-gradient(circle at 88% 85%, rgba(236, 72, 153, 0.18) 0%, transparent 50%),
+                linear-gradient(155deg, rgba(43, 16, 59, 0.92) 0%, rgba(24, 17, 48, 0.94) 55%, rgba(11, 19, 41, 0.96) 100%) !important;
+            border: 1.5px solid rgba(192, 132, 252, 0.55) !important;
+            box-shadow:
+                0 12px 26px -8px rgba(0, 0, 0, 0.5),
+                0 0 22px -6px rgba(168, 85, 247, 0.28),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16) !important;
         }
+        .kiosk-purple::before {
+            background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.85), rgba(236, 72, 153, 0.85), transparent) !important;
+        }
+
         .kiosk-amber {
-            background: linear-gradient(155deg, #301c07 0%, #1c1522 55%, #0b1329 100%) !important;
-            border: 1.5px solid rgba(251, 191, 36, 0.5) !important;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(245, 158, 11, 0.28) 0%, transparent 52%),
+                radial-gradient(circle at 88% 85%, rgba(251, 191, 36, 0.18) 0%, transparent 50%),
+                linear-gradient(155deg, rgba(48, 28, 7, 0.92) 0%, rgba(28, 21, 34, 0.94) 55%, rgba(11, 19, 41, 0.96) 100%) !important;
+            border: 1.5px solid rgba(251, 191, 36, 0.55) !important;
+            box-shadow:
+                0 12px 26px -8px rgba(0, 0, 0, 0.5),
+                0 0 22px -6px rgba(245, 158, 11, 0.28),
+                inset 0 1px 1px rgba(255, 255, 255, 0.16) !important;
+        }
+        .kiosk-amber::before {
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.85), rgba(245, 158, 11, 0.85), transparent) !important;
         }
 
         .security-hud-pill {
-            background: linear-gradient(160deg, #111936 0%, #090e24 55%, #17153b 100%) !important;
-            border: 1.5px solid rgba(129, 140, 248, 0.45) !important;
-            box-shadow: 0 14px 28px -10px rgba(15, 23, 42, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background:
+                radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.24) 0%, transparent 48%),
+                radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.2) 0%, transparent 48%),
+                linear-gradient(160deg, rgba(17, 25, 54, 0.95) 0%, rgba(9, 14, 36, 0.97) 55%, rgba(23, 21, 59, 0.95) 100%) !important;
+            border: 1.5px solid rgba(129, 140, 248, 0.5) !important;
+            box-shadow:
+                0 16px 32px -10px rgba(15, 23, 42, 0.55),
+                0 0 28px -8px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
+        }
+        .security-hud-pill::before {
+            background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.8), rgba(129, 140, 248, 0.8), transparent);
         }
 
-        /* Section Gradient Backgrounds */
+        /* Section Gradient Backgrounds with Soft Ambient Lighting Glows */
         .sec-info-hero {
             background-color: #eef2ff;
             background-image:
-                radial-gradient(rgba(79, 70, 229, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 12%, rgba(99, 102, 241, 0.16) 0%, transparent 42%),
+                radial-gradient(circle at 12% 88%, rgba(16, 185, 129, 0.12) 0%, transparent 42%),
+                radial-gradient(rgba(79, 70, 229, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f5f7ff 0%, #eef2ff 50%, #e0e7ff 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #c7d2fe;
         }
         .sec-info-emerald {
             background-color: #ecfdf5;
             background-image:
-                radial-gradient(rgba(16, 185, 129, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 14%, rgba(16, 185, 129, 0.16) 0%, transparent 42%),
+                radial-gradient(circle at 12% 86%, rgba(6, 182, 212, 0.12) 0%, transparent 42%),
+                radial-gradient(rgba(16, 185, 129, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f2fbf7 0%, #ecfdf5 50%, #d1fae5 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #a7f3d0;
         }
         .sec-info-versus {
             background-color: #f8fafc;
             background-image:
-                radial-gradient(rgba(100, 116, 139, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 85% 20%, rgba(244, 63, 94, 0.12) 0%, transparent 42%),
+                radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.14) 0%, transparent 42%),
+                radial-gradient(rgba(100, 116, 139, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(90deg, #fff5f6 0%, #f8fafc 50%, #f0fdf6 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #cbd5e1;
         }
         .sec-info-cosmic {
             background-color: #0b1026;
             background-image:
+                radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(168, 85, 247, 0.22) 0%, transparent 45%),
                 linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
                 linear-gradient(135deg, #0b1026 0%, #17153b 50%, #0f172a 100%);
-            background-size: 28px 28px, 28px 28px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px, 100% 100%;
             border: 2px solid #4338ca;
         }
         .sec-info-indigo {
             background-color: #eef2ff;
             background-image:
-                radial-gradient(rgba(99, 102, 241, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(14, 165, 233, 0.14) 0%, transparent 42%),
+                radial-gradient(rgba(99, 102, 241, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f4f7ff 0%, #eef2ff 50%, #e0f2fe 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #bae6fd;
         }
         .sec-info-amber {
             background-color: #fffbeb;
             background-image:
-                radial-gradient(rgba(217, 119, 6, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 15%, rgba(245, 158, 11, 0.15) 0%, transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(168, 85, 247, 0.12) 0%, transparent 42%),
+                radial-gradient(rgba(217, 119, 6, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #fffdf5 0%, #fffbeb 50%, #fef3c7 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #fde68a;
         }
         .sec-info-royal {
             background-color: #f3e8ff;
             background-image:
-                radial-gradient(rgba(109, 40, 217, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 12%, rgba(124, 58, 237, 0.15) 0%, transparent 42%),
+                radial-gradient(circle at 12% 88%, rgba(79, 70, 229, 0.14) 0%, transparent 42%),
+                radial-gradient(rgba(109, 40, 217, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f6f5ff 0%, #ede9fe 50%, #e0e7ff 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #c4b5fd;
         }
         .sec-info-cyan {
             background-color: #ecfeff;
             background-image:
-                radial-gradient(rgba(8, 145, 178, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 15%, rgba(6, 182, 212, 0.16) 0%, transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(16, 185, 129, 0.13) 0%, transparent 42%),
+                radial-gradient(rgba(8, 145, 178, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f2fcfe 0%, #ecfeff 50%, #e0f2fe 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #a5f3fc;
         }
         .sec-info-purple {
             background-color: #f3e8ff;
             background-image:
-                radial-gradient(rgba(124, 58, 237, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 15%, rgba(139, 92, 246, 0.15) 0%, transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(99, 102, 241, 0.13) 0%, transparent 42%),
+                radial-gradient(rgba(124, 58, 237, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #faf7ff 0%, #f3e8ff 50%, #ede9fe 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #ddd6fe;
         }
         .sec-info-finale {
             background-color: #ecfdf5;
             background-image:
-                radial-gradient(rgba(16, 185, 129, 0.08) 1.25px, transparent 1.25px),
+                radial-gradient(circle at 88% 15%, rgba(16, 185, 129, 0.16) 0%, transparent 42%),
+                radial-gradient(circle at 12% 85%, rgba(245, 158, 11, 0.14) 0%, transparent 42%),
+                radial-gradient(rgba(16, 185, 129, 0.075) 1.25px, transparent 1.25px),
                 linear-gradient(135deg, #f0fdf6 0%, #eef2ff 50%, #fef9c3 100%);
-            background-size: 24px 24px, 100% 100%;
+            background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
             border: 2px solid #a7f3d0;
         }
 
@@ -808,6 +1056,47 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 <body>
 
     <!-- ========================================================================= -->
+    <!-- REUSABLE PERFORMANCE-OPTIMIZED SECURITY & WORDPRESS SVG SPRITE            -->
+    <!-- ========================================================================= -->
+    <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true">
+        <defs>
+            <!-- WordPress Emblem -->
+            <symbol id="svg-wp-emblem" viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="3.5"/>
+                <circle cx="32" cy="32" r="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 3"/>
+                <path d="M13 32c0 8.5 5.2 15.8 12.6 18.8L15.2 22.4C13.8 25.3 13 28.6 13 32zm32.2-1.2c0-3.2-1.1-5.4-2.1-7.1-1.3-2.1-2.5-3.9-2.5-6 0-2.3 1.8-4.5 4.3-4.5.1 0 .2 0 .4.02C41.8 10.6 37.1 9 32 9c-7.8 0-14.7 3.9-18.8 9.8 1.4.04 2.7.07 3.8.07 2.4 0 6.1-.3 6.1-.3 1.2-.07 1.4 1.7.1 1.9 0 0-1.2.15-2.6.22l8.3 24.7 5-15-3.6-9.7c-1.2-.07-2.4-.22-2.4-.22-1.2-.07-1.1-1.97.1-1.9 0 0 3.8.3 6 .3 2.4 0 6.1-.3 6.1-.3 1.2-.07 1.4 1.7.1 1.9 0 0-1.2.15-2.6.22l8.2 24.5 2.3-7.6c1-3.2 1.7-5.6 1.7-7.7zM32.4 34l-6.8 19.8c2 .6 4.1.9 6.4.9 2.6 0 5.1-.4 7.4-1.3-.06-.1-.12-.2-.16-.3L32.4 34zm16.3-11.8c.1.7.15 1.5.15 2.4 0 2.3-.4 5-1.7 8.3l-6.9 20c6.7-3.9 11.2-11.1 11.2-19.4 0-3.9-1-7.6-2.75-10.8z" fill="currentColor"/>
+            </symbol>
+            <!-- Security Shield Check -->
+            <symbol id="svg-shield-check" viewBox="0 0 64 64">
+                <path d="M32 6L56 16V33C56 47.5 45.8 56.8 32 60C18.2 56.8 8 47.5 8 33V16L32 6Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M23 33L29 39L42 26" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+            <!-- Cyber Padlock -->
+            <symbol id="svg-padlock" viewBox="0 0 64 64">
+                <rect x="14" y="28" width="36" height="28" rx="7" fill="none" stroke="currentColor" stroke-width="3.5"/>
+                <path d="M22 28V19C22 13.5 26.5 9 32 9C37.5 9 42 13.5 42 19V28" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="32" cy="40" r="3.5" fill="currentColor"/>
+                <path d="M32 43.5V49" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+            </symbol>
+            <!-- Cryptographic Key -->
+            <symbol id="svg-crypto-key" viewBox="0 0 64 64">
+                <circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="3.5"/>
+                <circle cx="22" cy="32" r="4" fill="currentColor"/>
+                <path d="M34 32H56M48 32V41M54 32V38" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+            </symbol>
+            <!-- Local Server Stack -->
+            <symbol id="svg-server-stack" viewBox="0 0 64 64">
+                <rect x="10" y="10" width="44" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="3.2"/>
+                <rect x="10" y="34" width="44" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="3.2"/>
+                <circle cx="19" cy="18" r="2.5" fill="currentColor"/>
+                <circle cx="26" cy="18" r="2.5" fill="currentColor"/>
+                <circle cx="19" cy="42" r="2.5" fill="currentColor"/>
+                <circle cx="26" cy="42" r="2.5" fill="currentColor"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- ========================================================================= -->
     <!-- MAIN POSTER CANVAS (960px Desktop Infographic, 100% Fluid Mobile) -->
     <!-- ========================================================================= -->
     <div class="poster-container">
@@ -817,7 +1106,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <header class="infographic-section sec-info-hero text-center">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-indigo-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 7L68 18V45C68 63 55 77 38 83C21 77 8 45 8 45V18L38 7Z" fill="#090e1f"/>
@@ -848,6 +1137,8 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         </defs>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-shield-check"/></svg>
             </div>
 
             <div class="relative z-10 w-full space-y-4">
@@ -1002,7 +1293,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-emerald">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-emerald-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 6L68 22L38 38L8 22L38 6Z" fill="#2a3e6b"/>
@@ -1010,6 +1301,9 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         <path d="M68 22L38 38V74L68 58V22Z" fill="#0a1124"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tl"><use href="#svg-server-stack"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-shield-check"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1148,13 +1442,15 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-versus">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-slate-900" aria-hidden="true">
                 <div class="token-3d-wrapper-left">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 4L66 15V42C66 59 53 73 38 79C23 73 10 42 10 42V15L38 4Z" fill="#1e3056"/>
                         <path d="M38 4L10 15V42C10 42 23 73 38 79V4Z" fill="white" fill-opacity="0.14"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tr"><use href="#svg-shield-check"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-padlock"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1263,7 +1559,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-cosmic text-white">
 
-            <div class="bg-3d-layer bg-3d-layer-dark" aria-hidden="true">
+            <div class="bg-3d-layer bg-3d-layer-dark text-indigo-300" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 76 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <ellipse cx="38" cy="40" rx="35" ry="12" stroke="url(#navy-orb-ring-s4-top-r)" stroke-width="2.5"/>
@@ -1295,6 +1591,8 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         </defs>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-crypto-key"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-shield-check"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1449,7 +1747,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-indigo">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-indigo-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 6L68 22L38 38L8 22L38 6Z" fill="#2a3e6b"/>
@@ -1457,6 +1755,8 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         <path d="M68 22L38 38V74L68 58V22Z" fill="#0a1124"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-shield-check"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1555,13 +1855,15 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-amber">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-amber-900" aria-hidden="true">
                 <div class="token-3d-wrapper-left">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 4L66 15V42C66 59 53 73 38 79C23 73 10 42 10 42V15L38 4Z" fill="#1e3056"/>
                         <path d="M38 4L10 15V42C10 42 23 73 38 79V4Z" fill="white" fill-opacity="0.14"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tr"><use href="#svg-padlock"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-crypto-key"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1659,7 +1961,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- 7. WP LOGIN CUSTOMIZATION (Equal Height, Zero Awkward Empty Space) -->
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-royal">
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-purple-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 72 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23 36V22C23 14.8 28.8 9 36 9C43.2 9 49 14.8 49 22V36" stroke="#64748b" stroke-width="7" stroke-linecap="round"/>
@@ -1667,6 +1969,8 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         <circle cx="36" cy="52" r="5" fill="#090e1f"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-padlock"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1876,7 +2180,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-cyan">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-cyan-900" aria-hidden="true">
                 <div class="token-3d-wrapper-left">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 6L68 22L38 38L8 22L38 6Z" fill="#2a3e6b"/>
@@ -1884,6 +2188,8 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         <path d="M68 22L38 38V74L68 58V22Z" fill="#0a1124"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tr"><use href="#svg-server-stack"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-shield-check"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -1974,13 +2280,15 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <section class="infographic-section sec-info-purple">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-indigo-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M38 4L66 15V42C66 59 53 73 38 79C23 73 10 42 10 42V15L38 4Z" fill="#1e3056"/>
                         <path d="M38 4L10 15V42C10 42 23 73 38 79V4Z" fill="white" fill-opacity="0.14"/>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-server-stack"/></svg>
             </div>
 
             <div class="text-center max-w-3xl mx-auto space-y-2 relative z-10">
@@ -2090,7 +2398,7 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
         <!-- ========================================================================= -->
         <footer class="infographic-section sec-info-finale text-center">
 
-            <div class="bg-3d-layer" aria-hidden="true">
+            <div class="bg-3d-layer text-emerald-900" aria-hidden="true">
                 <div class="token-3d-wrapper-right">
                     <svg width="48" height="54" viewBox="0 0 72 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23 36V22C23 14.8 28.8 9 36 9C43.2 9 49 14.8 49 22V36" stroke="url(#navy-lock-shackle-s10-top-r)" stroke-width="7" stroke-linecap="round"/>
@@ -2107,6 +2415,9 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                         </defs>
                     </svg>
                 </div>
+                <svg class="bg-sec-svg-icon bg-sec-svg-tl"><use href="#svg-shield-check"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-bl"><use href="#svg-wp-emblem"/></svg>
+                <svg class="bg-sec-svg-icon bg-sec-svg-br"><use href="#svg-padlock"/></svg>
             </div>
 
             <div class="w-full space-y-4 relative z-10">
