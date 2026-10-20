@@ -12,49 +12,177 @@ include __DIR__ . '/header.php';
 
 <!-- Custom Ambient Glows, Luminous Surfaces & Background Icon Art Styles -->
 <style>
+    /* Ensure global background layers in header.php never clip at 75% width on mobile */
+    .background-elements,
+    .background-elements > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+
+    /* Clean Hero Full-Bleed Ambient Backdrop (Works seamlessly on Mobile & Desktop) */
+    .hero-ambient-backdrop {
+        background:
+            radial-gradient(circle at 82% 18%, rgba(99, 102, 241, 0.20) 0%, transparent 48%),
+            radial-gradient(circle at 18% 82%, rgba(16, 185, 129, 0.16) 0%, transparent 48%),
+            radial-gradient(circle at 50% 45%, rgba(168, 85, 247, 0.12) 0%, transparent 55%);
+    }
+    html.dark .hero-ambient-backdrop {
+        background:
+            radial-gradient(circle at 82% 18%, rgba(99, 102, 241, 0.28) 0%, transparent 50%),
+            radial-gradient(circle at 18% 82%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
+            radial-gradient(circle at 50% 45%, rgba(168, 85, 247, 0.18) 0%, transparent 58%);
+    }
+
     /* Ambient Luminous Orbs & Grid Backdrops */
     .ambient-grid-pattern {
         background-image: 
-            radial-gradient(rgba(99, 102, 241, 0.14) 1px, transparent 1px),
+            radial-gradient(rgba(99, 102, 241, 0.12) 1px, transparent 1px),
             linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
         background-size: 24px 24px, 48px 48px, 48px 48px;
     }
 
-    /* Card Watermark Background Icons */
-    .card-bg-icon {
+    /* Explicit Section Background Decoration Container & Ambient Orbs */
+    .sec-bg-layer {
         position: absolute;
-        left: -0.85rem;
-        bottom: -0.85rem;
-        font-size: 6.25rem;
-        line-height: 1;
-        opacity: 0.065;
+        inset: 0;
         pointer-events: none;
         user-select: none;
+        overflow: hidden;
         z-index: 0;
-        transform: rotate(12deg);
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+    .sec-glow-orb {
+        position: absolute;
+        border-radius: 9999px;
+        filter: blur(90px);
+        pointer-events: none;
+        opacity: 0.55;
+    }
+    html.dark .sec-glow-orb {
+        opacity: 0.7;
+    }
+    .orb-tr-indigo { top: -3rem; right: -3rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(99, 102, 241, 0.26) 0%, transparent 70%); }
+    .orb-bl-emerald { bottom: -3rem; left: -3rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%); }
+    .orb-tl-purple { top: -3rem; left: -3rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(168, 85, 247, 0.24) 0%, transparent 70%); }
+    .orb-br-rose { bottom: -3rem; right: -3rem; width: 22rem; height: 22rem; background: radial-gradient(circle, rgba(244, 63, 94, 0.20) 0%, transparent 70%); }
+    .orb-center-cyan { top: 18%; left: 28%; width: 24rem; height: 24rem; background: radial-gradient(circle, rgba(6, 182, 212, 0.20) 0%, transparent 70%); }
+
+    /* Vibrant & Clear Card Watermark Background Icons */
+    .card-bg-icon {
+        position: absolute !important;
+        left: -0.6rem !important;
+        bottom: -0.6rem !important;
+        top: auto !important;
+        right: auto !important;
+        font-size: 6.2rem !important;
+        line-height: 1 !important;
+        opacity: 0.16 !important;
+        pointer-events: none !important;
+        user-select: none !important;
+        z-index: 0 !important;
+        transform: rotate(-12deg) !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease !important;
     }
     html.dark .card-bg-icon {
-        opacity: 0.085;
+        opacity: 0.22 !important;
+    }
+    .glow-card.glow-indigo .card-bg-icon {
+        color: #4f46e5 !important;
+        filter: drop-shadow(0 6px 16px rgba(79, 70, 229, 0.28));
+    }
+    html.dark .glow-card.glow-indigo .card-bg-icon {
+        color: #818cf8 !important;
+        filter: drop-shadow(0 0 18px rgba(129, 140, 248, 0.4));
+    }
+    .glow-card.glow-emerald .card-bg-icon {
+        color: #059669 !important;
+        filter: drop-shadow(0 6px 16px rgba(16, 185, 129, 0.28));
+    }
+    html.dark .glow-card.glow-emerald .card-bg-icon {
+        color: #34d399 !important;
+        filter: drop-shadow(0 0 18px rgba(52, 211, 153, 0.4));
+    }
+    .glow-card.glow-rose .card-bg-icon {
+        color: #e11d48 !important;
+        filter: drop-shadow(0 6px 16px rgba(244, 63, 94, 0.28));
+    }
+    html.dark .glow-card.glow-rose .card-bg-icon {
+        color: #fb7185 !important;
+        filter: drop-shadow(0 0 18px rgba(251, 113, 133, 0.4));
+    }
+    .glow-card.glow-purple .card-bg-icon {
+        color: #7c3aed !important;
+        filter: drop-shadow(0 6px 16px rgba(168, 85, 247, 0.28));
+    }
+    html.dark .glow-card.glow-purple .card-bg-icon {
+        color: #c084fc !important;
+        filter: drop-shadow(0 0 18px rgba(192, 132, 252, 0.4));
+    }
+    .glow-card.glow-amber .card-bg-icon {
+        color: #d97706 !important;
+        filter: drop-shadow(0 6px 16px rgba(245, 158, 11, 0.28));
+    }
+    html.dark .glow-card.glow-amber .card-bg-icon {
+        color: #fbbf24 !important;
+        filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.4));
+    }
+    .glow-card.glow-cyan .card-bg-icon {
+        color: #0891b2 !important;
+        filter: drop-shadow(0 6px 16px rgba(6, 182, 212, 0.28));
+    }
+    html.dark .glow-card.glow-cyan .card-bg-icon {
+        color: #22d3ee !important;
+        filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.4));
     }
     .glow-card:hover .card-bg-icon {
-        transform: rotate(4deg) scale(1.1);
-        opacity: 0.13;
+        transform: rotate(-4deg) scale(1.1) !important;
+        opacity: 0.24 !important;
+    }
+    html.dark .glow-card:hover .card-bg-icon {
+        opacity: 0.32 !important;
     }
 
-    /* Section Background Floating Icon Art */
+    /* Section Background Floating Icon Art (Clear, Vibrant & Positioned at Outer Corners) */
     .sec-floating-icon {
-        position: absolute;
-        pointer-events: none;
-        user-select: none;
-        z-index: 0;
-        opacity: 0.045;
-        line-height: 1;
+        position: absolute !important;
+        pointer-events: none !important;
+        user-select: none !important;
+        z-index: 0 !important;
+        line-height: 1 !important;
+        font-size: 5.5rem !important;
+        opacity: 0.11 !important;
+        display: block !important;
     }
     html.dark .sec-floating-icon {
-        opacity: 0.065;
+        opacity: 0.16 !important;
     }
+    @media (min-width: 1024px) {
+        .sec-floating-icon {
+            font-size: 9.5rem !important;
+            opacity: 0.13 !important;
+        }
+        html.dark .sec-floating-icon {
+            opacity: 0.19 !important;
+        }
+    }
+    .sec-icon-tr { top: 1.25rem !important; right: 1rem !important; left: auto !important; bottom: auto !important; transform: rotate(-12deg) !important; }
+    .sec-icon-tl { top: 1.25rem !important; left: 1rem !important; right: auto !important; bottom: auto !important; transform: rotate(12deg) !important; }
+    .sec-icon-br { bottom: 1.25rem !important; right: 1rem !important; left: auto !important; top: auto !important; transform: rotate(10deg) !important; }
+    .sec-icon-bl { bottom: 1.25rem !important; left: 1rem !important; right: auto !important; top: auto !important; transform: rotate(-10deg) !important; }
+
+    .sec-icon-indigo { color: #4f46e5 !important; filter: drop-shadow(0 8px 22px rgba(79, 70, 229, 0.25)); }
+    html.dark .sec-icon-indigo { color: #818cf8 !important; filter: drop-shadow(0 0 26px rgba(129, 140, 248, 0.35)); }
+    .sec-icon-emerald { color: #059669 !important; filter: drop-shadow(0 8px 22px rgba(16, 185, 129, 0.25)); }
+    html.dark .sec-icon-emerald { color: #34d399 !important; filter: drop-shadow(0 0 26px rgba(52, 211, 153, 0.35)); }
+    .sec-icon-purple { color: #7c3aed !important; filter: drop-shadow(0 8px 22px rgba(168, 85, 247, 0.25)); }
+    html.dark .sec-icon-purple { color: #c084fc !important; filter: drop-shadow(0 0 26px rgba(192, 132, 252, 0.35)); }
+    .sec-icon-rose { color: #e11d48 !important; filter: drop-shadow(0 8px 22px rgba(244, 63, 94, 0.25)); }
+    html.dark .sec-icon-rose { color: #fb7185 !important; filter: drop-shadow(0 0 26px rgba(251, 113, 133, 0.35)); }
+    .sec-icon-amber { color: #d97706 !important; filter: drop-shadow(0 8px 22px rgba(245, 158, 11, 0.25)); }
+    html.dark .sec-icon-amber { color: #fbbf24 !important; filter: drop-shadow(0 0 26px rgba(251, 191, 36, 0.35)); }
+    .sec-icon-cyan { color: #0891b2 !important; filter: drop-shadow(0 8px 22px rgba(6, 182, 212, 0.25)); }
+    html.dark .sec-icon-cyan { color: #22d3ee !important; filter: drop-shadow(0 0 26px rgba(34, 211, 238, 0.35)); }
 
     /* Luminous Multi-Color Glow Cards */
     .glow-card {
@@ -166,6 +294,36 @@ include __DIR__ . '/header.php';
         flex-shrink: 0;
         box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.4);
     }
+
+    /* Hero Action Buttons: Strictly Single Row on Mobile & Desktop */
+    .hero-action-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+        align-items: center;
+    }
+    .hero-action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+    @media (max-width: 639px) {
+        .hero-action-btn {
+            padding: 0.85rem 0.45rem !important;
+            font-size: 0.75rem !important;
+            border-radius: 0.9rem !important;
+        }
+    }
+    @media (min-width: 640px) {
+        .hero-action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+    }
 </style>
 
 <main id="main-content" class="flex-grow pb-16 lg:pb-0">
@@ -173,17 +331,16 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <!-- 1. HERO SECTION + INTERACTIVE 4-IN-1 LIVE CAPTCHA PLAYGROUND -->
     <!-- ========================================================================= -->
-    <section id="hero" aria-labelledby="hero-heading" class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden ambient-grid-pattern">
+    <section id="hero" aria-labelledby="hero-heading" class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden hero-ambient-backdrop">
         
-        <!-- Multi-Layered Ambient Light Beams & Background Icons -->
-        <div class="background-elements absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute -top-20 right-1/4 w-[28rem] h-[28rem] bg-indigo-500/20 dark:bg-indigo-500/25 rounded-full blur-[110px]"></div>
-            <div class="absolute top-1/3 -left-20 w-[26rem] h-[26rem] bg-emerald-500/15 dark:bg-emerald-500/20 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-0 right-10 w-80 h-80 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-[95px]"></div>
-            <!-- Large Decorative Background Icons -->
-            <i class="fas fa-shield-halved sec-floating-icon text-[15rem] text-indigo-600 dark:text-indigo-400 top-6 -right-12 -rotate-12"></i>
-            <i class="fas fa-fingerprint sec-floating-icon text-[13rem] text-emerald-600 dark:text-emerald-400 bottom-12 -left-10 rotate-12"></i>
-            <i class="fas fa-lock sec-floating-icon text-[9rem] text-purple-600 dark:text-purple-400 top-16 left-1/3 rotate-6"></i>
+        <!-- Multi-Layered Ambient Light Beams & Background Icons (No mobile clipping) -->
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <div class="sec-glow-orb orb-bl-emerald"></div>
+            <i class="fas fa-shield-halved sec-floating-icon sec-icon-tr sec-icon-indigo"></i>
+            <i class="fas fa-fingerprint sec-floating-icon sec-icon-bl sec-icon-emerald"></i>
+            <i class="fas fa-lock sec-floating-icon sec-icon-tl sec-icon-purple"></i>
+            <i class="fas fa-server sec-floating-icon sec-icon-br sec-icon-cyan"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
@@ -216,33 +373,41 @@ include __DIR__ . '/header.php';
                         پایان قطعی‌های مکرر Google reCAPTCHA و نجات تسویه‌حساب فروشگاه‌های ووکامرس در زمان اختلال اینترنت بین‌الملل و اینترنت ملی؛ با <strong>بار مصرفی زیر ۱۰ کیلوبایت روی لود صفحات سایت</strong>، بیش از ۳۵ تم رنگی، ۶ نوع چالش مدرن و استودیوی بازطراحی اختصاصی صفحه ورود (<code class="px-1.5 py-0.5 rounded bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 font-mono text-xs border border-indigo-500/20">wp-login.php</code>).
                     </p>
 
-                    <!-- Action Buttons with Luminous Shadows -->
-                    <div class="flex flex-wrap items-center gap-3.5 pt-1">
-                        <a href="/demo.php" class="px-6 sm:px-7 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-sm sm:text-base shadow-xl shadow-indigo-600/35 transition-all flex items-center gap-2.5 whitespace-nowrap shrink-0 border border-indigo-400/30">
-                            <i class="fas fa-desktop text-amber-300 text-base"></i>
+                    <!-- Action Buttons (Single Row on Mobile & Desktop, 'مشاهده ۳۵+ تم' Removed) -->
+                    <div class="hero-action-row pt-1">
+                        <a href="/demo.php" class="hero-action-btn px-6 sm:px-7 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-sm sm:text-base shadow-xl shadow-indigo-600/35 transition-all border border-indigo-400/30">
+                            <i class="fas fa-desktop text-amber-300"></i>
                             <span>ورود به دموی افزونه</span>
                         </a>
 
-                        <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center gap-2 whitespace-nowrap shrink-0 border border-emerald-300/40">
+                        <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="hero-action-btn px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all border border-emerald-300/40">
                             <i class="fas fa-bag-shopping text-slate-950"></i>
                             <span>خرید اورجینال از راست‌چین</span>
                         </a>
-
-                        <a href="#captcha-modalities" class="px-4 py-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-300 dark:border-slate-700 hover:border-indigo-500 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 whitespace-nowrap shrink-0 shadow-sm">
-                            <span>مشاهده ۳۵+ تم</span>
-                            <i class="fas fa-arrow-down text-indigo-500 text-xs"></i>
-                        </a>
                     </div>
 
-                    <!-- Ecosystem Compatibility Strip -->
-                    <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-slate-600 dark:text-slate-400">
-                        <span class="flex items-center gap-1.5"><i class="fab fa-wordpress text-indigo-500 text-sm"></i> وردپرس ۵ و ۶+</span>
-                        <span aria-hidden="true" class="text-slate-300 dark:text-slate-700">·</span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-cart-shopping text-emerald-500 text-sm"></i> ووکامرس ۴ تا ۹+</span>
-                        <span aria-hidden="true" class="text-slate-300 dark:text-slate-700">·</span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-mobile-screen text-amber-500 text-sm"></i> دیجیتس (Digits OTP)</span>
-                        <span aria-hidden="true" class="text-slate-300 dark:text-slate-700">·</span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-bolt text-purple-500 text-sm"></i> لایت‌اسپید کش و راکت</span>
+                    <!-- Clear Ecosystem Compatibility Strip -->
+                    <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <span class="text-slate-900 dark:text-white font-black flex items-center gap-1.5 ml-1">
+                            <i class="fas fa-plug-circle-check text-emerald-500"></i>
+                            <span>سازگاری ۱۰۰٪ با:</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/25 text-indigo-800 dark:text-indigo-300">
+                            <i class="fab fa-wordpress text-indigo-500 text-sm"></i>
+                            <span>سازگار با وردپرس ۵ و ۶+</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-800 dark:text-emerald-300">
+                            <i class="fas fa-cart-shopping text-emerald-500 text-sm"></i>
+                            <span>سازگار با ووکامرس</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-800 dark:text-amber-300">
+                            <i class="fas fa-mobile-screen text-amber-500 text-sm"></i>
+                            <span>سازگار با دیجیتس (Digits OTP)</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/25 text-purple-800 dark:text-purple-300">
+                            <i class="fas fa-bolt text-purple-500 text-sm"></i>
+                            <span>سازگار با کش لایت‌اسپید و راکت</span>
+                        </span>
                     </div>
 
                 </div>
@@ -526,11 +691,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="why-guardify" aria-labelledby="why-heading" class="py-16 md:py-22 bg-slate-100/85 dark:bg-slate-900/70 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Ambient Orbs & Section Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-10 right-10 w-96 h-96 bg-rose-500/10 dark:bg-rose-500/15 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-10 left-10 w-96 h-96 bg-emerald-500/12 dark:bg-emerald-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-scale-balanced sec-floating-icon text-[14rem] text-indigo-500 top-8 left-12 -rotate-12"></i>
-            <i class="fas fa-network-wired sec-floating-icon text-[13rem] text-emerald-500 bottom-6 right-12 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-br-rose"></div>
+            <div class="sec-glow-orb orb-bl-emerald"></div>
+            <i class="fas fa-scale-balanced sec-floating-icon sec-icon-tl sec-icon-indigo"></i>
+            <i class="fas fa-network-wired sec-floating-icon sec-icon-br sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
@@ -570,7 +735,7 @@ include __DIR__ . '/header.php';
                 <article class="glow-card glow-rose p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white via-white to-rose-50/50 dark:from-slate-900 dark:via-slate-900 dark:to-rose-950/30 border-2 border-rose-300 dark:border-rose-500/45 flex flex-col justify-between space-y-6">
                     <div class="card-top-beam bg-gradient-to-r from-transparent via-rose-500 to-transparent"></div>
                     <div class="card-corner-glow bg-rose-500"></div>
-                    <i class="fas fa-cloud-Showers-heavy card-bg-icon text-rose-600 dark:text-rose-400"></i>
+                    <i class="fas fa-cloud-bolt card-bg-icon"></i>
 
                     <div class="relative z-10 space-y-5">
                         <div class="flex items-center justify-between pb-4 border-b border-rose-100 dark:border-slate-800">
@@ -690,11 +855,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="captcha-modalities" aria-labelledby="modalities-heading" class="py-16 md:py-22 relative overflow-hidden ambient-grid-pattern">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-1/4 -right-24 w-96 h-96 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-1/4 -left-24 w-96 h-96 bg-cyan-500/15 dark:bg-cyan-500/20 rounded-full blur-[110px]"></div>
-            <i class="fas fa-shapes sec-floating-icon text-[15rem] text-purple-500 top-10 -left-10 rotate-12"></i>
-            <i class="fas fa-sliders sec-floating-icon text-[13rem] text-indigo-500 bottom-10 -right-10 -rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tl-purple"></div>
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <i class="fas fa-shapes sec-floating-icon sec-icon-tl sec-icon-purple"></i>
+            <i class="fas fa-sliders sec-floating-icon sec-icon-br sec-icon-indigo"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
@@ -938,11 +1103,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="login-styler" aria-labelledby="styler-heading" class="py-16 md:py-22 bg-slate-100/85 dark:bg-slate-900/75 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute -top-16 left-1/4 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/15 dark:bg-purple-500/20 rounded-full blur-[110px]"></div>
-            <i class="fas fa-palette sec-floating-icon text-[15rem] text-indigo-500 top-6 -right-10 -rotate-12"></i>
-            <i class="fas fa-fingerprint sec-floating-icon text-[13rem] text-purple-500 bottom-6 -left-10 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <div class="sec-glow-orb orb-tl-purple"></div>
+            <i class="fas fa-palette sec-floating-icon sec-icon-tr sec-icon-indigo"></i>
+            <i class="fas fa-fingerprint sec-floating-icon sec-icon-bl sec-icon-purple"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -1086,11 +1251,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="forms-protection" aria-labelledby="forms-heading" class="py-16 md:py-22 relative overflow-hidden ambient-grid-pattern">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-12 right-1/3 w-96 h-96 bg-emerald-500/12 dark:bg-emerald-500/18 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-12 left-1/4 w-96 h-96 bg-indigo-500/12 dark:bg-indigo-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-cart-shopping sec-floating-icon text-[14rem] text-purple-500 top-8 -right-8 -rotate-12"></i>
-            <i class="fas fa-mobile-screen-button sec-floating-icon text-[13rem] text-emerald-500 bottom-8 -left-8 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-bl-emerald"></div>
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <i class="fas fa-cart-shopping sec-floating-icon sec-icon-tr sec-icon-purple"></i>
+            <i class="fas fa-mobile-screen-button sec-floating-icon sec-icon-bl sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
@@ -1212,11 +1377,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="login-hardening" aria-labelledby="hardening-heading" class="py-16 md:py-22 bg-slate-100/85 dark:bg-slate-900/75 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-10 left-10 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-500/20 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-rose-500/12 dark:bg-rose-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-user-shield sec-floating-icon text-[15rem] text-indigo-500 top-8 -left-10 rotate-12"></i>
-            <i class="fas fa-radar sec-floating-icon text-[14rem] text-emerald-500 bottom-8 -right-10 -rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <div class="sec-glow-orb orb-br-rose"></div>
+            <i class="fas fa-user-shield sec-floating-icon sec-icon-tl sec-icon-indigo"></i>
+            <i class="fas fa-shield-virus sec-floating-icon sec-icon-br sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
@@ -1389,11 +1554,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="performance" aria-labelledby="performance-heading" class="py-16 md:py-22 relative overflow-hidden ambient-grid-pattern">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-1/3 -right-20 w-96 h-96 bg-emerald-500/12 dark:bg-emerald-500/18 rounded-full blur-[110px]"></div>
-            <div class="absolute bottom-10 -left-20 w-96 h-96 bg-indigo-500/12 dark:bg-indigo-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-gauge-high sec-floating-icon text-[15rem] text-emerald-500 top-6 -right-10 -rotate-12"></i>
-            <i class="fas fa-chart-line sec-floating-icon text-[13rem] text-indigo-500 bottom-6 -left-10 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-bl-emerald"></div>
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <i class="fas fa-gauge-high sec-floating-icon sec-icon-tr sec-icon-emerald"></i>
+            <i class="fas fa-chart-line sec-floating-icon sec-icon-bl sec-icon-indigo"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
@@ -1490,9 +1655,10 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="comparison" aria-labelledby="comparison-heading" class="py-16 md:py-22 bg-slate-100/85 dark:bg-slate-900/75 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-10 right-1/4 w-96 h-96 bg-indigo-500/12 dark:bg-indigo-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-table-list sec-floating-icon text-[14rem] text-indigo-500 top-8 -left-10 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <i class="fas fa-table-list sec-floating-icon sec-icon-tl sec-icon-indigo"></i>
+            <i class="fas fa-database sec-floating-icon sec-icon-br sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-8">
@@ -1661,6 +1827,25 @@ include __DIR__ . '/header.php';
                                     ✗ خطای مکرر انقضای سشن
                                 </td>
                             </tr>
+
+                            <!-- Row 7: Database Architecture -->
+                            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+                                <td class="p-4 font-bold text-slate-900 dark:text-white border-l border-slate-200 dark:border-slate-800">
+                                    وضعیت پایگاه‌داده (دیتابیس) و نگهداری لاگ
+                                </td>
+                                <td class="p-4 border-x-2 border-amber-400/80 bg-emerald-50/50 dark:bg-emerald-950/25 font-black text-emerald-800 dark:text-emerald-300 text-center">
+                                    ✓ جدول اختصاصی و بهینه برای لاگ‌های امنیتی و تنظیمات
+                                </td>
+                                <td class="p-4 text-center border-l border-slate-200 dark:border-slate-800 text-slate-500 font-medium">
+                                    فاقد ثبت لاگ در دیتابیس
+                                </td>
+                                <td class="p-4 text-center border-l border-slate-200 dark:border-slate-800 text-slate-500 font-medium">
+                                    فاقد ثبت لاگ در دیتابیس
+                                </td>
+                                <td class="p-4 text-center text-rose-600 font-bold">
+                                    ✗ سنگین کردن جدول wp_options
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1674,10 +1859,10 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="setup-guide" aria-labelledby="setup-heading" class="py-16 md:py-22 relative overflow-hidden ambient-grid-pattern">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-12 left-1/3 w-96 h-96 bg-emerald-500/12 dark:bg-emerald-500/18 rounded-full blur-[110px]"></div>
-            <i class="fas fa-wand-magic-sparkles sec-floating-icon text-[13rem] text-indigo-500 top-6 -right-8 -rotate-12"></i>
-            <i class="fas fa-circle-check sec-floating-icon text-[13rem] text-emerald-500 bottom-6 -left-8 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-center-cyan"></div>
+            <i class="fas fa-wand-magic-sparkles sec-floating-icon sec-icon-tr sec-icon-indigo"></i>
+            <i class="fas fa-circle-check sec-floating-icon sec-icon-bl sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
@@ -1749,10 +1934,11 @@ include __DIR__ . '/header.php';
     <!-- ========================================================================= -->
     <section id="faq" aria-labelledby="faq-heading" class="py-16 md:py-22 bg-slate-100/80 dark:bg-slate-900/70 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden" itemscope itemtype="https://schema.org/FAQPage">
         <!-- Ambient Orbs & Background Icons -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden -z-0" aria-hidden="true">
-            <div class="absolute top-12 right-12 w-80 h-80 bg-indigo-500/12 dark:bg-indigo-500/18 rounded-full blur-[100px]"></div>
-            <i class="fas fa-circle-question sec-floating-icon text-[14rem] text-indigo-500 top-10 -right-10 -rotate-12"></i>
-            <i class="fas fa-comments sec-floating-icon text-[12rem] text-emerald-500 bottom-10 -left-10 rotate-12"></i>
+        <div class="sec-bg-layer" aria-hidden="true">
+            <div class="sec-glow-orb orb-tr-indigo"></div>
+            <div class="sec-glow-orb orb-bl-emerald"></div>
+            <i class="fas fa-circle-question sec-floating-icon sec-icon-tr sec-icon-indigo"></i>
+            <i class="fas fa-comments sec-floating-icon sec-icon-bl sec-icon-emerald"></i>
         </div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-8">
@@ -1782,15 +1968,16 @@ include __DIR__ . '/header.php';
             <div class="space-y-3.5 text-right" id="faq-accordion-list">
                 
                 <!-- FAQ 1 -->
-                <div data-faq-cat="speed" class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="true" class="w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                <div data-faq-cat="speed" class="faq-item glow-card glow-emerald rounded-2xl bg-white dark:bg-slate-900 border border-emerald-300/70 dark:border-emerald-500/30 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <i class="fas fa-feather-pointed card-bg-icon"></i>
+                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="true" class="relative z-10 w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                         <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2.5" itemprop="name">
                             <i class="fas fa-feather-pointed text-emerald-500 shrink-0"></i>
                             <span>آیا گاردفای پرو باعث کندی سرعت سایت یا افت امتیاز لایت‌هاوس می‌شود؟</span>
                         </h3>
                         <i class="fas fa-chevron-up text-indigo-500 text-xs transition-transform duration-200 faq-chevron"></i>
                     </button>
-                    <div class="faq-answer px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div class="faq-answer relative z-10 px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium" itemprop="text">
                             مطلقاً خیر. هرچند خود افزونه شامل امکانات گسترده‌ای در بخش مدیریت است، اما <strong>باری که روی لود فرانت‌اند صفحات سایت شما می‌اندازد زیر ۱۰ کیلوبایت است</strong>. برخلاف Google reCAPTCHA که بیش از ۵۰۰ کیلوبایت اسکریپت خارجی دانلود می‌کند، گاردفای پرو هیچ اثر منفی روی Core Web Vitals و سرعت باز شدن سایت ندارد.
                         </p>
@@ -1798,15 +1985,16 @@ include __DIR__ . '/header.php';
                 </div>
 
                 <!-- FAQ 2 -->
-                <div data-faq-cat="intranet" class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                <div data-faq-cat="intranet" class="faq-item glow-card glow-indigo rounded-2xl bg-white dark:bg-slate-900 border border-indigo-300/70 dark:border-indigo-500/30 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <i class="fas fa-server card-bg-icon"></i>
+                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="relative z-10 w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                         <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2.5" itemprop="name">
                             <i class="fas fa-server text-indigo-500 shrink-0"></i>
                             <span>آیا گاردفای پرو واقعاً بدون اتصال به هیچ سرور خارجی و در اینترنت ملی کار می‌کند؟</span>
                         </h3>
                         <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200 faq-chevron"></i>
                     </button>
-                    <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div class="faq-answer relative z-10 hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium" itemprop="text">
                             بله، ۱۰۰٪. در حالت موتور بومی، تمامی مراحل تولید چالش، بررسی رفتار کاربر و تایید توکن امنیتی مستقیماً با توابع استاندارد PHP روی هاست خودتان انجام می‌شود و حتی در صورت قطع کامل اینترنت بین‌الملل، تسویه‌حساب مشتریان بدون یک ثانیه توقف انجام می‌گیرد.
                         </p>
@@ -1814,15 +2002,16 @@ include __DIR__ . '/header.php';
                 </div>
 
                 <!-- FAQ 3 -->
-                <div data-faq-cat="compat" class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                <div data-faq-cat="compat" class="faq-item glow-card glow-purple rounded-2xl bg-white dark:bg-slate-900 border border-purple-300/70 dark:border-purple-500/30 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <i class="fas fa-cart-shopping card-bg-icon"></i>
+                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="relative z-10 w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                         <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2.5" itemprop="name">
                             <i class="fas fa-cart-shopping text-purple-500 shrink-0"></i>
                             <span>آیا با ووکامرس، پنل پیامکی دیجیتس (Digits) و افزونه‌های کش سازگار است؟</span>
                         </h3>
                         <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200 faq-chevron"></i>
                     </button>
-                    <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div class="faq-answer relative z-10 hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium" itemprop="text">
                             کاملاً. گاردفای پرو به صورت پیش‌فرض با فرم‌های ورود، عضویت و تسویه‌حساب ووکامرس، فرم‌های پیامکی دیجیتس، المنتور پرو و گرویتی فرمز یکپارچه است و به لطف توکن پویا (AJAX Nonce)، هیچ‌گونه تداخلی با LiteSpeed Cache و WP Rocket ندارد.
                         </p>
@@ -1830,15 +2019,16 @@ include __DIR__ . '/header.php';
                 </div>
 
                 <!-- FAQ 4 -->
-                <div data-faq-cat="compat" class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                <div data-faq-cat="compat" class="faq-item glow-card glow-amber rounded-2xl bg-white dark:bg-slate-900 border border-amber-300/70 dark:border-amber-500/30 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <i class="fas fa-paintbrush card-bg-icon"></i>
+                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="relative z-10 w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                         <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2.5" itemprop="name">
                             <i class="fas fa-paintbrush text-amber-500 shrink-0"></i>
                             <span>آیا استایلر صفحه ورود وردپرس باعث اختلال در افزونه‌های امنیتی یا کوکی‌ها می‌شود؟</span>
                         </h3>
                         <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200 faq-chevron"></i>
                     </button>
-                    <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div class="faq-answer relative z-10 hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium" itemprop="text">
                             خیر، استایلر گاردفای پرو با استفاده از هوک‌های استاندارد هسته وردپرس (`login_enqueue_scripts`) ظاهر صفحه `wp-login.php` را نوسازی می‌کند؛ بنابراین تمامی کوکی‌ها، نشست‌ها و افزونه‌های دو مرحله‌ای کاملاً پایدار و استاندارد باقی می‌مانند.
                         </p>
@@ -1846,15 +2036,16 @@ include __DIR__ . '/header.php';
                 </div>
 
                 <!-- FAQ 5 -->
-                <div data-faq-cat="intranet" class="faq-item rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
+                <div data-faq-cat="intranet" class="faq-item glow-card glow-cyan rounded-2xl bg-white dark:bg-slate-900 border border-cyan-300/70 dark:border-cyan-500/30 shadow-sm overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <i class="fas fa-arrows-split-up-and-left card-bg-icon"></i>
+                    <button type="button" onclick="toggleFaqAccordion(this)" aria-expanded="false" class="relative z-10 w-full p-5 sm:p-6 text-right flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                         <h3 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2.5" itemprop="name">
                             <i class="fas fa-arrows-split-up-and-left text-cyan-500 shrink-0"></i>
                             <span>قابلیت سوییچر هوشمند (Smart Failover) چگونه کار می‌کند؟</span>
                         </h3>
                         <i class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-200 faq-chevron"></i>
                     </button>
-                    <div class="faq-answer hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <div class="faq-answer relative z-10 hidden px-5 pb-5 sm:px-6 sm:pb-6 border-t border-slate-100 dark:border-slate-800/80 pt-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium" itemprop="text">
                             اگر تمایل داشته باشید در روزهای عادی از کلودفلر یا گوگل استفاده کنید، سیستم پایشگر گاردفای پرو در پس‌زمینه وضعیت ارتباط سرور را بررسی کرده و به محض بروز اختلال در اینترنت بین‌الملل، فرم‌ها را به صورت خودکار به کپچای بومی سوییچ می‌کند.
                         </p>
@@ -1875,10 +2066,12 @@ include __DIR__ . '/header.php';
                 
                 <!-- CTA Ambient Glows & Watermark Icons -->
                 <div class="card-top-beam bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-                <div class="absolute -top-24 -right-24 w-72 h-72 bg-indigo-500/30 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-emerald-500/25 rounded-full blur-3xl pointer-events-none"></div>
-                <i class="fas fa-shield-halved sec-floating-icon text-[14rem] text-indigo-400 top-4 -right-8 -rotate-12" style="opacity:0.09;"></i>
-                <i class="fas fa-rocket sec-floating-icon text-[12rem] text-emerald-400 bottom-4 -left-8 rotate-12" style="opacity:0.09;"></i>
+                <div class="sec-bg-layer" aria-hidden="true">
+                    <div class="sec-glow-orb orb-tr-indigo"></div>
+                    <div class="sec-glow-orb orb-bl-emerald"></div>
+                    <i class="fas fa-shield-halved sec-floating-icon sec-icon-tr sec-icon-indigo"></i>
+                    <i class="fas fa-rocket sec-floating-icon sec-icon-bl sec-icon-emerald"></i>
+                </div>
 
                 <div class="relative z-10 max-w-3xl mx-auto space-y-6">
                     <div class="text-xs font-black text-emerald-300" style="color:#6ee7b7 !important;">

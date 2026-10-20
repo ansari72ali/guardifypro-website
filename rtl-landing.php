@@ -559,37 +559,39 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             user-select: none !important;
             z-index: 0 !important;
             display: none !important;
+            filter: drop-shadow(0 4px 12px rgba(79, 70, 229, 0.22));
         }
         .bg-sec-svg-tl {
             top: 0.65rem !important;
             left: 0.85rem !important;
-            width: 64px !important;
-            height: 64px !important;
-            opacity: 0.055 !important;
+            width: 68px !important;
+            height: 68px !important;
+            opacity: 0.14 !important;
         }
         .bg-sec-svg-tr {
             top: 0.65rem !important;
             right: 0.85rem !important;
-            width: 64px !important;
-            height: 64px !important;
-            opacity: 0.055 !important;
+            width: 68px !important;
+            height: 68px !important;
+            opacity: 0.14 !important;
         }
         .bg-sec-svg-bl {
             bottom: 0.65rem !important;
             left: 0.85rem !important;
-            width: 68px !important;
-            height: 68px !important;
-            opacity: 0.05 !important;
+            width: 72px !important;
+            height: 72px !important;
+            opacity: 0.13 !important;
         }
         .bg-sec-svg-br {
             bottom: 0.65rem !important;
             right: 0.85rem !important;
-            width: 68px !important;
-            height: 68px !important;
-            opacity: 0.05 !important;
+            width: 72px !important;
+            height: 72px !important;
+            opacity: 0.13 !important;
         }
         .bg-3d-layer-dark .bg-sec-svg-icon {
-            opacity: 0.09 !important;
+            opacity: 0.20 !important;
+            filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.35));
         }
 
         @media (min-width: 768px) {
@@ -676,30 +678,40 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             z-index: 20 !important;
         }
 
-        /* Subtle Low-Opacity Watermark Icons Inside Cards (Positioned in Corner Behind Content) */
+        /* Vibrant Low-Opacity Watermark Icons Inside Cards (Positioned in Corner Behind Content) */
         .box-watermark-icon {
             position: absolute;
-            left: -0.65rem;
-            bottom: -0.65rem;
-            font-size: 4.6rem;
-            opacity: 0.055;
+            left: -0.45rem;
+            bottom: -0.45rem;
+            font-size: 4.8rem;
+            opacity: 0.14;
             pointer-events: none;
             user-select: none;
             z-index: 1;
             line-height: 1;
+            transform: rotate(-10deg);
+            filter: drop-shadow(0 4px 10px rgba(79, 70, 229, 0.16));
         }
+        .box-deluxe-indigo .box-watermark-icon { color: #4f46e5 !important; opacity: 0.15; }
+        .box-deluxe-emerald .box-watermark-icon { color: #059669 !important; opacity: 0.15; }
+        .box-deluxe-amber .box-watermark-icon { color: #d97706 !important; opacity: 0.16; }
+        .box-deluxe-purple .box-watermark-icon { color: #7c3aed !important; opacity: 0.15; }
+        .box-deluxe-cyan .box-watermark-icon { color: #0891b2 !important; opacity: 0.15; }
+        .box-deluxe-rose .box-watermark-icon { color: #e11d48 !important; opacity: 0.15; }
 
         .box-watermark-icon-dark {
             position: absolute;
-            left: -0.65rem;
-            bottom: -0.65rem;
-            font-size: 4.6rem;
-            opacity: 0.075;
+            left: -0.45rem;
+            bottom: -0.45rem;
+            font-size: 4.8rem;
+            opacity: 0.16;
             pointer-events: none;
             user-select: none;
             z-index: 1;
             line-height: 1;
-            color: #ffffff;
+            color: #818cf8;
+            transform: rotate(-10deg);
+            filter: drop-shadow(0 0 14px rgba(99, 102, 241, 0.35));
         }
 
         /* =========================================================================
@@ -908,6 +920,48 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.85), rgba(245, 158, 11, 0.85), transparent) !important;
         }
 
+        /* Single-line enforcement for Section 4 Captcha Model Headers */
+        .kiosk-header-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            flex-wrap: nowrap !important;
+            gap: 0.5rem !important;
+            white-space: nowrap !important;
+            width: 100% !important;
+        }
+        .kiosk-header-title {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.45rem !important;
+            white-space: nowrap !important;
+            font-size: 0.88rem !important;
+            font-weight: 900 !important;
+            line-height: 1.3 !important;
+            color: #ffffff !important;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .kiosk-header-badge {
+            flex-shrink: 0 !important;
+            white-space: nowrap !important;
+            font-size: 0.72rem !important;
+            font-weight: 900 !important;
+            padding: 0.22rem 0.65rem !important;
+            border-radius: 9999px !important;
+        }
+        @media (max-width: 480px) {
+            .kiosk-header-title {
+                font-size: 0.78rem !important;
+                gap: 0.35rem !important;
+            }
+            .kiosk-header-badge {
+                font-size: 0.68rem !important;
+                padding: 0.18rem 0.5rem !important;
+            }
+        }
+
         .security-hud-pill {
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -1050,6 +1104,84 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
             border-radius: 9999px;
             font-size: var(--type-xs);
             font-weight: 900;
+        }
+
+        /* =========================================================================
+           6. ZEBRA-STRIPED FEATURE TABLE (960PX CONTAINER ALIGNED)
+           ========================================================================= */
+        .zebra-table-card {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            border-radius: 1.35rem;
+            overflow: hidden;
+            border: 2px solid rgba(129, 140, 248, 0.55);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow:
+                0 16px 34px -8px rgba(79, 70, 229, 0.16),
+                0 0 24px -6px rgba(99, 102, 241, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 20;
+        }
+        .zebra-feature-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: right;
+            font-size: var(--type-sm);
+        }
+        .zebra-feature-table thead tr {
+            background: linear-gradient(90deg, #1e1b4b 0%, #311042 50%, #0f172a 100%);
+            color: #ffffff;
+        }
+        .zebra-feature-table th {
+            padding: 1.05rem 1.35rem;
+            font-weight: 900;
+            font-size: var(--type-sm);
+            border-bottom: 2px solid #6366f1;
+            vertical-align: middle;
+        }
+        .zebra-feature-table th:first-child {
+            width: 37%;
+            border-left: 1px solid rgba(129, 140, 248, 0.3);
+        }
+        .zebra-feature-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .zebra-feature-table tbody tr:nth-child(even) {
+            background-color: #f5f7ff;
+        }
+        .zebra-feature-table td {
+            padding: 0.95rem 1.35rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #e0e7ff;
+            line-height: 1.75;
+        }
+        .zebra-feature-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .zebra-feature-table td:first-child {
+            font-weight: 900;
+            color: #1e1b4b;
+            border-left: 1px solid #e0e7ff;
+            background-color: rgba(238, 242, 255, 0.45);
+        }
+        .zebra-feature-table tbody tr:nth-child(even) td:first-child {
+            background-color: rgba(224, 231, 255, 0.65);
+        }
+        @media (max-width: 767px) {
+            .zebra-table-card {
+                border-radius: 1rem;
+            }
+            .zebra-feature-table th,
+            .zebra-feature-table td {
+                padding: 0.75rem 0.85rem;
+                font-size: 0.8125rem;
+            }
+            .zebra-feature-table th:first-child {
+                width: 40%;
+            }
         }
     </style>
 </head>
@@ -1374,27 +1506,27 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
                 <!-- Pillar 3 -->
                 <div class="p-5 sm:p-6 rounded-2xl box-deluxe-amber space-y-3 relative overflow-hidden">
-                    <i class="fas fa-microchip box-watermark-icon text-amber-950"></i>
+                    <i class="fas fa-database box-watermark-icon text-amber-950"></i>
                     <div class="flex items-center justify-between pb-2.5 border-b border-amber-300/80 relative z-10">
                         <span class="px-3 py-1 rounded-full bg-amber-600 text-white type-xs font-black flex items-center gap-1.5">
                             <i class="fas fa-database"></i>
-                            مزیت ۰۳ • تمیز و بهینه
+                            مزیت ۰۳ • ساختار اختصاصی و بهینه
                         </span>
                         <div class="icon-circle-lg bg-gradient-to-tr from-amber-500 to-orange-500 text-white shadow-md border-2 border-white">
-                            <i class="fas fa-feather-pointed"></i>
+                            <i class="fas fa-server"></i>
                         </div>
                     </div>
-                    <h4 class="type-h3 text-slate-950 relative z-10">دیتابیس سایت را سنگین نمی‌کند</h4>
+                    <h4 class="type-h3 text-slate-950 relative z-10">جدول اختصاصی و بهینه برای لاگ و تنظیمات</h4>
                     <p class="type-body text-slate-800 relative z-10">
-                        بدون ساخت جدول‌های اضافی و بدون انباشت داده‌های موقت کار می‌کند تا دیتابیس وردپرس همیشه مرتب و سریع بماند.
+                        تمامی لاگ‌های امنیتی و تنظیمات در جدول اختصاصی و بهینه ذخیره می‌شوند تا جداول اصلی وردپرس سنگین نشوند و سرعت کوئری‌ها بالا بماند.
                     </p>
                     <div class="p-2.5 rounded-xl bg-white/85 border border-amber-300 space-y-1.5 relative z-10">
                         <div class="flex justify-between type-micro text-amber-950 font-black">
-                            <span>سبکی و سلامت پایگاه‌داده</span>
-                            <span>۰ جدول اضافی</span>
+                            <span>معماری دیتابیس و ثبت لاگ امنیتی</span>
+                            <span>جدول اختصاصی بهینه</span>
                         </div>
                         <div class="info-meter-track">
-                            <div class="info-meter-fill bg-gradient-to-l from-amber-500 to-orange-500" style="width: 96%;"></div>
+                            <div class="info-meter-fill bg-gradient-to-l from-amber-500 to-orange-500" style="width: 98%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1610,12 +1742,12 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
                 <!-- 1. Native Puzzle Slider -->
                 <div class="p-4 sm:p-5 rounded-2xl box-neon-kiosk kiosk-emerald flex flex-col justify-center space-y-3 relative overflow-hidden">
-                    <div class="flex items-center justify-between relative z-10">
-                        <h4 class="type-h4 text-white flex items-center gap-2">
-                            <span class="icon-circle-sm bg-emerald-500/30 text-emerald-300"><i class="fas fa-sliders"></i></span>
+                    <div class="kiosk-header-row relative z-10">
+                        <h4 class="kiosk-header-title">
+                            <span class="icon-circle-sm bg-emerald-500/30 text-emerald-300 shrink-0"><i class="fas fa-sliders"></i></span>
                             <span>۱. اسلایدر کشیدنی (Puzzle Slider)</span>
                         </h4>
-                        <span class="type-micro text-amber-200 font-black bg-slate-900/90 px-2.5 py-1 rounded-full border border-amber-400/50">اسلایدر لمسی</span>
+                        <span class="kiosk-header-badge text-amber-200 bg-slate-900/90 border border-amber-400/50">اسلایدر لمسی</span>
                     </div>
 
                     <div class="guardify-captcha-container guardify-theme-dark-slate guardify-font-inherit guardify-slider-wrap !my-0 relative z-10" data-captcha-type="slider">
@@ -1644,12 +1776,12 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
                 <!-- 2. Dynamic Math Challenge -->
                 <div class="p-4 sm:p-5 rounded-2xl box-neon-kiosk kiosk-indigo flex flex-col justify-center space-y-3 relative overflow-hidden">
-                    <div class="flex items-center justify-between relative z-10">
-                        <h4 class="type-h4 text-white flex items-center gap-2">
-                            <span class="icon-circle-sm bg-indigo-500/30 text-indigo-300"><i class="fas fa-calculator"></i></span>
+                    <div class="kiosk-header-row relative z-10">
+                        <h4 class="kiosk-header-title">
+                            <span class="icon-circle-sm bg-indigo-500/30 text-indigo-300 shrink-0"><i class="fas fa-calculator"></i></span>
                             <span>۲. چالش جمع ریاضی (Math Challenge)</span>
                         </h4>
-                        <span class="type-micro text-amber-200 font-black bg-slate-900/90 px-2.5 py-1 rounded-full border border-amber-400/50">جمع ریاضی</span>
+                        <span class="kiosk-header-badge text-amber-200 bg-slate-900/90 border border-amber-400/50">جمع ریاضی</span>
                     </div>
 
                     <div class="guardify-captcha-container guardify-theme-dark-slate guardify-font-inherit guardify-math-wrap !my-0 relative z-10" data-captcha-type="math">
@@ -1681,12 +1813,12 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
                 <!-- 3. Visual Icon Match -->
                 <div class="p-4 sm:p-5 rounded-2xl box-neon-kiosk kiosk-purple flex flex-col justify-center space-y-3 relative overflow-hidden">
-                    <div class="flex items-center justify-between relative z-10">
-                        <h4 class="type-h4 text-white flex items-center gap-2">
-                            <span class="icon-circle-sm bg-purple-500/30 text-purple-300"><i class="fas fa-shapes"></i></span>
+                    <div class="kiosk-header-row relative z-10">
+                        <h4 class="kiosk-header-title">
+                            <span class="icon-circle-sm bg-purple-500/30 text-purple-300 shrink-0"><i class="fas fa-shapes"></i></span>
                             <span>۳. تطبیق آیکون (Icon Match)</span>
                         </h4>
-                        <span class="type-micro text-amber-200 font-black bg-slate-900/90 px-2.5 py-1 rounded-full border border-amber-400/50">چالش تصویری</span>
+                        <span class="kiosk-header-badge text-amber-200 bg-slate-900/90 border border-amber-400/50">چالش تصویری</span>
                     </div>
 
                     <div class="guardify-captcha-container guardify-theme-dark-slate guardify-font-inherit guardify-icon-wrap !my-0 relative z-10" data-captcha-type="icon_match">
@@ -1711,12 +1843,12 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
 
                 <!-- 4. Invisible Honeypot Trap -->
                 <div class="p-4 sm:p-5 rounded-2xl box-neon-kiosk kiosk-amber flex flex-col justify-center space-y-3 relative overflow-hidden">
-                    <div class="flex items-center justify-between relative z-10">
-                        <h4 class="type-h4 text-white flex items-center gap-2">
-                            <span class="icon-circle-sm bg-amber-500/30 text-amber-300"><i class="fas fa-eye-slash"></i></span>
+                    <div class="kiosk-header-row relative z-10">
+                        <h4 class="kiosk-header-title">
+                            <span class="icon-circle-sm bg-amber-500/30 text-amber-300 shrink-0"><i class="fas fa-eye-slash"></i></span>
                             <span>۴. تله نامرئی (Invisible Honeypot)</span>
                         </h4>
-                        <span class="type-micro text-amber-200 font-black bg-slate-900/90 px-2.5 py-1 rounded-full border border-amber-400/50">۱۰۰٪ نامرئی</span>
+                        <span class="kiosk-header-badge text-amber-200 bg-slate-900/90 border border-amber-400/50">۱۰۰٪ نامرئی</span>
                     </div>
 
                     <div class="guardify-captcha-container guardify-theme-dark-slate guardify-font-inherit !my-0 relative z-10">
@@ -2301,82 +2433,112 @@ $canonical_url = "https://guardifypro.ir/rtl-landing.php";
                 </h3>
             </div>
 
-            <div class="w-full rounded-2xl overflow-hidden border-2 border-indigo-300 shadow-lg bg-white relative z-10">
+            <div class="zebra-table-card">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-right border-collapse type-sm">
+                    <table class="zebra-feature-table">
                         <thead>
-                            <tr class="bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-950 text-white border-b-2 border-indigo-500">
-                                <th class="py-3.5 px-4 sm:px-6 font-black w-[36%] border-l border-indigo-800/70 align-middle">
-                                    ویژگی یا قابلیت افزونه
+                            <tr>
+                                <th>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-sliders text-indigo-300"></i>
+                                        <span>ویژگی یا قابلیت افزونه</span>
+                                    </span>
                                 </th>
-                                <th class="py-3.5 px-4 sm:px-6 font-black text-amber-300 align-middle">
-                                    وضعیت و عملکرد در گاردفای پرو
+                                <th class="text-amber-300">
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-circle-check text-emerald-400"></i>
+                                        <span>وضعیت و عملکرد در گاردفای پرو</span>
+                                    </span>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-indigo-200 font-medium text-slate-900">
-                            <tr class="bg-emerald-100/80">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/90 border-l border-indigo-200 align-middle">
-                                    نحوه اجرای کپچا
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-server text-indigo-600"></i>
+                                        <span>نحوه اجرای کپچا</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-emerald-950 align-middle">
+                                <td class="font-bold text-slate-900">
                                     کاملاً مستقل و محلی روی سرور خودتان (بدون نیاز به سرور خارجی یا قطعی)
                                 </td>
                             </tr>
-                            <tr class="bg-indigo-50/90">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/60 border-l border-indigo-200 align-middle">
-                                    بار مصرفی روی لود سایت
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-bolt text-emerald-600"></i>
+                                        <span>بار مصرفی روی لود سایت</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-emerald-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     حجم لود فرانت‌اند زیر ۱۰ کیلوبایت (بدون کم‌ترین فشار یا افت سرعت لود صفحات سایت)
                                 </td>
                             </tr>
-                            <tr class="bg-purple-100/70">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/90 border-l border-indigo-200 align-middle">
-                                    روش‌های تایید هویت کاربر
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-fingerprint text-purple-600"></i>
+                                        <span>روش‌های تایید هویت کاربر</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     اسلایدر لمسی روان، چالش جمع ریاضی، تطبیق آیکون، تله هانی‌پات نامرئی
                                 </td>
                             </tr>
-                            <tr class="bg-indigo-50/90">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/60 border-l border-indigo-200 align-middle">
-                                    پشتیبانی از فروشگاه ووکامرس
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-cart-shopping text-indigo-600"></i>
+                                        <span>پشتیبانی از فروشگاه ووکامرس</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     اتصال خودکار به فرم‌های تسویه‌حساب، ورود، عضویت و ثبت سفارش سریع
                                 </td>
                             </tr>
-                            <tr class="bg-amber-100/70">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/90 border-l border-indigo-200 align-middle">
-                                    سازگاری با فرم‌سازها
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-rectangle-list text-amber-600"></i>
+                                        <span>سازگاری با فرم‌سازها</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     هماهنگ با المنتور پرو، فرم تماس ۷، گرویتی‌فرم و ثبت دیدگاه‌ها
                                 </td>
                             </tr>
-                            <tr class="bg-indigo-50/90">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/60 border-l border-indigo-200 align-middle">
-                                    امنیت صفحه ورود پیشخوان
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-user-lock text-rose-600"></i>
+                                        <span>امنیت صفحه ورود پیشخوان</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     قفل خودکار ضد حدس پسورد (Brute-Force) و مخفی‌سازی آدرس ورود
                                 </td>
                             </tr>
-                            <tr class="bg-cyan-100/70">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/90 border-l border-indigo-200 align-middle">
-                                    استایلر اختصاصی صفحه ورود
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-palette text-cyan-600"></i>
+                                        <span>استایلر اختصاصی صفحه ورود</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 align-middle">
+                                <td class="font-bold text-slate-900">
                                     ۶ الگوی چیدمان مدرن، ۲۰+ والپیپر گرادیانت نوری (CSS)، فونت‌های محلی آفلاین و شخصی‌سازی کادر و فیلدها
                                 </td>
                             </tr>
-                            <tr class="bg-emerald-100/80">
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-indigo-950 bg-indigo-100/60 border-l border-indigo-200 align-middle">
-                                    وضعیت پایگاه‌داده (دیتابیس)
+                            <tr>
+                                <td>
+                                    <span class="inline-flex items-center gap-2">
+                                        <i class="fas fa-database text-emerald-600"></i>
+                                        <span>وضعیت پایگاه‌داده (دیتابیس)</span>
+                                    </span>
                                 </td>
-                                <td class="py-3.5 px-4 sm:px-6 font-black text-emerald-950 align-middle">
-                                    بدون ساختن جدول اضافی و سازگار با افزونه‌های کش (LiteSpeed و WP Rocket)
+                                <td class="font-bold text-slate-900">
+                                    ایجاد جدول اختصاصی و بهینه برای نگهداری لاگ‌های امنیتی و تنظیمات + سازگاری کامل با افزونه‌های کش (LiteSpeed و WP Rocket)
                                 </td>
                             </tr>
                         </tbody>

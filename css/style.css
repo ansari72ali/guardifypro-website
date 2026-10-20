@@ -427,33 +427,16 @@ h4, h5, h6 { line-height: 1.50 !important; }
 }
 
 /* Responsive width percentages & boundary containment across breakpoints */
-@media (max-width: 639px) {
+@media (max-width: 1023px) {
     .background-elements {
         width: 100% !important;
         max-width: 100% !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
     }
-    .background-elements > *,
-    .background-elements .ambient-glow-orb,
-    .background-elements [class*="rounded-full"][class*="blur-"] {
-        max-width: 75% !important;
-        max-height: 75% !important;
-    }
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-    .background-elements {
-        width: 100% !important;
+    .background-elements > * {
         max-width: 100% !important;
-        overflow: hidden !important;
-        box-sizing: border-box !important;
-    }
-    .background-elements > *,
-    .background-elements .ambient-glow-orb,
-    .background-elements [class*="rounded-full"][class*="blur-"] {
-        max-width: 85% !important;
-        max-height: 85% !important;
+        max-height: 100% !important;
     }
 }
 
@@ -464,9 +447,7 @@ h4, h5, h6 { line-height: 1.50 !important; }
         overflow: hidden !important;
         box-sizing: border-box !important;
     }
-    .background-elements > *,
-    .background-elements .ambient-glow-orb,
-    .background-elements [class*="rounded-full"][class*="blur-"] {
+    .background-elements > * {
         max-width: 100% !important;
     }
 }

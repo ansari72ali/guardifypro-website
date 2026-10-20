@@ -264,7 +264,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
     <link rel="stylesheet" href="/css/captcha-themes.css">
     
     <!-- Main Style (with local IRANSans @font-face suite and cache busting) -->
-    <link rel="stylesheet" href="/css/style.css?v=4.60">
+    <link rel="stylesheet" href="/css/style.css?v=4.65">
     
     <!-- Universal Theme Manager Script -->
     <script src="/js/theme-manager.js?v=4.30"></script>
