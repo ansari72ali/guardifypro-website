@@ -137,7 +137,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
           "@id": "https://guardifypro.ir/#website",
           "url": "https://guardifypro.ir/",
           "name": "گاردفای پرو | وب‌سایت رسمی افزونه Guardify Pro",
-          "description": "معرفی، بررسی تخصصی و شبیه‌ساز آنلاین افزونه کپچای بومی و امنیت ورود وردپرس گاردفای پرو",
+          "description": "معرفی، بررسی تخصصی و دموی آنلاین افزونه کپچای بومی و امنیت ورود وردپرس گاردفای پرو",
           "inLanguage": "fa-IR",
           "publisher": {
             "@id": "https://guardifypro.ir/#organization"
@@ -183,7 +183,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "شبیه‌ساز زنده افزونه",
+              "name": "دموی افزونه",
               "item": "https://guardifypro.ir/demo.php"
             },
             {
@@ -314,7 +314,7 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                 <a href="/#forms-protection" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0 py-1">ووکامرس و فرم‌ها</a>
                 <a href="/#comparison" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0 py-1">مقایسه فنی</a>
                 <a href="/#faq" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0 py-1">سوالات متداول</a>
-                <a href="/guide.php" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0 py-1">راهنمای جامع</a>
+                <a href="/guide.php" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors whitespace-nowrap shrink-0 py-1">راهنمای پنل افزونه</a>
             </nav>
 
             <!-- Zone 3: Primary Actions & Theme Switcher -->
@@ -325,10 +325,10 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                     <i class="fas fa-sun hidden dark:block text-amber-400 text-sm"></i>
                 </button>
 
-                <!-- Live Simulator Button -->
+                <!-- Live Demo Button -->
                 <a href="/demo.php" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black transition-all shadow-md shadow-indigo-600/20 whitespace-nowrap shrink-0">
                     <i class="fas fa-desktop text-amber-300 text-xs"></i>
-                    <span>شبیه‌ساز زنده</span>
+                    <span>دموی افزونه</span>
                 </a>
                 
                 <!-- RTL-Theme Direct Purchase CTA -->
@@ -395,14 +395,14 @@ $html_theme_class = ($server_theme === 'light' || $server_theme === 'dark') ? $s
                     <i class="fas fa-angle-left text-slate-400"></i>
                 </a>
                 <a href="/guide.php" class="mobile-link py-2.5 px-3.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center justify-between">
-                    <span class="flex items-center gap-2.5"><i class="fas fa-book-open text-rose-500 w-4 text-center"></i> آموزش و مستندات کامل افزونه</span>
+                    <span class="flex items-center gap-2.5"><i class="fas fa-book-open text-rose-500 w-4 text-center"></i> راهنمای پنل افزونه (تولتیپ تعاملی)</span>
                     <i class="fas fa-angle-left text-slate-400"></i>
                 </a>
 
                 <div class="pt-3 mt-1 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <a href="/demo.php" class="mobile-link py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-black flex items-center justify-center gap-2 shadow-md">
                         <i class="fas fa-desktop text-amber-300"></i>
-                        <span>ورود به شبیه‌ساز زنده افزونه</span>
+                        <span>ورود به دموی افزونه</span>
                     </a>
                     <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="mobile-link py-3 px-4 text-center rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-slate-950 font-black shadow-md flex items-center justify-center gap-2">
                         <i class="fas fa-bag-shopping"></i>

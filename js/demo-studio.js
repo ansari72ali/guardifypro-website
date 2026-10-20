@@ -1274,7 +1274,7 @@ window.refreshLoginIconChallenge = refreshLoginIconChallenge;
 function handleDemoLoginSubmit(e) {
     e.preventDefault();
     AudioSynth.playSuccess();
-    showAdminToast('تست اعتبارسنجی ورود با موفقیت انجام شد (حالت شبیه‌ساز زنده)');
+    showAdminToast('تست اعتبارسنجی ورود با موفقیت انجام شد (دموی افزونه)');
 }
 window.handleDemoLoginSubmit = handleDemoLoginSubmit;
 
@@ -1533,7 +1533,7 @@ window.guardifySwitchTab = guardifySwitchTab;
 
 window.guardifySubmitMainForm = function() {
     AudioSynth.playSuccess();
-    showAdminToast('تنظیمات گاردفای پرو با موفقیت ذخیره شد (حالت شبیه‌ساز زنده)');
+    showAdminToast('تنظیمات گاردفای پرو با موفقیت ذخیره شد (دموی افزونه)');
 };
 
 // Live Search Finder in Admin Panel (Ctrl+K)
@@ -1691,7 +1691,7 @@ window.downloadGuardifyScanReport = downloadGuardifyScanReport;
 
 function loadGuardifySimulatorPreset(preset) {
     AudioSynth.playClick();
-    showAdminToast(`پریست شبیه‌ساز روی «${preset}» تنظیم شد.`);
+    showAdminToast(`پریست دموی افزونه روی «${preset}» تنظیم شد.`);
 }
 window.loadGuardifySimulatorPreset = loadGuardifySimulatorPreset;
 

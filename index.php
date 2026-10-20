@@ -53,7 +53,7 @@ include __DIR__ . '/header.php';
                     <div class="flex flex-wrap items-center gap-3.5 pt-1">
                         <a href="/demo.php" class="px-6 sm:px-7 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm sm:text-base shadow-xl shadow-indigo-600/25 transition-all flex items-center gap-2.5 whitespace-nowrap shrink-0">
                             <i class="fas fa-desktop text-amber-300 text-base"></i>
-                            <span>ورود به شبیه‌ساز کامل افزونه</span>
+                            <span>ورود به دموی افزونه</span>
                         </a>
 
                         <a href="https://www.rtl-theme.com" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-sm sm:text-base shadow-lg shadow-emerald-500/20 transition-all flex items-center gap-2 whitespace-nowrap shrink-0">
@@ -211,7 +211,7 @@ include __DIR__ . '/header.php';
                             <div class="flex items-center justify-between text-xs text-slate-200 font-bold">
                                 <span class="flex items-center gap-1.5">
                                     <i class="fas fa-user-secret text-teal-400"></i>
-                                    <span>شبیه‌سازی تله مخفی هانی‌پات (۱۰۰٪ نامرئی)</span>
+                                    <span>پیش‌نمایش تله مخفی هانی‌پات (۱۰۰٪ نامرئی)</span>
                                 </span>
                                 <span class="text-[11px] text-teal-400 font-mono">Zero Friction</span>
                             </div>
@@ -246,7 +246,7 @@ include __DIR__ . '/header.php';
                             </div>
 
                             <a href="/demo.php" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-black text-xs text-center transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/25 group">
-                                <span>مشاهده کامل پیشخوان مدیریت و ۳۵+ تم در شبیه‌ساز</span>
+                                <span>مشاهده کامل پیشخوان مدیریت و ۳۵+ تم در دموی افزونه</span>
                                 <i class="fas fa-arrow-left text-[11px] group-hover:-translate-x-1 transition-transform"></i>
                             </a>
                         </div>
@@ -772,7 +772,7 @@ include __DIR__ . '/header.php';
                     <div class="pt-1">
                         <a href="/demo.php?tab=login" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm shadow-lg shadow-indigo-600/25 transition-all">
                             <i class="fas fa-desktop text-amber-300"></i>
-                            <span>طراحی زنده صفحه ورود در شبیه‌ساز</span>
+                            <span>طراحی زنده صفحه ورود در دموی افزونه</span>
                         </a>
                     </div>
                 </div>
@@ -1540,7 +1540,7 @@ include __DIR__ . '/header.php';
                     </h2>
 
                     <p class="text-slate-100 text-xs sm:text-base leading-relaxed font-medium max-w-2xl mx-auto" style="color:#f8fafc !important;">
-                        پیش از خرید می‌توانید تمامی امکانات، ۳۵+ تم رنگی، استایلر صفحه ورود و پیشخوان مدیریت افزونه را به صورت زنده در شبیه‌ساز آنلاین امتحان کنید.
+                        پیش از خرید می‌توانید تمامی امکانات، ۳۵+ تم رنگی، استایلر صفحه ورود و پیشخوان مدیریت افزونه را به صورت زنده در دموی افزونه امتحان کنید.
                     </p>
 
                     <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -1551,7 +1551,7 @@ include __DIR__ . '/header.php';
 
                         <a href="/demo.php" class="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-400 font-black text-sm sm:text-base shadow-xl shadow-indigo-600/30 transition-all flex items-center gap-2.5">
                             <i class="fas fa-desktop text-amber-300"></i>
-                            <span>ورود به شبیه‌ساز آنلاین افزونه</span>
+                            <span>ورود به دموی افزونه</span>
                         </a>
                     </div>
                 </div>

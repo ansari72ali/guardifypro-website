@@ -55,20 +55,20 @@ if (!isset($current_page)) {
                     </ul>
                 </div>
 
-                <!-- Col 4: Demo Simulator & Guides -->
+                <!-- Col 4: Plugin Demo & Guides -->
                 <div>
-                    <h3 class="text-xs font-black text-white tracking-wider mb-4">شبیه‌ساز و مستندات</h3>
+                    <h3 class="text-xs font-black text-white tracking-wider mb-4">دموی افزونه و مستندات</h3>
                     <ul class="space-y-2.5 text-xs font-medium">
                         <li>
                             <a href="/demo.php" class="text-amber-300 font-bold hover:text-amber-200 transition-colors flex items-center gap-1.5">
                                 <i class="fas fa-desktop text-[10px]"></i>
-                                <span>شبیه‌ساز زنده افزونه</span>
+                                <span>دموی افزونه</span>
                             </a>
                         </li>
                         <li>
                             <a href="/guide.php" class="text-indigo-400 font-bold hover:text-indigo-300 transition-colors flex items-center gap-1.5">
                                 <i class="fas fa-graduation-cap text-[10px]"></i>
-                                <span>آموزش جامع پنل و تنظیمات</span>
+                                <span>راهنمای پنل افزونه</span>
                             </a>
                         </li>
                         <li><a href="/demo.php?tab=captcha" class="hover:text-indigo-400 transition-colors">آزمایشگاه ۳۵+ تم کپچا</a></li>
@@ -126,7 +126,7 @@ if (!isset($current_page)) {
         </a>
         <a href="/demo.php" class="flex flex-col items-center justify-center gap-1 py-1 px-3 rounded-xl bg-indigo-600 text-white font-black shadow-md shadow-indigo-600/30">
             <i class="fas fa-desktop text-xs text-amber-300"></i>
-            <span>شبیه‌ساز</span>
+            <span>دموی افزونه</span>
         </a>
         <a href="/#faq" class="flex flex-col items-center justify-center gap-1 py-1 px-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
             <i class="fas fa-circle-question text-sm"></i>

@@ -22,7 +22,7 @@ include __DIR__ . "/header.php";
             </h1>
             
             <p class="text-muted text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                تمامی چالش‌های کپچای آفلاین (اسلایدر، ریاضی، تطبیق آیکون، هانی‌پات) و ۶ چیدمان اختصاصی WP-Login Pro را بدون کاهش سرعت صفحه اصلی، در محیط اختصاصی و ایزوله شبیه‌سازی کنید.
+                تمامی چالش‌های کپچای آفلاین (اسلایدر، ریاضی، تطبیق آیکون، هانی‌پات) و ۶ چیدمان اختصاصی WP-Login Pro را بدون کاهش سرعت صفحه اصلی، در محیط دموی افزونه بررسی کنید.
             </p>
 
             <!-- Important Disclaimer Banner (Polished, Professional & High-Contrast in Light & Dark Mode) -->
@@ -34,7 +34,7 @@ include __DIR__ . "/header.php";
                     <div class="space-y-2">
                         <div class="flex items-center gap-2">
                             <span class="disclaimer-badge px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 text-[11px] font-black border border-amber-300 dark:border-amber-500/30">یادداشت فنی و سلب مسئولیت</span>
-                            <span class="disclaimer-sub text-[11px] text-amber-800 dark:text-amber-400 font-bold">• محیط شبیه‌ساز ایزوله</span>
+                            <span class="disclaimer-sub text-[11px] text-amber-800 dark:text-amber-400 font-bold">• محیط دموی افزونه</span>
                         </div>
                         <p class="disclaimer-text text-xs md:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                             <strong class="disclaimer-strong text-amber-900 dark:text-amber-300 font-black">توجه مهم:</strong> این صفحه صرفاً یک محیط پیش‌نمایش در قالب HTML و کلاینت‌ساید است و ممکن است به لحاظ استایل‌ها یا رفتار المان‌ها، با نسخه نهایی افزونه تفاوت‌های جزئی داشته باشد. عملکرد صحیح، صددرصدی و مکانیزم‌های کامل امنیتی و اعتبارسنجی سمت سرور، منحصراً در بستر سایت وردپرس پس از نصب مستقیم افزونه گاردفای پرو قابل مشاهده و بهره‌برداری می‌باشد.
@@ -46,7 +46,7 @@ include __DIR__ . "/header.php";
             <!-- Direct 3-Part Real Plugin Studio Switcher -->
             <div class="mt-8 mb-4 p-4 rounded-3xl bg-slate-900/90 border-2 border-indigo-500/40 shadow-2xl flex flex-wrap items-center justify-center gap-3">
                 <span class="w-full text-center text-xs font-black text-amber-400 mb-1">
-                    ⚡ دسترسی مستقیم به استودیو و شبیه‌ساز واقعی افزونه گاردفای پرو:
+                    ⚡ دسترسی مستقیم به استودیو و دموی افزونه گاردفای پرو:
                 </span>
                 <a href="/demo.php?tab=captcha" class="px-4 py-2.5 rounded-2xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
                     <i class="fas fa-puzzle-piece text-indigo-400"></i>
@@ -54,7 +54,7 @@ include __DIR__ . "/header.php";
                 </a>
                 <a href="/demo.php?tab=login" class="px-4 py-2.5 rounded-2xl bg-amber-500/20 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border border-amber-500/40 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
                     <i class="fas fa-key text-amber-400"></i>
-                    <span>۲. شبیه‌ساز ۶ چیدمان فرم ورود (WP-Login)</span>
+                    <span>۲. پیش‌نمایش ۶ چیدمان فرم ورود (WP-Login)</span>
                 </a>
                 <a href="/demo.php?tab=admin" class="px-4 py-2.5 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 border border-emerald-500/40 font-black text-xs transition-all flex items-center gap-2 shadow-sm">
                     <i class="fas fa-sliders text-emerald-400"></i>
@@ -131,7 +131,7 @@ include __DIR__ . "/header.php";
 
                         <button type="button" id="testHoneypotTriggerBtn" class="w-full py-2.5 px-4 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold text-xs flex items-center justify-center gap-2 cursor-pointer transition-all">
                             <i class="fas fa-robot"></i>
-                            <span>تست شبیه‌سازی نفوذ ربات به تله</span>
+                            <span>تست نفوذ ربات به تله</span>
                         </button>
                     </div>
 
@@ -348,7 +348,7 @@ include __DIR__ . "/header.php";
                                 <div>
                                     <div class="flex items-center gap-2 mb-1">
                                         <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                        <h2 class="text-lg font-black text-readable">شبیه‌ساز زنده فرم محافظت‌شده</h2>
+                                        <h2 class="text-lg font-black text-readable">دموی زنده فرم محافظت‌شده</h2>
                                     </div>
                                     <p class="text-xs text-muted font-medium">نوع فرم مقصد را انتخاب کرده و رفتار ضد اسپم را آزمایش نمایید.</p>
                                 </div>
@@ -474,7 +474,7 @@ include __DIR__ . "/header.php";
                                 <span>استودیوی سفارشی‌ساز ورود (WP-Login Styler Studio)</span>
                                 <span class="text-amber-400 font-mono text-xs bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-bold">۶ چیدمان زنده</span>
                             </h2>
-                            <p class="text-xs text-slate-400 mt-1">تغییر چیدمان، پس‌زمینه‌ها، کپچای تعبیه شده و شبیه‌سازی ورود وردپرس در لحظه</p>
+                            <p class="text-xs text-slate-400 mt-1">تغییر چیدمان، پس‌زمینه‌ها، کپچای تعبیه شده و دموی ورود وردپرس در لحظه</p>
                         </div>
                     </div>
 

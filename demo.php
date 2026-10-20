@@ -4,7 +4,7 @@
  * 100% Authentic Replica matching extracted guardify-captcha-pro plugin
  * Client-side only with 0 database persistence and 0 user blocking.
  */
-$page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌نمایش تعاملی";
+$page_title = "دموی افزونه گاردفای پرو | پیش‌نمایش تعاملی";
 ?>
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
@@ -109,11 +109,11 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                     </div>
                     <div>
                         <span class="font-black text-sm block leading-tight">گاردفای <span class="text-indigo-500 dark:text-indigo-400">پرو</span></span>
-                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold block">شبیه ساز افزونه v4.00 Pro</span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-semibold block">دموی افزونه v4.00 Pro</span>
                     </div>
                 </a>
                 <span class="hidden sm:inline-block text-xs bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-400 px-2.5 py-1 rounded-lg font-bold">
-                    شبیه ساز افزونه
+                    دموی افزونه
                 </span>
             </div>
 
@@ -387,8 +387,8 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                         </div>
 
                         <div class="space-y-1.5 pt-2">
-                            <label class="block text-slate-700 dark:text-slate-400 font-bold">تست شبیه‌ساز رفتار ربات (در صورت تایپ، بلافاصله اخطار بلاک ظاهر می‌شود):</label>
-                            <input type="text" id="demo-honeypot-bot-input" placeholder="اینجا مقداری تایپ کنید تا رفتار ربات شبیه‌سازی شود..." class="w-full bg-white dark:bg-slate-950 border border-rose-300 dark:border-rose-500/40 rounded-xl py-2 px-3 text-slate-900 dark:text-white focus:outline-none focus:border-rose-500" />
+                            <label class="block text-slate-700 dark:text-slate-400 font-bold">تست رفتار ربات در دموی افزونه (در صورت تایپ، بلافاصله اخطار بلاک ظاهر می‌شود):</label>
+                            <input type="text" id="demo-honeypot-bot-input" placeholder="اینجا مقداری تایپ کنید تا رفتار ربات تست شود..." class="w-full bg-white dark:bg-slate-950 border border-rose-300 dark:border-rose-500/40 rounded-xl py-2 px-3 text-slate-900 dark:text-white focus:outline-none focus:border-rose-500" />
                         </div>
 
                         <div id="demo-honeypot-alert" class="hidden"></div>
@@ -419,7 +419,7 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                 </div>
                 <div class="space-y-1">
                     <div class="flex items-center gap-2">
-                        <span class="font-black text-amber-900 dark:text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش شبیه‌ساز ورود:</span>
+                        <span class="font-black text-amber-900 dark:text-amber-300 text-sm sm:text-base">اطلاعیه پیش‌نمایش دموی ورود:</span>
                         <span class="text-[10px] bg-amber-100 dark:bg-amber-400/20 text-amber-800 dark:text-amber-300 font-extrabold px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-400/30">محیط نمایشی (Demo Only)</span>
                     </div>
                     <p class="text-amber-900/90 dark:text-amber-100/90 text-xs sm:text-[13px] leading-relaxed">
@@ -492,7 +492,7 @@ $page_title = "شبیه ساز افزونه گاردفای پرو | پیش‌ن�
                         </div>
 
                         <!-- Login Form -->
-                        <form name="loginform" id="loginform" onsubmit="event.preventDefault(); showAdminToast('تست ورود انجام شد (شبیه‌ساز)');">
+                        <form name="loginform" id="loginform" onsubmit="event.preventDefault(); showAdminToast('تست ورود انجام شد (دموی افزونه)');">
                             <p class="mb-4">
                                 <label for="demo_user_login" class="block text-xs font-bold text-slate-200 mb-1.5">نام کاربری یا نشانی ایمیل</label>
                                 <input type="text" name="log" id="demo_user_login" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500" value="admin" placeholder="name@example.com" required />
