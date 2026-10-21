@@ -1,16 +1,249 @@
+# ==============================================================================
+# Guardify Pro (guardifypro.ir) — Enterprise LiteSpeed Web Server .htaccess
+# Optimized for: LiteSpeed Enterprise / OpenLiteSpeed, LSCache, Security & SEO
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. DIRECTORY LISTING & CORE SERVER OPTIONS
+# ------------------------------------------------------------------------------
+# Disable directory browsing (prevents users from viewing folder contents -> 403)
+# Disable MultiViews to prevent implicit filename negotiation conflicts
+Options -Indexes -MultiViews +FollowSymLinks
+
+# Default Directory Index Priority
 DirectoryIndex index.php index.html
 
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
-ErrorDocument 502 /500.html
-ErrorDocument 503 /500.html
-ErrorDocument 504 /500.html
+# Default Charset & Language
+AddDefaultCharset UTF-8
+DefaultLanguage fa-IR
 
+# Hide Server Signature
+ServerSignature Off
+
+# ------------------------------------------------------------------------------
+# 2. CUSTOM ERROR PAGES (GUARDIFY PRO THEME)
+# ------------------------------------------------------------------------------
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 429 /429.html
+ErrorDocument 500 /500.html
+ErrorDocument 502 /502.html
+ErrorDocument 503 /503.html
+ErrorDocument 504 /504.html
+
+# ------------------------------------------------------------------------------
+# 3. LITESPEED NATIVE CACHE & PERFORMANCE ENGINE (LSCache)
+# ------------------------------------------------------------------------------
+<IfModule LiteSpeed>
+    # Enable LiteSpeed Public Cache Engine
+    CacheLookup on
+
+    # Enable ESI (Edge Side Includes) if needed
+    EsiEngine on
+
+    # Keep-Alive & Connection Optimization for LiteSpeed
+    RewriteEngine On
+
+    # Do not cache error pages or POST requests
+    RewriteCond %{REQUEST_METHOD} ^POST$ [OR]
+    RewriteCond %{REQUEST_URI} ^/(400|401|403|404|429|500|502|503|504)\.html$ [NC]
+    RewriteRule .* - [E=Cache-Control:no-cache]
+
+    # Cache public landing & documentation pages for ultra-fast TTFB (2 hours)
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} ^/(|index\.php|demo|demo\.php|admin|admin\.php|guide|guide\.php|comparison|comparison\.php|rtl-landing|rtl-landing\.php)$ [NC]
+    RewriteRule .* - [E=Cache-Control:max-age=7200,E=Cache-Tag:guardify_public]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. SECURITY HARDENING & FILE ACCESS PROTECTION
+# ------------------------------------------------------------------------------
+# 4.1. Block access to all hidden files and directories (.htaccess, .git, .env, etc.)
+# Except .well-known (used for SSL/ACME Let's Encrypt verification)
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.php$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.php [L]
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F,L]
+</IfModule>
+
+# 4.2. Protect internal template partials, Node dev files, configs, and backups
+<FilesMatch "(^(header|footer)\.php$|^admin-panel-markup\.html$|^server\.(js|ts)$|^package(-lock)?\.json$|^tsconfig\.json$|^metadata\.json$|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env|yml|yaml|lock|md)$)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 4.3. Firewall Rules: Block SQL Injection, XSS, File Injection & Malicious Bots
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Disallow dangerous HTTP methods (TRACE, DELETE, TRACK, PUT, PATCH)
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|DELETE|TRACK|PUT|PATCH)$ [NC]
+    RewriteRule .* - [F,L]
+
+    # Block Directory Traversal, Null Bytes, Base64/Eval Injections & XSS in Query String
+    RewriteCond %{QUERY_STRING} (\.\.//|\.\.\\) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} (globals|encode|localhost|loopback) [NC,OR]
+    RewriteCond %{QUERY_STRING} (concat| union.*select|insert.*into|drop.*table|information_schema) [NC,OR]
+    RewriteCond %{QUERY_STRING} (base64_encode|base64_decode|eval\(|phpinfo\(|system\(|passthru\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (proc/self/environ|mosConfig_[a-zA-Z_]{1,21}(=|\%3D)) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\%00|\%0d\%0a) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block common vulnerability scanners & aggressive scraping bots
+    RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|acunetix|nessus|havij|libwww-perl|python-requests|zgrab|masscan|nmap) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. ENTERPRISE HTTP SECURITY HEADERS
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Prevent MIME-Type Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Prevent Clickjacking (Allow same origin)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Legacy XSS Protection Filter
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy for Privacy & Analytics accuracy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy (Restrict unnecessary browser hardware APIs)
+    Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+    # Strict Transport Security (HSTS - 1 Year when on HTTPS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # Remove X-Powered-By header to obscure PHP version
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 6. URL ROUTING & CLEAN EXTENSIONLESS URLS
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Optional: Force HTTPS in production (active when not on localhost / dev proxy)
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1) [NC]
+    RewriteCond %{HTTP_HOST} \.ir$ [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect direct access to error pages if needed or serve them directly
+    RewriteCond %{REQUEST_URI} ^/(400|401|403|404|429|500|502|503|504)\.html$ [NC]
+    RewriteRule ^ - [L]
+
+    # Clean URLs: Map extensionless routes (e.g., /demo -> /demo.php, /guide -> /guide.php)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+    RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+
+    # Clean URLs: Map extensionless routes to .html if matching .html exists
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)/?$ $1.html [L,QSA]
+
+    # Note: Any remaining non-existent file/folder naturally triggers LiteSpeed's
+    # ErrorDocument 404 /404.html with a genuine HTTP 404 status code.
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 7. BROWSER CACHING (EXPIRES & CACHE-CONTROL HEADERS)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML & Dynamic PHP Responses (revalidated immediately or via LSCache)
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/xhtml+xml "access plus 0 seconds"
+
+    # Data & Manifests
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/ld+json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+
+    # CSS & JavaScript (1 Year - Immutable Static Assets)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Web Fonts (1 Year)
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+
+    # Media & Vector Icons (1 Year)
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Long-term immutable cache for static assets
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|avif|svg|js|css|swf|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # CORS support for Web Fonts
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font\.css)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+
+    # Never cache custom error documents in browser
+    <FilesMatch "^(400|401|403|404|429|500|502|503|504)\.html$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 8. GZIP & BROTLI COMPRESSION (LITESPEED + APACHE COMPATIBLE)
+# ------------------------------------------------------------------------------
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/ld+json application/xml application/xhtml+xml application/rss+xml image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/ld+json application/xml application/xhtml+xml application/rss+xml image/svg+xml font/ttf font/otf
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 9. PHP RUNTIME HARDENING (IF APPLICABLE ON SHARED LITESPEED)
+# ------------------------------------------------------------------------------
+<IfModule lsapi_module>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_flag expose_php Off
 </IfModule>

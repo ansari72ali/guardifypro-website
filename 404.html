@@ -1,50 +1,187 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="dark scroll-smooth" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه مورد نظر یافت نشد | گاردفای پرو</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --primary: #6366f1; --bg-dark: #020617; }
-        body { font-family: 'IRANSans', 'IRANSansWeb', sans-serif; background-color: #020617; color: #f8fafc; overflow: hidden; }
-        .mesh-gradient { position: fixed; width: 150vmax; height: 150vmax; top: -75vmax; left: -75vmax; z-index: -2; opacity: 0.5; filter: blur(120px); }
-        .mesh-1 { background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 70%); animation: mesh-float 40s infinite linear; }
-        @keyframes mesh-float { 0% { transform: translate(0, 0) rotate(0deg); } 100% { transform: translate(0, 0) rotate(360deg); } }
-        .ui-pattern { 
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L60 60M60 30L30 60M0 0L30 30M30 0L0 30' stroke='%236366f1' stroke-width='0.5' stroke-opacity='0.15' fill='none'/%3E%3C/svg%3E");
-            position: absolute; inset: 0; pointer-events: none; z-index: -1; opacity: 0.1;
-        }
-    </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="mesh-gradient mesh-1"></div>
-    <div class="ui-pattern"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>خطای ۴۰۴ - صفحه مورد نظر یافت نشد | گاردفای پرو Guardify Pro</title>
 
-    <div class="max-w-xl w-full px-6 text-center">
-        <div class="mb-12 relative inline-block">
-            <div class="text-[12rem] font-black leading-none text-indigo-500/10">404</div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="bg-indigo-600 w-24 h-24 rounded-3xl shadow-2xl shadow-indigo-600/40 flex items-center justify-center animate-bounce">
-                    <i class="fas fa-search text-white text-4xl"></i>
+    <!-- Instant Synchronous Zero-FOUT Theme Engine -->
+    <script>
+        (function() {
+            function getTheme() {
+                var m = document.cookie.match(/(?:^|;\s*)(?:guardify_theme|user-theme)=([^;]+)/);
+                if (m && (m[1] === 'light' || m[1] === 'dark')) return decodeURIComponent(m[1]);
+                try {
+                    var l = localStorage.getItem('guardify_theme');
+                    if (l === 'light' || l === 'dark') return l;
+                } catch(e) {}
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+                return 'dark';
+            }
+            var t = getTheme();
+            document.documentElement.classList.remove('dark', 'light');
+            document.documentElement.classList.add(t);
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['IRANSans', 'IRANSansWeb', 'IRANYekan', 'Vazirmatn', 'sans-serif'],
+                        heading: ['IRANSans', 'IRANSansWeb', 'IRANYekan', 'Vazirmatn', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=4.65">
+    <script src="/js/theme-manager.js?v=4.30"></script>
+</head>
+<body class="transition-colors duration-300 min-h-screen flex flex-col bg-slate-50 dark:bg-[#050811] text-slate-900 dark:text-slate-100 selection:bg-indigo-600 selection:text-white">
+
+    <!-- Atmospheric Multi-Layered Background -->
+    <div class="background-elements fixed inset-0 pointer-events-none -z-20 overflow-hidden" aria-hidden="true">
+        <div class="mesh-gradient mesh-1"></div>
+        <div class="mesh-gradient mesh-2"></div>
+        <div class="cyber-grid-overlay"></div>
+    </div>
+
+    <!-- Top Glassmorphic Header -->
+    <header class="fixed top-0 w-full z-50 glass-nav border-b border-slate-200/80 dark:border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+            <a href="/" class="flex items-center gap-3 group shrink-0">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-600/25">
+                    <i class="fas fa-shield-halved text-white text-lg"></i>
                 </div>
+                <div class="text-right">
+                    <span class="text-lg sm:text-xl font-black tracking-tight block text-slate-900 dark:text-white">
+                        گاردفای <span class="text-indigo-600 dark:text-indigo-400">پرو</span>
+                    </span>
+                    <span class="text-[10px] text-slate-500 dark:text-slate-400 font-bold block">
+                        کپچای بومی و امنیت ورود وردپرس
+                    </span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-700 dark:text-slate-300">
+                <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">صفحه اصلی</a>
+                <a href="/demo.php" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">دموی زنده افزونه</a>
+                <a href="/guide.php" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">راهنمای پنل</a>
+                <a href="/rtl-landing.php" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">معرفی جامع</a>
+            </nav>
+
+            <div class="flex items-center gap-2.5">
+                <button id="theme-toggle" type="button" class="theme-toggle w-10 h-10 rounded-xl flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 hover:border-indigo-500 transition-colors cursor-pointer" aria-label="تغییر حالت نمایش روز و شب">
+                    <i class="fas fa-moon dark:hidden text-indigo-600 text-sm"></i>
+                    <i class="fas fa-sun hidden dark:block text-amber-400 text-sm"></i>
+                </button>
+                <a href="/" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black transition-all shadow-md shadow-indigo-600/20">
+                    <i class="fas fa-house text-xs"></i>
+                    <span>صفحه اصلی</span>
+                </a>
             </div>
         </div>
-        
-        <h1 class="text-4xl font-black mb-6">صفحه مورد نظر پیدا نشد!</h1>
-        <p class="text-slate-400 text-lg mb-12 leading-relaxed">متاسفانه آدرسی که وارد کردید در سرور گاردفای وجود ندارد. ممکن است آدرس تغییر کرده باشد یا حذف شده باشد.</p>
-        
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/" class="w-full sm:w-auto px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl transition-all shadow-xl shadow-indigo-600/20">
-                بازگشت به صفحه اصلی
-            </a>
-            <button onclick="history.back()" class="w-full sm:w-auto px-10 py-4 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all">
-                صفحه قبلی
-            </button>
+    </header>
+
+    <div class="h-20"></div>
+
+    <!-- Main Error Content -->
+    <main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 relative z-10">
+        <div class="max-w-3xl w-full">
+            <div class="relative rounded-3xl bg-white/90 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800/90 backdrop-blur-2xl shadow-2xl p-6 sm:p-10 md:p-12 text-center overflow-hidden">
+                
+                <!-- Decorative Background Icon -->
+                <div class="absolute -left-10 -top-10 text-indigo-500/5 dark:text-indigo-400/5 pointer-events-none select-none">
+                    <i class="fas fa-compass text-[16rem]"></i>
+                </div>
+
+                <!-- Status Code Pill -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 dark:text-indigo-400 text-xs font-black mb-6">
+                    <span class="w-2 h-2 rounded-full bg-indigo-500 animate-ping"></span>
+                    <span>HTTP ERROR 404 · PAGE NOT FOUND</span>
+                </div>
+
+                <!-- Visual Icon & Giant Number -->
+                <div class="relative flex items-center justify-center my-2">
+                    <span class="text-8xl sm:text-9xl font-black tracking-tighter text-slate-200/80 dark:text-slate-800/90 select-none font-mono">404</span>
+                    <div class="absolute w-20 h-20 rounded-3xl bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center shadow-2xl shadow-indigo-600/40 border-2 border-white/20">
+                        <i class="fas fa-magnifying-glass-location text-3xl"></i>
+                    </div>
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 dark:text-white mt-4 mb-3">
+                    صفحه یا مسیر مورد نظر یافت نشد!
+                </h1>
+                <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-7 font-medium mb-8">
+                    آدرسی که وارد کرده‌اید در سرور <strong>گاردفای پرو</strong> وجود ندارد، حذف شده یا نشانی آن تغییر یافته است. از طریق دکمه‌های زیر می‌توانید به بخش‌های اصلی سایت دسترسی داشته باشید.
+                </p>
+
+                <!-- Primary Action Buttons -->
+                <div class="flex flex-row flex-wrap items-center justify-center gap-3 mb-8">
+                    <a href="/" class="px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-black text-xs sm:text-sm shadow-xl shadow-indigo-600/25 transition-all flex items-center gap-2">
+                        <i class="fas fa-house"></i>
+                        <span>بازگشت به صفحه اصلی</span>
+                    </a>
+                    <a href="/demo.php" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-emerald-500/20 transition-all flex items-center gap-2">
+                        <i class="fas fa-desktop"></i>
+                        <span>ورود به دموی افزونه</span>
+                    </a>
+                    <button type="button" onclick="history.back()" class="px-5 py-3.5 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>صفحه قبلی</span>
+                    </button>
+                </div>
+
+                <!-- Helpful Quick Links Grid -->
+                <div class="pt-6 border-t border-slate-200/80 dark:border-slate-800/80 text-right">
+                    <div class="text-xs font-black text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
+                        <i class="fas fa-bolt text-amber-500"></i>
+                        <span>دسترسی سریع به مهم‌ترین بخش‌های گاردفای پرو:</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <a href="/demo.php" class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/80 hover:bg-indigo-50/70 dark:hover:bg-slate-800/80 border border-slate-200/80 dark:border-slate-800 transition-all flex items-center gap-3 group">
+                            <span class="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"><i class="fas fa-sliders"></i></span>
+                            <div>
+                                <div class="text-xs font-black text-slate-900 dark:text-white">شبیه‌ساز زنده کپچا</div>
+                                <div class="text-[10.5px] text-slate-500 dark:text-slate-400">تست ۳۵+ تم و ۶ چالش</div>
+                            </div>
+                        </a>
+                        <a href="/guide.php" class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/80 hover:bg-indigo-50/70 dark:hover:bg-slate-800/80 border border-slate-200/80 dark:border-slate-800 transition-all flex items-center gap-3 group">
+                            <span class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"><i class="fas fa-book-open"></i></span>
+                            <div>
+                                <div class="text-xs font-black text-slate-900 dark:text-white">راهنمای تعاملی پنل</div>
+                                <div class="text-[10.5px] text-slate-500 dark:text-slate-400">آموزش ۱۲ تب پیشخوان</div>
+                            </div>
+                        </a>
+                        <a href="/rtl-landing.php" class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/80 hover:bg-indigo-50/70 dark:hover:bg-slate-800/80 border border-slate-200/80 dark:border-slate-800 transition-all flex items-center gap-3 group">
+                            <span class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"><i class="fas fa-table-list"></i></span>
+                            <div>
+                                <div class="text-xs font-black text-slate-900 dark:text-white">جدول مشخصات فنی</div>
+                                <div class="text-[10.5px] text-slate-500 dark:text-slate-400">مقایسه و بررسی امکانات</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="py-5 border-t border-slate-200/80 dark:border-slate-800/80 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <span>© ۲۰۲۶ گاردفای پرو (Guardify Pro v4.00) — طراحی و توسعه توسط تیم امنیتی <strong>DevBan</strong></span>
+            <span class="font-mono text-[11px] text-indigo-600 dark:text-indigo-400">LiteSpeed Web Server · Protected by Guardify Shield</span>
+        </div>
+    </footer>
+
 </body>
 </html>

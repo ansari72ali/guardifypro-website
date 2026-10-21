@@ -84,6 +84,55 @@ function renderPhpFile(filePath, req) {
     return content;
 }
 
+// Helper to send custom HTML error pages
+function sendCustomError(res, statusCode) {
+    const errorFile = path.join(__dirname, `${statusCode}.html`);
+    res.status(statusCode);
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    if (fs.existsSync(errorFile)) {
+        return res.sendFile(errorFile);
+    }
+    return res.send(`<h1>HTTP Error ${statusCode}</h1>`);
+}
+
+// Security Middleware: Headers, Directory Listing Prevention & Protected Files
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.removeHeader('X-Powered-By');
+
+    let reqPath = '/';
+    try {
+        reqPath = decodeURIComponent(req.path || '/');
+    } catch (e) {
+        return sendCustomError(res, 400);
+    }
+
+    const baseName = path.basename(reqPath);
+
+    // Block hidden dotfiles (.htaccess, .git, .env, etc.) except .well-known
+    if (baseName.startsWith('.') && !reqPath.startsWith('/.well-known/')) {
+        return sendCustomError(res, 403);
+    }
+
+    // Block direct access to internal template partials & config files
+    if (/^(header\.php|footer\.php|admin-panel-markup\.html|server\.(js|ts)|package(-lock)?\.json|tsconfig\.json|metadata\.json)$/i.test(baseName)) {
+        return sendCustomError(res, 403);
+    }
+
+    // Prevent directory listing on existing folders (e.g., /css/, /js/, /fonts/, /img/)
+    if (reqPath !== '/') {
+        const diskPath = path.join(__dirname, reqPath);
+        if (fs.existsSync(diskPath) && fs.statSync(diskPath).isDirectory()) {
+            return sendCustomError(res, 403);
+        }
+    }
+
+    next();
+});
+
 // Explicit PHP-first and HTML route handlers
 app.get(['/', '/index.php', '/index.html'], (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, must-revalidate');
@@ -106,6 +155,20 @@ app.get(['/demo', '/demo.php', '/demo.html'], (req, res) => {
     res.send(html);
 });
 
+app.get(['/admin', '/admin.php', '/admin.html'], (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    const html = renderPhpFile(path.join(__dirname, 'admin.php'), req);
+    res.send(html);
+});
+
+app.get(['/comparison', '/comparison.php', '/comparison.html'], (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+    const html = renderPhpFile(path.join(__dirname, 'comparison.php'), req);
+    res.send(html);
+});
+
 app.get(['/guide', '/guide.php', '/guide.html', '/tutorial', '/tutorial.php', '/tutorial.html'], (req, res) => {
     res.setHeader('Cache-Control', 'no-cache, must-revalidate');
     res.setHeader('Content-Type', 'text/html; charset=UTF-8');
@@ -120,30 +183,34 @@ app.get(['/rtl-landing', '/rtl-landing.php', '/presentation', '/presentation.php
     res.send(html);
 });
 
-app.get(['/wp-login', '/wp-login.php'], (req, res) => {
-    res.status(404).send('Not Found');
+// Direct routes for custom error pages
+['400', '401', '403', '404', '429', '500', '502', '503', '504'].forEach((code) => {
+    app.get([`/${code}`, `/${code}.html`], (req, res) => {
+        sendCustomError(res, parseInt(code, 10));
+    });
 });
 
-// Serve static assets with caching headers
+app.get(['/wp-login', '/wp-login.php'], (req, res) => {
+    return sendCustomError(res, 404);
+});
+
+// Serve static assets with caching headers (dotfiles & directory indexes disabled)
 app.use(express.static(__dirname, {
+    index: false,
+    dotfiles: 'deny',
     maxAge: '1h',
     setHeaders: (res, filePath) => {
         if (filePath.endsWith('.html') || filePath.endsWith('.js') || filePath.endsWith('.css') || filePath.endsWith('.php')) {
-            // Instant updates without stale cache
             res.setHeader('Cache-Control', 'no-cache, must-revalidate');
         } else if (filePath.endsWith('.png') || filePath.endsWith('.jpg') || filePath.endsWith('.webp') || filePath.endsWith('.woff') || filePath.endsWith('.woff2') || filePath.endsWith('.svg')) {
-            // Media and font assets: cache efficiently
             res.setHeader('Cache-Control', 'public, max-age=86400');
         }
     }
 }));
 
-// Fallback route
+// Fallback 404 route
 app.get('*', (req, res) => {
-    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
-    res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    const html = renderPhpFile(path.join(__dirname, 'index.php'), req);
-    res.send(html);
+    return sendCustomError(res, 404);
 });
 
 app.listen(PORT, '0.0.0.0', () => {
